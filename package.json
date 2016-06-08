@@ -1,0 +1,14 @@
+{
+  "name": "backstopjs-test",
+  "version": "1.0.0",
+  "description": "BackstopJS configuration for CiviHR",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Danilo",
+  "license": "ISC",
+  "devDependencies": {
+    "backstopjs": "^1.2.1",
+    "eslint": "^2.11.1",
+    "eslint-config-google": "^0.5.0"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "scenarios": [{
+    "label": "Select2 Before",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "#s2id_phone_phone_type_id"
+    ],
+    "readyEvent": null,
+    "delay": 500,
+    "misMatchThreshold": 0.1
+  },
+  {
+    "label": "Select2 Selecting",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "hideSelectors": ["label"],
+    "removeSelectors": [],
+    "selectors": [
+      "table.form-layout:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(3)"
+    ],
+    "readyEvent": null,
+    "delay": 500,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "select2/select2-open.js"
+  },
+  {
+    "label": "Select2 After (with focus)",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "#s2id_phone_phone_type_id"
+    ],
+    "readyEvent": null,
+    "delay": 500,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "select2/select2-click-option.js"
+  },
+  {
+    "label": "Select2 After (without focus)",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "#s2id_phone_phone_type_id"
+    ],
+    "readyEvent": null,
+    "delay": 500,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "select2/select2-click-option-and-blur.js"
+  }],
+  "paths": {
+    "bitmaps_reference": "../../backstop_data/select2_bitmaps_reference",
+    "bitmaps_test": "../../backstop_data/select2_bitmaps_test",
+    "compare_data": "../../backstop_data/select2_bitmaps_test/select2_compare.json",
+    "casper_scripts": "../../backstop_data/casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
