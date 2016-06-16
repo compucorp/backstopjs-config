@@ -13,10 +13,10 @@
       "form#user-login-form"
     ],
     "readyEvent": null,
-    "delay": 500,
+    "delay": 0,
     "misMatchThreshold": 0.1,
-    "onBeforeScript": "onbefore.js",
-    "onReadyScript": "onready.js"
+    "onBeforeScript": null,
+    "onReadyScript": null
   }, {
     "label": "Contact Page",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
@@ -26,10 +26,10 @@
       "body"
     ],
     "readyEvent": null,
-    "delay": 1500,
+    "delay": 0,
     "misMatchThreshold": 0.1,
-    "onBeforeScript": "onbefore.js",
-    "onReadyScript": "page-ready/login.js"
+    "onBeforeScript": "login.js",
+    "onReadyScript": "page-ready/after-login.js"
   }, {
     "label": "Advanced search",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
@@ -37,7 +37,6 @@
     "removeSelectors": [],
     "selectors": [
       "body",
-      "div.crm-accordion-wrapper:nth-of-type(1)",
       "div.crm-accordion-wrapper:nth-of-type(2)",
       "div.crm-accordion-wrapper:nth-of-type(3)",
       "div.crm-accordion-wrapper:nth-of-type(4)",
@@ -56,10 +55,10 @@
       "div.crm-accordion-wrapper:nth-of-type(17)",
       "div.crm-accordion-wrapper:nth-of-type(18)"
     ],
+    "delay": 0,
     "readyEvent": null,
-    "delay": 10000,
     "misMatchThreshold": 0.1,
-    "onBeforeScript": "onbefore.js",
+    "onBeforeScript": null,
     "onReadyScript": "page-ready/open-accordions"
   }, {
     "label": "New Individual",
@@ -78,9 +77,9 @@
       ".crm-tagGroup-accordion"
     ],
     "readyEvent": null,
-    "delay": 500,
+    "delay": 3500,
     "misMatchThreshold": 0.1,
-    "onBeforeScript": "onbefore.js",
+    "onBeforeScript": null,
     "onReadyScript": "page-ready/open-accordions"
   }, {
     "label": "Contact Reports",
@@ -93,15 +92,15 @@
       "div.crm-accordion-wrapper:nth-of-type(2)"
     ],
     "readyEvent": null,
-    "delay": 500,
+    "delay": 0,
     "misMatchThreshold": 0.1,
-    "onBeforeScript": "onbefore.js",
-    "onReadyScript": "page-ready/open-accordions"
+    "onBeforeScript": null,
+    "onReadyScript": null
   }],
   "paths": {
     "bitmaps_reference": "../../backstop_data/pages_bitmaps_reference",
     "bitmaps_test": "../../backstop_data/pages_bitmaps_test",
-    "compare_data": "../../backstop_data/pages_bitmaps_test/pages_compare.json",
+    "compare_data": "../../backstop_data/pages_bitmaps_test/compare.json",
     "casper_scripts": "../../backstop_data/casper_scripts"
   },
   "engine": "phantomjs",

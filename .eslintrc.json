@@ -26,6 +26,7 @@
     "object-curly-spacing": 0,
     "no-else-return": 0,
     "no-trailing-spaces": 0,
+    "no-negated-condition": 0,
     "newline-per-chained-call": [2, {
       "ignoreChainWithDepth": 2
     }],

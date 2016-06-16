@@ -3,9 +3,9 @@ module.exports = function (casper, scenario, vp) {
   var Page = require('../page-objects/crm-page.js');
   var page = new Page(casper, scenario, vp);
 
-  casper.echo('onReady.js', 'INFO');
-
   casper.then(function() {
-    page.loginIfNeeded();
+    this.echo('Closing error notifications', 'INFO');
+    page.closeErrorNotifications();
+    this.wait(1000);
   });
 };
