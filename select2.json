@@ -2,10 +2,10 @@
   "viewports": [{
     "name": "desktop",
     "width": 1920,
-    "height": 900
+    "height": 1920
   }],
   "scenarios": [{
-    "label": "Select2 Before",
+    "label": "Select2 - before",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
@@ -17,7 +17,7 @@
     "misMatchThreshold": 0.1
   },
   {
-    "label": "Select2 Selecting",
+    "label": "Select2 - selecting",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": ["label"],
     "removeSelectors": [],
@@ -30,7 +30,7 @@
     "onReadyScript": "select2/select2-open.js"
   },
   {
-    "label": "Select2 After (with focus)",
+    "label": "Select2 - after (with focus)",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
@@ -43,7 +43,7 @@
     "onReadyScript": "select2/select2-click-option.js"
   },
   {
-    "label": "Select2 After (without focus)",
+    "label": "Select2 - after (without focus)",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
@@ -54,6 +54,19 @@
     "delay": 500,
     "misMatchThreshold": 0.1,
     "onReadyScript": "select2/select2-click-option-and-blur.js"
+  },
+  {
+    "label": "Select2 - disabled",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "#s2id_phone_phone_type_id"
+    ],
+    "readyEvent": null,
+    "delay": 500,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "select2/select2-disable.js"
   }],
   "paths": {
     "bitmaps_reference": "../../backstop_data/select2_bitmaps_reference",

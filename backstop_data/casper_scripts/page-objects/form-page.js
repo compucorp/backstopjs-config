@@ -49,6 +49,11 @@ FormPage.prototype = Object.create(CrmPage.prototype, {
       }, select2ContainerSelector + ' input');
     }
   },
+  disableSelect2: {
+    value: function (select2ContainerSelector) {
+      this.addClassToElement(select2ContainerSelector, 'select2-container-disabled');
+    }
+  },
   blurSelect2: {
     value: function (select2ContainerSelector) {
       this.waitForSelectorAndEvaluate(function (selector) {

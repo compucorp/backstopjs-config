@@ -29,6 +29,11 @@ CrmPage.prototype = Object.create({
       el.style.height = height;
     }, targetSelector, width, height);
   },
+  addClassToElement: function (targetSelector, className) {
+    this.waitForSelectorAndEvaluate(function (selector, newClass) {
+      document.querySelector(selector).classList.add(newClass);
+    }, targetSelector, className);
+  },
   closeAllAlertMsgBlocks: function () {
     this.clickAll('.alert-danger > a.close');
   },
