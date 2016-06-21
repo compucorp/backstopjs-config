@@ -5,60 +5,60 @@
     "height": 1500
   }],
   "scenarios": [{
-    "label": "Select2 multiple - before",
+    "label": "Select2 lookup - before",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
-      "#s2id_preferred_communication_method"
+      "#s2id_preferred_language"
     ],
     "readyEvent": null,
     "delay": 500,
     "misMatchThreshold": 0.1
   },
   {
-    "label": "Select2 multiple - selecting",
+    "label": "Select2 lookup - selecting",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": ["label"],
     "removeSelectors": [],
     "selectors": [
-      "table.form-layout:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"
+      "table.form-layout:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(3)"
     ],
     "readyEvent": null,
     "delay": 1000,
     "misMatchThreshold": 0.1,
-    "onReadyScript": "select2-multiple/open.js"
+    "onReadyScript": "select2-lookup/open.js"
   },
   {
-    "label": "Select2 multiple - after",
+    "label": "Select2 lookup - after",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
-      "#s2id_preferred_communication_method"
+      "#s2id_preferred_language"
     ],
     "readyEvent": null,
     "delay": 500,
     "misMatchThreshold": 0.1,
-    "onReadyScript": "select2-multiple/click-option.js"
+    "onReadyScript": "select2-lookup/click-option.js"
   },
   {
-    "label": "Select2 multiple - disabled",
+    "label": "Select2 lookup - disabled",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
-      "#s2id_preferred_communication_method"
+      "#s2id_preferred_language"
     ],
     "readyEvent": null,
     "delay": 500,
     "misMatchThreshold": 0.1,
-    "onReadyScript": "select2-multiple/disable.js"
+    "onReadyScript": "select2-lookup/disable.js"
   }],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/select2_multiple_bitmaps_reference",
-    "bitmaps_test": "../../backstop_data/select2_multiple_bitmaps_test",
-    "compare_data": "../../backstop_data/select2_multiple_bitmaps_test/compare.json",
+    "bitmaps_reference": "../../backstop_data/select2_lookup_bitmaps_reference",
+    "bitmaps_test": "../../backstop_data/select2_lookup_bitmaps_test",
+    "compare_data": "../../backstop_data/select2_lookup_bitmaps_test/compare.json",
     "casper_scripts": "../../backstop_data/casper_scripts"
   },
   "engine": "phantomjs",
