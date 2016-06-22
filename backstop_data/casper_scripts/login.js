@@ -15,9 +15,15 @@ module.exports = function (casper, scenario, vp) {
 
   casper.echo('Logging in before starting...', 'INFO');
 
+  var loginFormSelector = 'form#user-login-form';
+
   casper.thenOpen(config.url + '/welcome-page', function () {
-    var loginFormSelector = 'form#user-login-form';
     casper.waitForSelector(loginFormSelector, function () {
+      this.waitWhileSelector(loginFormSelector, function () {
+        this.echo('Logged in', 'INFO');
+      }, function () {
+        this.echo('Login form visible and timeout reached!', 'RED_BAR');
+      }, 5000);
       this.fill(loginFormSelector, config.credentials, true);
     }, function () {
       this.echo('Login form not found!', 'RED_BAR');

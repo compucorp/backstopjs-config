@@ -12,8 +12,7 @@
     "selectors": [
       "form#user-login-form"
     ],
-    "readyEvent": null,
-    "delay": 0,
+    "delay": 500,
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
     "onReadyScript": null
@@ -29,7 +28,7 @@
     "delay": 0,
     "misMatchThreshold": 0.1,
     "onBeforeScript": "login.js",
-    "onReadyScript": "page-ready/after-login.js"
+    "onReadyScript": "page-ready/close-notifications.js"
   }, {
     "label": "Advanced search",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
@@ -96,6 +95,19 @@
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
     "onReadyScript": null
+  }, {
+    "label": "Import Job Contracts",
+    "url": "http://localhost:8910/index.php?q=civicrm/job/import",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onBeforeScript": null,
+    "onReadyScript": "page-ready/close-notifications.js"
   }],
   "paths": {
     "bitmaps_reference": "../../backstop_data/pages_bitmaps_reference",

@@ -1,0 +1,33 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "scenarios": [{
+    "label": "Modal",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      ".ui-dialog"
+    ],
+    "readyEvent": null,
+    "delay": 3500,
+    "misMatchThreshold": 0.1,
+    "onBeforeScript": "login.js",
+    "onReadyScript": "modal/show-modal"
+  }],
+  "paths": {
+    "bitmaps_reference": "../../backstop_data/modal_bitmaps_reference",
+    "bitmaps_test": "../../backstop_data/modal_bitmaps_test",
+    "compare_data": "../../backstop_data/modal_bitmaps_test/compare.json",
+    "casper_scripts": "../../backstop_data/casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
