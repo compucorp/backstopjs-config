@@ -108,6 +108,119 @@
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
     "onReadyScript": "page-ready/close-notifications.js"
+  }, {
+    "label": "New Activity",
+    "url": "http://localhost:8910/index.php?q=civicrm/activity&reset=1&action=add&context=standalone",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "page-ready/open-accordions"
+  }, {
+    "label": "New Email",
+    "url": "http://localhost:8910/index.php?q=civicrm/activity/email/add&atype=3&action=add&reset=1&context=standalone",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "page-ready/open-accordions"
+  }, {
+    "label": "New Group",
+    "url": "http://localhost:8910/index.php?q=civicrm/group/add&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "New Tag",
+    "url": "http://localhost:8910/index.php?q=civicrm/admin/tag&reset=1&action=add",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "Find and Merge Duplicate Contacts",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/deduperules&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "My Absences",
+    "url": "http://localhost:8910/index.php?q=civicrm/absences#hrabsence/list",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "Vacancy Dashboard",
+    "url": "http://localhost:8910/index.php?q=civicrm/vacancy/dashboard&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "Find Draft Vacancies",
+    "url": "http://localhost:8910/index.php?q=civicrm/vacancy/find&force=1&status=1&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "page-ready/close-notifications.js"
+  }, {
+    "label": "Find Cases",
+    "url": "http://localhost:8910/index.php?q=civicrm/case/search&force=1&type=8&reset=1",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
+  }, {
+    "label": "CiviCRM API",
+    "url": "http://localhost:8910/civicrm/api/explorer#explorer",
+    "hideSelectors": [],
+    "removeSelectors": [],
+    "selectors": [
+      "body"
+    ],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1
   }],
   "paths": {
     "bitmaps_reference": "../../backstop_data/pages_bitmaps_reference",
