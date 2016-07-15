@@ -1,3 +1,4 @@
 node_modules/
-backstop_data/*_bitmaps_*/
+backstop_data/*-reference*/
+backstop_data/*-test*/
 crm-config.json

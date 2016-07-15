@@ -44,6 +44,11 @@ CrmPage.prototype = Object.create({
   },
   closeErrorNotifications: function () {
     this.clickAll('a.ui-notify-cross.ui-notify-close');
+  },
+  hideElement: function(targetSelector) {
+    this.waitForSelectorAndEvaluate(function (selector) {
+      document.querySelector(selector).style.display = 'none';
+    }, targetSelector);
   }
 });
 

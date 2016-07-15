@@ -28,7 +28,7 @@
     "delay": 0,
     "misMatchThreshold": 0.1,
     "onBeforeScript": "login.js",
-    "onReadyScript": "page-ready/close-notifications.js"
+    "onReadyScript": "common/close-notifications.js"
   }, {
     "label": "Advanced search",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
@@ -58,7 +58,7 @@
     "readyEvent": null,
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
-    "onReadyScript": "page-ready/open-accordions"
+    "onReadyScript": "common/open-accordions"
   }, {
     "label": "New Individual",
     "url": "http://localhost:8910/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
@@ -79,7 +79,7 @@
     "delay": 3500,
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
-    "onReadyScript": "page-ready/open-accordions"
+    "onReadyScript": "common/open-accordions"
   }, {
     "label": "Contact Reports",
     "url": "http://localhost:8910/index.php?q=civicrm/report/list&compid=99&reset=1",
@@ -107,7 +107,7 @@
     "delay": 0,
     "misMatchThreshold": 0.1,
     "onBeforeScript": null,
-    "onReadyScript": "page-ready/close-notifications.js"
+    "onReadyScript": "common/close-notifications.js"
   }, {
     "label": "New Activity",
     "url": "http://localhost:8910/index.php?q=civicrm/activity&reset=1&action=add&context=standalone",
@@ -119,7 +119,7 @@
     "readyEvent": null,
     "delay": 0,
     "misMatchThreshold": 0.1,
-    "onReadyScript": "page-ready/open-accordions"
+    "onReadyScript": "common/open-accordions"
   }, {
     "label": "New Email",
     "url": "http://localhost:8910/index.php?q=civicrm/activity/email/add&atype=3&action=add&reset=1&context=standalone",
@@ -130,8 +130,7 @@
     ],
     "readyEvent": null,
     "delay": 0,
-    "misMatchThreshold": 0.1,
-    "onReadyScript": "page-ready/open-accordions"
+    "misMatchThreshold": 0.1
   }, {
     "label": "New Group",
     "url": "http://localhost:8910/index.php?q=civicrm/group/add&reset=1",
@@ -198,7 +197,7 @@
     "readyEvent": null,
     "delay": 0,
     "misMatchThreshold": 0.1,
-    "onReadyScript": "page-ready/close-notifications.js"
+    "onReadyScript": "common/close-notifications.js"
   }, {
     "label": "Find Cases",
     "url": "http://localhost:8910/index.php?q=civicrm/case/search&force=1&type=8&reset=1",
@@ -223,9 +222,9 @@
     "misMatchThreshold": 0.1
   }],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/pages_bitmaps_reference",
-    "bitmaps_test": "../../backstop_data/pages_bitmaps_test",
-    "compare_data": "../../backstop_data/pages_bitmaps_test/compare.json",
+    "bitmaps_reference": "../../backstop_data/common-pages-reference",
+    "bitmaps_test": "../../backstop_data/common-pages-test",
+    "compare_data": "../../backstop_data/common-pages-test/compare.json",
     "casper_scripts": "../../backstop_data/casper_scripts"
   },
   "engine": "phantomjs",

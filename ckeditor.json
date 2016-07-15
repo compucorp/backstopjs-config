@@ -16,7 +16,7 @@
     "delay": 0,
     "misMatchThreshold": 0.1,
     "onBeforeScript": "login.js",
-    "onReadyScript": "page-ready/open-accordions"
+    "onReadyScript": "common/open-accordions"
   }],
   "paths": {
     "bitmaps_reference": "../../backstop_data/ckeditor_bitmaps_reference",

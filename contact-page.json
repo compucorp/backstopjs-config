@@ -1,0 +1,61 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "scenarios": [{
+    "label": "Contact Summary",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "selectors": ["body"],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onBeforeScript": "login.js",
+    "onReadyScript": "common/close-notifications.js"
+  }, {
+    "label": "Job Contract",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "selectors": ["body"],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "contact-page/show-job-contract.js"
+  }, {
+    "label": "Job Roles",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "selectors": ["body"],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "contact-page/show-job-roles.js"
+  }, {
+    "label": "Summary",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "selectors": ["body"],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "contact-page/show-summary.js"
+  }, {
+    "label": "Appraisals",
+    "url": "http://localhost:8910/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "selectors": ["body"],
+    "readyEvent": null,
+    "delay": 0,
+    "misMatchThreshold": 0.1,
+    "onReadyScript": "contact-page/show-appraisals.js"
+  }],
+  "paths": {
+    "bitmaps_reference": "../../backstop_data/contact-page-reference",
+    "bitmaps_test": "../../backstop_data/contact-page-test",
+    "compare_data": "../../backstop_data/contact-page-test/compare.json",
+    "casper_scripts": "../../backstop_data/casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
