@@ -2,7 +2,7 @@
   "viewports": [{
     "name": "desktop",
     "width": 1920,
-    "height": 1500
+    "height": 1900
   }],
   "scenarios": [{
     "label": "Select2 lookup - before",
@@ -56,9 +56,9 @@
     "onReadyScript": "select2-lookup/disable.js"
   }],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/select2_lookup_bitmaps_reference",
-    "bitmaps_test": "../../backstop_data/select2_lookup_bitmaps_test",
-    "compare_data": "../../backstop_data/select2_lookup_bitmaps_test/compare.json",
+    "bitmaps_reference": "../../backstop_data/select2-lookup_bitmaps-reference",
+    "bitmaps_test": "../../backstop_data/select2_lookup-bitmaps-test",
+    "compare_data": "../../backstop_data/select2_lookup-bitmaps-test/compare.json",
     "casper_scripts": "../../backstop_data/casper_scripts"
   },
   "engine": "phantomjs",
