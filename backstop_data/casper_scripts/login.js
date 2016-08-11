@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function (casper, scenario, vp) {
-
   var config;
   try {
     config = require('./crm-config');
@@ -9,7 +8,7 @@ module.exports = function (casper, scenario, vp) {
     var sampleStructure =
       '{"url": "YOUR LOCAL URL", "credentials": {"name": "YOUR USERNAME", "pass": "YOUR PASSWORD"}}';
     casper.echo(
-      'You should create a "crm-config.json" file in the "casper_scripts" directory containing the following structure: ' +
+      'You should create a "crm-config.json" file in the "casper_scripts" directory, containing the following structure: ' +
       sampleStructure, 'ERROR');
   }
 

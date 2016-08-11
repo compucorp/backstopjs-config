@@ -6,7 +6,7 @@
   }],
   "scenarios": [{
     "label": "CKEditor",
-    "url": "http://localhost:8910/index.php?q=civicrm/activity/email/add&atype=3&action=add&reset=1&context=standalone",
+    "url": "{url}/index.php?q=civicrm/activity/email/add&atype=3&action=add&reset=1&context=standalone",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [

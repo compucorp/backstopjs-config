@@ -6,7 +6,7 @@
   }],
   "scenarios": [{
     "label": "Modal",
-    "url": "http://localhost:8910/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
+    "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [

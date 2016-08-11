@@ -6,7 +6,7 @@
   }],
   "scenarios": [{
     "label": "Contact Summary",
-    "url": "http://localhost:8979/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=92",
     "selectors": ["body"],
     "readyEvent": null,
     "delay": 0,
@@ -15,7 +15,7 @@
     "onReadyScript": "common/close-notifications.js"
   }, {
     "label": "Job Contract",
-    "url": "http://localhost:8979/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=92",
     "selectors": ["body"],
     "readyEvent": null,
     "delay": 0,
@@ -23,7 +23,7 @@
     "onReadyScript": "contact-page/show-job-contract.js"
   }, {
     "label": "Job Roles",
-    "url": "http://localhost:8979/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=92",
     "selectors": ["body"],
     "readyEvent": null,
     "delay": 0,
@@ -31,7 +31,7 @@
     "onReadyScript": "contact-page/show-job-roles.js"
   }, {
     "label": "Summary",
-    "url": "http://localhost:8979/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=92",
     "selectors": ["body"],
     "readyEvent": null,
     "delay": 0,
@@ -39,7 +39,7 @@
     "onReadyScript": "contact-page/show-summary.js"
   }, {
     "label": "Appraisals",
-    "url": "http://localhost:8979/index.php?q=civicrm/contact/view&reset=1&cid=92",
+    "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=92",
     "selectors": ["body"],
     "readyEvent": null,
     "delay": 0,

@@ -6,7 +6,7 @@
   }],
   "scenarios": [{
     "label": "Select2 multiple - before",
-    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
@@ -14,11 +14,12 @@
     ],
     "readyEvent": null,
     "delay": 500,
-    "misMatchThreshold": 0.1
+    "misMatchThreshold": 0.1,
+    "onBeforeScript": "login.js"
   },
   {
     "label": "Select2 multiple - selecting",
-    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": ["label"],
     "removeSelectors": [],
     "selectors": [
@@ -31,7 +32,7 @@
   },
   {
     "label": "Select2 multiple - after",
-    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
@@ -44,7 +45,7 @@
   },
   {
     "label": "Select2 multiple - disabled",
-    "url": "http://localhost:8910/index.php?q=civicrm/contact/search/advanced&reset=1",
+    "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [
