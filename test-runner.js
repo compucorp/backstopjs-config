@@ -1,7 +1,6 @@
 /* eslint no-console: 0 */
 
 'use strict';
-var gulp = require('gulp');
 var argv = require('yargs').argv;
 var exec = require('child_process').exec;
 var fs = require('fs');
@@ -53,9 +52,8 @@ function modifyConfigOnceChanged() {
  * Executes the BackstopJS task in its contextual path
  * @param  {string}   taskName       The name of the BackstopJS task to execute
  * @param  {string}   configFileName The configuration file to use
- * @param  {Function} done           The gulp callback
  */
-function execBackstopJS(taskName, configFileName, done) {
+function execBackstopJS(taskName, configFileName) {
   var proc = exec('npm run ' + taskName + ' -- --configPath=../../' + configFileName, {
     cwd: 'node_modules/backstopjs'
   }, function(error, stdout, stderr) {
@@ -63,15 +61,12 @@ function execBackstopJS(taskName, configFileName, done) {
       console.error(error);
       throw error;
     }
-    done();
   });
   proc.stdout.pipe(process.stdout);
   proc.stderr.pipe(process.stderr);
 }
 
-gulp.task('common-pages', function(done) {
-  if (localUrl) {
-    modifyConfigOnceChanged();
-    execBackstopJS(argv.reference ? 'reference' : 'test', 'common-pages.json', done);
-  }
-});
+if (localUrl) {
+  modifyConfigOnceChanged();
+  execBackstopJS(argv.task || 'test', argv.configPath);
+}
