@@ -43,6 +43,24 @@
       "onReadyScript": "search/communications-preferences"
     },
     {
+      "label": "Delete contacts",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/delete-contacts"
+    },
+    {
+      "label": "Delete contacts - modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/delete-contacts-modal"
+    },
+    {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
