@@ -134,6 +134,24 @@
       "onReadyScript": "search/email-schedule-tracking"
     },
     {
+      "label": "Email - unhold addresses",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-unhold-addresses"
+    },
+    {
+      "label": "Email - unhold addresses - Modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-unhold-addresses-modal"
+    },
+    {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
