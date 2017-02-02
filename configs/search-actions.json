@@ -41,6 +41,15 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/add-smart-group"
+    },
+    {
+      "label": "Group - remove contacts",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/remove-group"
     }
   ],
   "paths": {
