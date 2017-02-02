@@ -61,6 +61,25 @@
       "onReadyScript": "search/delete-contacts-modal"
     },
     {
+      "label": "Delete permanently",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js",
+      "onReadyScript": "search/delete-permanently"
+    },
+    {
+      "label": "Delete permanently - modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/delete-permanently-modal"
+    },
+    {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
