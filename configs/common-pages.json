@@ -1,0 +1,116 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "scenarios": [
+    {
+      "label": "Standard Search",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js"
+    },
+    {
+      "label": "Advanced Search",
+      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "Search result",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/find-contact"
+    },
+    {
+      "label": "New Individual",
+      "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": null,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "New Household",
+      "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Household",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": null,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "New Organization",
+      "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Organization",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": null,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "Contact Reports",
+      "url": "{url}/index.php?q=civicrm/report/list&compid=99&reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": null,
+      "onReadyScript": "common/open-accordions"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "../../backstop_data/common-pages-reference",
+    "bitmaps_test": "../../backstop_data/common-pages-test",
+    "compare_data": "../../backstop_data/common-pages-test/compare.json",
+    "casper_scripts": "../../backstop_data/casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
