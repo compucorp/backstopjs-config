@@ -25,6 +25,15 @@
       "onReadyScript": "search/add-to-household"
     },
     {
+      "label": "Add relationship - to organization",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/add-to-organization"
+    },
+    {
       "label": "Communications preferences",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
