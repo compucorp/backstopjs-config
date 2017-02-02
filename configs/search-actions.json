@@ -80,6 +80,60 @@
       "onReadyScript": "search/delete-permanently-modal"
     },
     {
+      "label": "Email - schedule/send via CiviMail",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule"
+    },
+    {
+      "label": "Email - schedule/send via CiviMail - Attachments",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".crm-tabset"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule-attachments"
+    },
+    {
+      "label": "Email - schedule/send via CiviMail - Header and Footer",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".crm-tabset"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule-header-footer"
+    },
+    {
+      "label": "Email - schedule/send via CiviMail - Publication",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".crm-tabset"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule-publication"
+    },
+    {
+      "label": "Email - schedule/send via CiviMail - Responses",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".crm-tabset"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule-responses"
+    },
+    {
+      "label": "Email - schedule/send via CiviMail - Tracking",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".crm-tabset"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/email-schedule-tracking"
+    },
+    {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
