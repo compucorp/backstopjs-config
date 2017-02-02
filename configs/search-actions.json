@@ -204,6 +204,15 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/mailing-labels"
+    },
+    {
+      "label": "Merge contacts",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/merge-contacts"
     }
   ],
   "paths": {
