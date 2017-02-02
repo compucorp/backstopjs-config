@@ -213,6 +213,15 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/merge-contacts"
+    },
+    {
+      "label": "Register participants for event",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/register-participants-for-event"
     }
   ],
   "paths": {
