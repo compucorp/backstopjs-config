@@ -152,6 +152,24 @@
       "onReadyScript": "search/email-unhold-addresses-modal"
     },
     {
+      "label": "Export contact",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/export-contact"
+    },
+    {
+      "label": "Export contact - Step 3",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/export-contact-step-3"
+    },
+    {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["body"],
