@@ -275,6 +275,24 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/tag-remove-from-contacts-modal"
+    },
+    {
+      "label": "Update multiple contacts",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/update-multiple-contacts"
+    },
+    {
+      "label": "Update multiple contacts - Modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/update-multiple-contacts-modal"
     }
   ],
   "paths": {
