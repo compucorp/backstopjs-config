@@ -257,6 +257,24 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/tag-add-to-contacts-modal"
+    },
+    {
+      "label": "Tag - remove from contacts",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/tag-remove-from-contacts"
+    },
+    {
+      "label": "Tag - remove from contacts - Modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/tag-remove-from-contacts-modal"
     }
   ],
   "paths": {
