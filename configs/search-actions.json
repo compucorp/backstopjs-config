@@ -221,6 +221,24 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/register-participants-for-event"
+    },
+    {
+      "label": "Restore contacts from trash",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/restore-contacts-from-trash"
+    },
+    {
+      "label": "Restore contacts from trash - Modal",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/restore-contacts-from-trash-modal"
     }
   ],
   "paths": {
