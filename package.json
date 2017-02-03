@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "BackstopJS configuration for CiviHR",
   "main": "index.js",
-  "scripts": {},
-  "author": "Danilo",
-  "license": "ISC",
   "scripts": {
     "test": "node test-runner.js"
   },
+  "author": "Danilo",
+  "license": "ISC",
   "devDependencies": {
-    "backstopjs": "^1.3.5",
+    "backstopjs": "^2.3.7",
     "eslint": "^3.1.1",
     "eslint-config-google": "^0.6.0",
     "yargs": "^4.8.1"

@@ -35,10 +35,10 @@
     }
   ],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/contact-page-reference",
-    "bitmaps_test": "../../backstop_data/contact-page-test",
-    "compare_data": "../../backstop_data/contact-page-test/compare.json",
-    "casper_scripts": "../../backstop_data/casper_scripts"
+    "bitmaps_reference": "./backstop_data/contact-page-reference",
+    "bitmaps_test": "./backstop_data/contact-page-test",
+    "compare_data": "./backstop_data/contact-page-test/compare.json",
+    "casper_scripts": "./backstop_data/casper_scripts"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],

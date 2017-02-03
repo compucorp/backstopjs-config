@@ -67,7 +67,6 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js",
       "onReadyScript": "search/delete-permanently"
     },
     {
@@ -225,10 +224,10 @@
     }
   ],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/search-actions-reference",
-    "bitmaps_test": "../../backstop_data/search-actions-test",
-    "compare_data": "../../backstop_data/search-actions-test/compare.json",
-    "casper_scripts": "../../backstop_data/casper_scripts"
+    "bitmaps_reference": "./backstop_data/search-actions-reference",
+    "bitmaps_test": "./backstop_data/search-actions-test",
+    "compare_data": "./backstop_data/search-actions-test/compare.json",
+    "casper_scripts": "./backstop_data/casper_scripts"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],

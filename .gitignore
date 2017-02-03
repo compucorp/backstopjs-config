@@ -2,3 +2,4 @@ node_modules/
 backstop_data/*-reference*/
 backstop_data/*-test*/
 crm-config.json
+tmp.json
