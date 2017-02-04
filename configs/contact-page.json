@@ -18,7 +18,7 @@
     {
       "label": "Contributions",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "selectors": ["#softCredit", "#paymentDetails_Information", "#customData", "#AdditionalDetail", ".crm-Premium-accordion"],
+      "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
@@ -27,7 +27,7 @@
     {
       "label": "Record Contribution",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "selectors": ["body"],
+      "selectors": ["#softCredit", "#paymentDetails_Information", "#customData", "#AdditionalDetail", ".crm-Premium-accordion"],
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
