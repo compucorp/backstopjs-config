@@ -20,6 +20,19 @@
       "onBeforeScript": "login.js"
     },
     {
+      "label": "Standard Search - result",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/find-contact"
+    },
+    {
       "label": "Advanced Search",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
       "hideSelectors": ["#mainTabContainer"],
@@ -33,8 +46,8 @@
       "onReadyScript": "common/open-accordions"
     },
     {
-      "label": "Search result",
-      "url": "{url}/civicrm/contact/search?reset=1",
+      "label": "Advanced Search - result",
+      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
       "hideSelectors": ["#mainTabContainer"],
       "removeSelectors": [],
       "selectors": [
@@ -43,7 +56,7 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onReadyScript": "search/find-contact"
+      "onReadyScript": "search/advanced-find-contact"
     },
     {
       "label": "New Individual",
