@@ -124,6 +124,41 @@
       "onReadyScript": "common/open-accordions"
     },
     {
+      "label": "Import Contact",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Import Contact - Step 2",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact/step-2"
+    },
+    {
+      "label": "Import Contact - Step 3",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact/step-3"
+    },
+    {
+      "label": "Import Contact - Step 4",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact/step-4"
+    },
+    {
       "label": "Find and merge duplicates",
       "url": "{url}/civicrm/contact/deduperules?reset=1",
       "selectors": ["body"],
