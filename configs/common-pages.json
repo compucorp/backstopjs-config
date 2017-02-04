@@ -122,6 +122,46 @@
       "misMatchThreshold": 0.1,
       "onBeforeScript": null,
       "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "Find and merge duplicates",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find and merge duplicates - Dedupe Exceptions",
+      "url": "{url}/civicrm/dedupe/exception?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find and merge duplicates - Add rule for Household",
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Household&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find and merge duplicates - Add rule for Individuals",
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Individual&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find and merge duplicates - Add rule for Organizations",
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Organization&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
