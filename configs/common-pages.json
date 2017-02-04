@@ -203,6 +203,31 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "contributions/search-result"
+    },
+    {
+      "label": "Membership - Dashboard",
+      "url": "{url}/civicrm/member?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Membership - Find Memberships",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Membership - Find Memberships - Results",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "membership/search-result"
     }
   ],
   "paths": {
