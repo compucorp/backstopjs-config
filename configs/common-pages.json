@@ -162,6 +162,47 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Contributions - Dashboard",
+      "url": "{url}/civicrm/contribute?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Contributions - New Contribution",
+      "url": "{url}/civicrm/admin/contribute/add?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Contributions - Dashboard - Table",
+      "url": "{url}/civicrm/contribute?reset=1#table_layout",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 2000,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Contributions - Manage Contribution Pages",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Contributions - Find Contributions",
+      "url": "{url}/civicrm/contribute/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contributions/search-result"
     }
   ],
   "paths": {
