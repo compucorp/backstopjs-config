@@ -2,8 +2,9 @@
   "viewports": [{
     "name": "desktop",
     "width": 1920,
-    "height": 900
+    "height": 3000
   }],
+  "onReadyScript": "common/close-notifications",
   "scenarios": [
     {
       "label": "Contact Summary",
@@ -12,8 +13,7 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js",
-      "onReadyScript": "common/close-notifications"
+      "onBeforeScript": "login.js"
     },
     {
       "label": "Contributions",
@@ -27,11 +27,56 @@
     {
       "label": "Record Contribution",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "selectors": ["#softCredit", "#paymentDetails_Information", "#customData", "#AdditionalDetail", ".crm-Premium-accordion"],
+      "selectors": [".ui-dialog"],
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "contact-page/record-contribution"
+    },
+    {
+      "label": "Memberships",
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact-page/show-memberships"
+    },
+    {
+      "label": "Memberships - Add Membership",
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact-page/record-membership"
+    },
+    {
+      "label": "Events",
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact-page/show-memberships"
+    },
+    {
+      "label": "Events - Add Membership",
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact-page/record-event"
+    },
+    {
+      "label": "Tags",
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact-page/show-tags"
     }
   ],
   "paths": {

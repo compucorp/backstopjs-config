@@ -60,7 +60,7 @@ function createAllFile(scenarios) {
     "viewports": [{
       "name": "desktop",
       "width": 1920,
-      "height": 900
+      "height": 3000
     }],
     "paths": {
       "bitmaps_reference": "./backstop_data/all-reference",
