@@ -110,6 +110,15 @@
       "onReadyScript": "common/open-accordions"
     },
     {
+      "label": "New email",
+      "url": "{url}/civicrm/activity/email/add?atype=3&action=add&reset=1&context=standalone",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
       "label": "Contact Reports",
       "url": "{url}/index.php?q=civicrm/report/list&compid=99&reset=1",
       "hideSelectors": [],
