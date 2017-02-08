@@ -6,7 +6,6 @@
   }],
   "onReadyScript": "common/close-notifications",
   "scenarios": [
-    ,
     {
       "label": "Membership - Dashboard",
       "url": "{url}/civicrm/member?reset=1",
