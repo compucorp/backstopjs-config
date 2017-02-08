@@ -7,58 +7,6 @@
   "onReadyScript": "common/close-notifications",
   "scenarios": [
     {
-      "label": "Standard Search",
-      "url": "{url}/civicrm/contact/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js"
-    },
-    {
-      "label": "Standard Search - result",
-      "url": "{url}/civicrm/contact/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/find-contact"
-    },
-    {
-      "label": "Advanced Search",
-      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
-    },
-    {
-      "label": "Advanced Search - result",
-      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/advanced-find-contact"
-    },
-    {
       "label": "New Individual",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
       "hideSelectors": [],
@@ -69,7 +17,7 @@
       "readyEvent": null,
       "delay": 3500,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": null,
+      "onBeforeScript": "login.js",
       "onReadyScript": "common/open-accordions"
     },
     {
@@ -83,7 +31,6 @@
       "readyEvent": null,
       "delay": 3500,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": null,
       "onReadyScript": "common/open-accordions"
     },
     {
@@ -97,7 +44,6 @@
       "readyEvent": null,
       "delay": 3500,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": null,
       "onReadyScript": "common/open-accordions"
     },
     {
@@ -129,7 +75,6 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": null,
       "onReadyScript": "common/open-accordions"
     },
     {
@@ -206,94 +151,12 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Contributions - Dashboard",
-      "url": "{url}/civicrm/contribute?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Contributions - New Contribution",
-      "url": "{url}/civicrm/admin/contribute/add?action=add&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Contributions - Dashboard - Table",
-      "url": "{url}/civicrm/contribute?reset=1#table_layout",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 2000,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Contributions - Manage Contribution Pages",
-      "url": "{url}/civicrm/admin/contribute?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Contributions - Find Contributions",
-      "url": "{url}/civicrm/contribute/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/search-result"
-    },
-    {
-      "label": "Membership - Dashboard",
-      "url": "{url}/civicrm/member?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Membership - Find Memberships",
-      "url": "{url}/civicrm/member/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Membership - Find Memberships - Results",
-      "url": "{url}/civicrm/member/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "membership/search-result"
-    },
-    {
-      "label": "Membership - Batch Data Entry",
-      "url": "{url}/civicrm/batch?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Membership - New Data Entry Batch",
-      "url": "{url}/civicrm/batch/add?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/common-pages/reference",
-    "bitmaps_test": "./backstop_data/screenshots/common-pages/test",
-    "compare_data": "./backstop_data/screenshots/common-pages/compare.json",
+    "bitmaps_reference": "./backstop_data/screenshots/contact-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/contact-menu/test",
+    "compare_data": "./backstop_data/screenshots/contact-menu/compare.json",
     "casper_scripts": "./casper_scripts"
   },
   "engine": "phantomjs",

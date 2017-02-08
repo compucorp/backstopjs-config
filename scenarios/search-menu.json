@@ -1,0 +1,74 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "onReadyScript": "common/close-notifications",
+  "scenarios": [
+    {
+      "label": "Standard Search",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js"
+    },
+    {
+      "label": "Standard Search - result",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/find-contact"
+    },
+    {
+      "label": "Advanced Search",
+      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "common/open-accordions"
+    },
+    {
+      "label": "Advanced Search - result",
+      "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/advanced-find-contact"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/screenshots/search-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/search-menu/test",
+    "compare_data": "./backstop_data/screenshots/search-menu/compare.json",
+    "casper_scripts": "./casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
