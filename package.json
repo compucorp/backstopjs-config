@@ -6,12 +6,8 @@
   "scripts": {
     "test": "node test-runner.js"
   },
-  "author": "Danilo",
-  "license": "ISC",
   "devDependencies": {
-    "backstopjs": "^2.3.7",
-    "eslint": "^3.1.1",
-    "eslint-config-google": "^0.6.0",
+    "backstopjs": "~2.3.7",
     "yargs": "^4.8.1"
   }
 }

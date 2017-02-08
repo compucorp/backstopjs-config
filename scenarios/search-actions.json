@@ -296,10 +296,10 @@
     }
   ],
   "paths": {
-    "bitmaps_reference": "./backstop_data/search-actions-reference",
-    "bitmaps_test": "./backstop_data/search-actions-test",
-    "compare_data": "./backstop_data/search-actions-test/compare.json",
-    "casper_scripts": "./backstop_data/casper_scripts"
+    "bitmaps_reference": "./backstop_data/screenshots/search-actions/reference",
+    "bitmaps_test": "./backstop_data/screenshots/search-actions/test",
+    "compare_data": "./backstop_data/screenshots/search-actions/compare.json",
+    "casper_scripts": "./casper_scripts"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],

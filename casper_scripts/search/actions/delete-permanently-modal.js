@@ -4,7 +4,7 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    this.page.uploadFile('#uploadFile', 'CiviCRM_Contact_Search.csv');
-    page.clickFirst('#_qf_DataSource_upload-bottom')
+    require('./delete-permanently')(casper, scenarios, vp);
+    page.clickFirst('#popup-button');
   });
 };

@@ -291,10 +291,10 @@
     }
   ],
   "paths": {
-    "bitmaps_reference": "./backstop_data/common-pages-reference",
-    "bitmaps_test": "./backstop_data/common-pages-test",
-    "compare_data": "./backstop_data/common-pages-test/compare.json",
-    "casper_scripts": "./backstop_data/casper_scripts"
+    "bitmaps_reference": "./backstop_data/screenshots/common-pages/reference",
+    "bitmaps_test": "./backstop_data/screenshots/common-pages/test",
+    "compare_data": "./backstop_data/screenshots/common-pages/compare.json",
+    "casper_scripts": "./casper_scripts"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],

@@ -5,11 +5,11 @@ var argv = require('yargs').argv;
 var exec = require('child_process').exec;
 var fs = require('fs');
 
-var configFolderPath = './configs/';
+var configFolderPath = './scenarios/';
 var localUrl;
 
 try {
-  localUrl = JSON.parse(fs.readFileSync('./backstop_data/casper_scripts/crm-config.json', 'utf8')).url;
+  localUrl = JSON.parse(fs.readFileSync('./configs/crm-config.json', 'utf8')).url;
 } catch (e) {
   if (e.code === 'ENOENT') {
     var sampleStructure =
@@ -63,10 +63,10 @@ function createAllFile(scenarios) {
       "height": 3000
     }],
     "paths": {
-      "bitmaps_reference": "./backstop_data/all-reference",
-      "bitmaps_test": "./backstop_data/all-test",
-      "compare_data": "./backstop_data/all-test/compare.json",
-      "casper_scripts": "./backstop_data/casper_scripts"
+      "bitmaps_reference": "./backstop_data/screenshots/all/reference",
+      "bitmaps_test": "./backstop_data/screenshots/all/test",
+      "compare_data": "./backstop_data/screenshots/all/compare.json",
+      "casper_scripts": "./casper_scripts"
     },
     "engine": "phantomjs",
     "report": ["browser"],

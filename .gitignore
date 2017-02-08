@@ -1,6 +1,4 @@
 node_modules/
-backstop_data/*-reference*/
-backstop_data/*-test*/
-backstop_data/html_report/
+backstop_data/
 crm-config.json
 tmp.json
