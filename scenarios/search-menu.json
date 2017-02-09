@@ -9,8 +9,6 @@
     {
       "label": "Standard Search",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
       "selectors": [
         "body"
       ],
@@ -20,10 +18,19 @@
       "onBeforeScript": "login.js"
     },
     {
+      "label": "Standard Search - with many options",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [
+        ".CRM_Contact_Form_Search_Basic"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/with-many-options"
+    },
+    {
       "label": "Standard Search - result",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
       "selectors": [
         "body"
       ],
@@ -35,8 +42,6 @@
     {
       "label": "Advanced Search",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
       "selectors": [
         "body"
       ],
@@ -49,7 +54,6 @@
       "label": "Advanced Search - result",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "removeSelectors": [],
       "selectors": [
         "body"
       ],
