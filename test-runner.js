@@ -1,6 +1,5 @@
-/* eslint no-console: 0 */
-
 'use strict';
+
 var argv = require('yargs').argv;
 var exec = require('child_process').exec;
 var fs = require('fs');
@@ -22,30 +21,35 @@ try {
   }
 }
 
+function getFileScenarios(files, idx, scenarios) {
+  if (idx === files.length) {
+    console.log(scenarios.length)
+    createAllFile(scenarios);
+  } else {
+    var file = files[idx];
+
+    fs.readFile(configFolderPath + file, 'utf8', (err, data) => {
+      if (err) throw err;
+
+      data = JSON.parse(data);
+      data.scenarios = data.scenarios.map(scenario => {
+        if (scenario['onBeforeScript'] === 'login.js') {
+          delete scenario['onBeforeScript'];
+        }
+
+        return scenario;
+      });
+
+      scenarios = scenarios.concat(data.scenarios);
+      getFileScenarios(files, ++idx, scenarios);
+    });
+  }
+}
+
 if (argv.configPath === 'all') {
   fs.readdir(configFolderPath, 'utf8', (err, files) => {
     var scenarios = [];
-
-    files.map((file, idx) => {
-      fs.readFile(configFolderPath + file, 'utf8', (err, data) => {
-        if (err) throw err;
-
-        data = JSON.parse(data);
-        data.scenarios = data.scenarios.map(scenario => {
-          if (scenario['onBeforeScript'] === 'login.js') {
-            delete scenario['onBeforeScript'];
-          }
-
-          return scenario;
-        });
-
-        scenarios = scenarios.concat(data.scenarios);
-
-        if (idx === files.length - 1) {
-          createAllFile(scenarios);
-        }
-      });
-    });
+    getFileScenarios(files, 0, scenarios);
   });
 } else {
   fs.readFile(argv.configPath, 'utf8', (err, data) => {
