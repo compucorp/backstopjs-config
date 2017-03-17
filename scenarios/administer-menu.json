@@ -1,0 +1,95 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "onReadyScript": "common/close-notifications",
+  "scenarios": [
+    {
+      "label": "CiviCRMCustom Data",
+      "url": "{url}/civicrm/admin/custom/group?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js"
+    },
+    {
+      "label": "Custom Fields List",
+      "url": "{url}/civicrm/admin/custom/group/field?reset=1&action=browse&gid=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New Custom Field Set",
+      "url": "{url}/civicrm/admin/custom/group?action=add&reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Add Custom Field Set",
+      "url": "{url}/civicrm/admin/custom/group/field/add?reset=1&action=add&gid=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Edit Custom Field Set",
+      "url": "{url}/civicrm/admin/custom/group/field/update?action=update&reset=1&gid=1&id=2",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Edit Multiple Choice Options",
+      "url": "{url}/civicrm/admin/custom/group/field/option?reset=1&action=browse&gid=1&fid=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 3500,
+      "misMatchThreshold": 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/screenshots/administer-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/administer-menu/test",
+    "compare_data": "./backstop_data/screenshots/administer-menu/compare.json",
+    "casper_scripts": "./casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
