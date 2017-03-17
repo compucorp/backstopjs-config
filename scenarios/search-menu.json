@@ -83,6 +83,17 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/full-text-result"
+    },
+    {
+      "label": "Search builder",
+      "url": "{url}/civicrm/contact/search/builder?reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
