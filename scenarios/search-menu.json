@@ -61,6 +61,28 @@
       "delay": 0,
       "misMatchThreshold": 0.1,
       "onReadyScript": "search/advanced-find-contact"
+    },
+    {
+      "label": "Full-text Search",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Full-text Search - result",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
+      "hideSelectors": ["#mainTabContainer"],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "search/full-text-result"
     }
   ],
   "paths": {
