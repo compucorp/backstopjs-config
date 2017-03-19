@@ -1,0 +1,80 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "onReadyScript": "common/close-notifications",
+  "scenarios": [
+    {
+      "label": "Events - Dashboard",
+      "url": "{url}/civicrm/event?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js"
+    },
+    {
+      "label": "Register Event Participant",
+      "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find Participants",
+      "url": "{url}/civicrm/event/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Find Participants result",
+      "url": "{url}/civicrm/event/search?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "events/find-participants"
+    },
+    {
+      "label": "Event Reports",
+      "url": "{url}/civicrm/report/list?compid=1&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New Event",
+      "url": "{url}/civicrm/event/add?reset=1&action=add",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Manage Events",
+      "url": "{url}/civicrm/event/manage?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
+    "compare_data": "./backstop_data/screenshots/contributions-menu/compare.json",
+    "casper_scripts": "./casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
