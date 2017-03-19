@@ -52,7 +52,7 @@ if (argv.configPath === 'all') {
     getFileScenarios(files, 0, scenarios);
   });
 } else {
-  fs.readFile(argv.configPath, 'utf8', (err, data) => {
+  fs.readFile('./scenarios/' + argv.configPath, 'utf8', (err, data) => {
     if (err) throw err;
 
     writeTmpFile(replaceURL(data));

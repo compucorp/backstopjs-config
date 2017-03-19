@@ -11,10 +11,10 @@
 }
 ```
 
-- Run a specific config file.
-`node test-runner.js --task=reference --configPath=./scenarios/search-actions.json`
+- Run a specific config file (all scenarios must be under scenarios folder)
+`node test-runner.js --task=reference --configPath=./search-actions.json`
 
-`node test-runner.js --task=test --configPath=./scenarios/search-actions.json`
+`node test-runner.js --task=test --configPath=./search-actions.json`
 
 
 # Covered pages
