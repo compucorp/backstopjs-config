@@ -15,7 +15,7 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
       "misMatchThreshold": 0.1,
       "onBeforeScript": "login.js"
     },
@@ -28,7 +28,7 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
       "misMatchThreshold": 0.1
     },
     {
@@ -40,7 +40,7 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
       "misMatchThreshold": 0.1
     },
     {
@@ -52,7 +52,7 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
       "misMatchThreshold": 0.1
     },
     {
@@ -64,7 +64,7 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
       "misMatchThreshold": 0.1
     },
     {
@@ -76,7 +76,139 @@
         "body"
       ],
       "readyEvent": null,
-      "delay": 3500,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Profiles",
+      "url": "{url}/civicrm/admin/uf/group?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Tags",
+      "url": "{url}/civicrm/tag?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Activity Types",
+      "url": "{url}/civicrm/admin/options/activity_type?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Relationship Types",
+      "url": "{url}/civicrm/admin/reltype?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Contact Types",
+      "url": "{url}/civicrm/admin/options/subtype?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Display Preference",
+      "url": "{url}/civicrm/admin/setting/preferences/display?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Search Preference",
+      "url": "{url}/civicrm/admin/setting/search?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Date Preference",
+      "url": "{url}/civicrm/admin/setting/preferences/date?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Navigation Preference",
+      "url": "{url}/civicrm/admin/menu?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Word Replacements",
+      "url": "{url}/civicrm/admin/options/wordreplacements?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Customize Data and Screens - Manage Custom Searches",
+      "url": "{url}/civicrm/admin/options/custom_search?reset=1",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 0,
       "misMatchThreshold": 0.1
     }
   ],
