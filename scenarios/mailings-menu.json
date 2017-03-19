@@ -1,0 +1,191 @@
+{
+  "viewports": [{
+    "name": "desktop",
+    "width": 1920,
+    "height": 900
+  }],
+  "onReadyScript": "common/close-notifications",
+  "scenarios": [
+    {
+      "label": "New Mailings",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js"
+    },
+    {
+      "label": "New Mailings - Attachments",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onBeforeScript": "login.js",
+      "onReadyScript": "mailings/attachments"
+    },
+    {
+      "label": "New Mailings - Header and Footer",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/header-and-footer"
+    },
+    {
+      "label": "New Mailings - Publication",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/publication"
+    },
+    {
+      "label": "New Mailings - Responses",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/responses"
+    },
+    {
+      "label": "New Mailings - Tracking",
+      "url": "{url}/civicrm/a/#/mailing/493",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/tracking"
+    },
+    {
+      "label": "Draft and Unscheduled Mailings",
+      "url": "{url}/civicrm/mailing/browse/unscheduled?reset=1&scheduled=false",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Scheduled and Sent Mailings",
+      "url": "{url}/civicrm/mailing/browse/scheduled?reset=1&scheduled=true",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Archived Mailings",
+      "url": "{url}/civicrm/mailing/browse/archived?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Mailing Reports",
+      "url": "{url}/civicrm/report/list?compid=4&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Headers, Footers, and Automated Messages",
+      "url": "{url}/civicrm/admin/component?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Headers, Footers, and Automated Messages - Add mailing Component",
+      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Message Templates",
+      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Message Templates - Sytem Workflow",
+      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/message-workflow"
+    },
+    {
+      "label": "Message Templates - Add Message Template",
+      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "From Email Addresses",
+      "url": "{url}/civicrm/admin/options/from_email_address?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "From Email Addresses - New",
+      "url": "{url}/civicrm/admin/options/from_email_address?reset=1",
+      "selectors": [".ui-dialog"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/new-email-addresses"
+    },
+    {
+      "label": "Find Mass SMS",
+      "url": "{url}/civicrm/mailing/browse?reset=1&sms=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New A/B Test",
+      "url": "{url}/civicrm/a/#/abtest/2",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 2000,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Manage A/B Tests",
+      "url": "{url}/civicrm/a/#/abtest",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
+    "compare_data": "./backstop_data/screenshots/contributions-menu/compare.json",
+    "casper_scripts": "./casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["CLI", "browser"],
+  "cliExitOnFail": false,
+  "casperFlags": ["--log-level=info"],
+  "debug": false,
+  "port": 3001
+}
