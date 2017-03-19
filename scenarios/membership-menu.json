@@ -47,6 +47,14 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Membership Reports",
+      "url": "{url}/civicrm/report/list?compid=3&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
