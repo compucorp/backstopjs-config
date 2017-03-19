@@ -151,6 +151,46 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New Group",
+      "url": "{url}/civicrm/group/add?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Manage Groups",
+      "url": "{url}/civicrm/group?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New Tag",
+      "url": "{url}/civicrm/tag?reset=1&action=add",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Manage Tags",
+      "url": "{url}/civicrm/tag?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Add Tag set",
+      "url": "{url}/civicrm/tag?action=add&reset=1&tagset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
