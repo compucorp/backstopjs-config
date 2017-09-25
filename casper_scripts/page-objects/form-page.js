@@ -103,6 +103,15 @@ FormPage.prototype = Object.create(CrmPage.prototype, {
         document.querySelector(selector).click();
       }, select2ContainerSelector + ' .select2-choices');
     }
+  },
+
+  /**
+   * Submits the current page form.
+   */
+  submit: {
+    value: function () {
+      this.clickFirst('#content form .crm-form-submit');
+    }
   }
 });
 

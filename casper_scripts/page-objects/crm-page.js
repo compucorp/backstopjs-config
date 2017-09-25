@@ -131,6 +131,17 @@ CrmPage.prototype = Object.create({
     }, function () {
       this.echo('Selector "' + targetSelector + '" not found', 'WARN_BAR');
     }, 8000);
+  },
+
+  /**
+   * Waits for the URL to change.
+   */
+  waitForUrlChange: function () {
+    var oldUrl = this.casper.getCurrentUrl();
+
+    return this.casper.waitFor(function () {
+      return oldUrl !== this.casper.getCurrentUrl();
+    }.bind(this));
   }
 });
 
