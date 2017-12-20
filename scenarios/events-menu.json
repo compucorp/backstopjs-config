@@ -63,6 +63,78 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Import Participants",
+      "url": "{url}/civicrm/event/import?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Event Templates",
+      "url": "{url}/civicrm/admin/eventTemplate?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Event Type Options",
+      "url": "{url}/civicrm/admin/options/event_type?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Participant Status",
+      "url": "{url}/civicrm/admin/participant_status?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Participant Role Options",
+      "url": "{url}/civicrm/admin/options/participant_role?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Participant Listing Options",
+      "url": "{url}/civicrm/admin/options/participant_listing?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Event Name Badge Layouts",
+      "url": "{url}/civicrm/admin/badgelayout?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "New Event Name Badge Layout",
+      "url": "{url}/civicrm/admin/badgelayout?action=add&reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "CiviEvent Component Settings",
+      "url": "{url}/civicrm/admin/setting/preferences/event?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {
