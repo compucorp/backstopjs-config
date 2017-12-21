@@ -404,7 +404,7 @@
       "misMatchThreshold": 0.1
     },
     {
-      "label": "Communications - Schedule Reminders",
+      "label": "Communications - Preferred Communication Methods",
       "url": "{url}/civicrm/admin/options/preferred_communication_method?reset=1",
       "hideSelectors": [],
       "removeSelectors": [],
@@ -466,18 +466,6 @@
     {
       "label": "Communications - Postal Greeting Type Options",
       "url": "{url}/civicrm/admin/options/postal_greeting?reset=1",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Communications - Addressee Type Options",
-      "url": "{url}/civicrm/admin/options/addressee?reset=1",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
@@ -764,8 +752,8 @@
       "misMatchThreshold": 0.1
     },
     {
-      "label": "CiviReport - Report Template",
-      "url": "{url}/civicrm/admin/report/register?reset=1",
+      "label": "CiviReport - Create New Report from Template",
+      "url": "{url}/civicrm/admin/report/template/list?reset=1",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
