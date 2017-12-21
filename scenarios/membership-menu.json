@@ -24,6 +24,14 @@
       "misMatchThreshold": 0.1
     },
     {
+      "label": "Membership - New Membership",
+      "url": "{url}/civicrm/member/add?reset=1&action=add&context=standalone",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
       "label": "Membership - Find Memberships - Results",
       "url": "{url}/civicrm/member/search?reset=1",
       "selectors": ["body"],
@@ -43,6 +51,14 @@
     {
       "label": "Membership - New Data Entry Batch",
       "url": "{url}/civicrm/batch/add?reset=1&action=add",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Membership - Import Memberships",
+      "url": "{url}/civicrm/member/import?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,

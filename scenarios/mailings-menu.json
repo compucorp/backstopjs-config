@@ -173,6 +173,30 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Mail Accounts",
+      "url": "{url}/civicrm/admin/mailSettings?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "CiviMail Settings",
+      "url": "{url}/civicrm/admin/mail?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "CiviMail Component Settings",
+      "url": "{url}/civicrm/admin/setting/preferences/mailing?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
     }
   ],
   "paths": {

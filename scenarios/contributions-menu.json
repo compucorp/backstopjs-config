@@ -58,6 +58,14 @@
       "misMatchThreshold": 0.1
     },
     {
+      "label": "Import Contributions",
+      "url": "{url}/civicrm/contribute/import?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
       "label": "Pledges - Dashboard",
       "url": "{url}/civicrm/pledge?reset=1",
       "selectors": ["body"],
@@ -232,6 +240,62 @@
     {
       "label": "Close Accounting Period",
       "url": "{url}/civicrm/admin/contribute/closeaccperiod?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Financial Types",
+      "url": "{url}/civicrm/admin/financial/financialType?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Financial Accounts",
+      "url": "{url}/civicrm/admin/financial/financialAccount?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Payment Methods Options",
+      "url": "{url}/civicrm/admin/options/payment_instrument?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Accepted Credit Cards Options",
+      "url": "{url}/civicrm/admin/options/accept_creditcard?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Soft Credit Types Options",
+      "url": "{url}/civicrm/admin/options/soft_credit_type?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Payment Processor",
+      "url": "{url}/civicrm/admin/paymentProcessor?reset=1",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "CiviContribute Component Settings",
+      "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,

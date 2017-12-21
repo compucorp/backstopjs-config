@@ -10,7 +10,7 @@
   "scenarios": [
     {
       "label": "Component - CRM Error",
-      "url": "{url}/civicrm/admin/leaveandabsences/periods?action=add&reset=1",
+      "url": "{url}/civicrm/group/add?reset=1",
       "onReadyScript": "common/close-notifications",
       "onReadyScript": "components/crm-error"
     }

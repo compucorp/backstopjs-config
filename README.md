@@ -58,7 +58,7 @@
 - [x] New Contribution
 - [x] Find Contribution
 - [x] Contribution Reports
-- [ ] Import Contributions
+- [x] Import Contributions
 - [x] Pledges - Dashboard
 - [x] Pledges - New Pledges
 - [x] Pledges - Find Pledges
@@ -84,7 +84,7 @@
 - [x] Register Event Participant
 - [x] Find Participants
 - [x] Event Reports
-- [ ] Import Participants
+- [x] Import Participants
 - [x] New Event
 - [x] Manage Events
 
@@ -107,26 +107,122 @@
 
 ## Memberships menu
 - [x] Dashboard
-- [ ] New Membership
+- [x] New Membership
 - [x] Find Memberships
 - [x] Membership Reports
 - [x] Batch Data Entry
-- [ ] Import Memberships
+- [x] Import Memberships
 
 
 ## Administer menu
 
+### Administration Console
+  - [x] System Status
+  - [x] Configuration Checklist
+
 ### Customize Data and Screens
-- [x] Custom Fields
-- [x] New Custom Field
-- [x] Profiles
-- [x] Tags
-- [x] Activity Types
-- [x] Relationship Types
-- [x] Contact Types
-- [x] Display Preferences
-- [x] Search Preferences
-- [x] Date Preferences
-- [x] Navigation Preferences
-- [x] World Replacements
-- [x] Manage Custom Searches
+  - [x] Custom Fields
+  - [x] New Custom Field
+  - [x] Profiles
+    - [x] Name and Address - CiviCRM Profile Fields
+  - [x] Tags
+  - [x] Activity Types
+  - [x] Relationship Types
+  - [x] Contact Types
+  - [x] Dropdown Options
+    - [x] Gender Options
+    - [x] Individual contact prefixes Options
+    - [x] Individual contact suffixes Options
+    - [x] Instant Messenger (IM) screen-names Options
+    - [x] Location Types (Home, Work...)
+    - [x] Mobile Phone Providers Options
+    - [x] Phone Type Options
+    - [x] Website Type Options
+  - [x] Display Preferences
+  - [x] Search Preferences
+  - [x] Date Preferences
+  - [x] Navigation Preferences
+  - [x] World Replacements
+  - [x] Manage Custom Searches
+
+### Communications
+  - [x] Organization Address and Contact Info
+  - [x] Message Templates
+  - [x] New Message Template
+  - [x] Schedule Reminders
+  - [x] Preferred Communication Methods
+  - [x] Label Formats
+  - [x] Print Page (PDF) Formats
+  - [x] Communication Style Options
+  - [x] Email Greeting Type Options
+  - [x] Postal Greeting Type Options
+  - [x] Addressee Type Options
+
+### Localization
+  - [x] Settings
+  - [x] Addresses
+  - [x] Date
+  - [x] Languages Options
+
+### Users and Permissions
+  - [x] Access Control
+  - [x] Synchronize Users to Contacts
+
+### System Settings
+  - [x] Enable Components
+  - [x] Connections
+  - [x] Extensions
+  - [x] Cleanup Caches and Update Paths
+  - [x] Debugging and Error Handling
+  - [x] Upload Directories
+  - [x] Import/Export Mappings
+  - [x] Mapping and Geocoding Providers
+  - [x] Misc
+  - [x] Option Groups
+  - [x] Payment Processor
+  - [x] Resource URLs
+  - [x] Safe File Extension Options
+  - [x] Scheduled Jobs
+  - [x] SMS Provider
+
+### CiviReport
+  - [x] All Reports
+  - [x] Create New Report from Template
+  - [x] Manage Templates
+  - [x] Register Report
+
+### CiviMember
+  - [x] Membership Types
+  - [x] Membership Status Rules
+  - [x] Component Settings
+
+### CiviCampaign
+  - [ ] Survey Types
+  - [ ] Campaign Types
+  - [ ] Campaign Status
+  - [ ] Engagement Index
+  - [ ] CiviCampaign Component Settings
+
+### CiviContribute
+  - [x] Financial Types
+  - [x] Financial Accounts
+  - [x] Payment Methods Options
+  - [x] Accepted Credit Cards Options
+  - [x] Soft Credit Types Options
+  - [x] Payment Processor
+  - [x] Payment Processor
+
+### CiviEvent
+  - [x] Event Templates
+  - [x] Event Type Options
+  - [x] Participant Status
+  - [x] Participant Role Options
+  - [x] Participant Listing Options
+  - [x] Event Name Badge Layouts
+  - [x] New Event Name Badge Layout
+  - [x] CiviEvent Component Settings
+
+### CiviMail
+  - [x] Mail Accounts
+  - [x] CiviMail Settings
+  - [x] CiviMail Component Settings
