@@ -101,7 +101,7 @@ function writeTmpFile(data) {
 function execBackstopJS() {
   var task = argv.task || 'test';
 
-  var proc = exec('backstop ' + task + ' --configPath=tmp.json', function(error, stdout, stderr) {
+  var proc = exec('./node_modules/.bin/backstop ' + task + ' --configPath=tmp.json', function(error, stdout, stderr) {
     if (error) {
       console.error(error);
       throw error;
