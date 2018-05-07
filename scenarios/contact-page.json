@@ -58,7 +58,7 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onReadyScript": "contact-page/show-memberships"
+      "onReadyScript": "contact-page/show-events"
     },
     {
       "label": "Events - Add Membership",
