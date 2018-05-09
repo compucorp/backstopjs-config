@@ -61,24 +61,8 @@
       "onReadyScript": "mailings/tracking"
     },
     {
-      "label": "Draft and Unscheduled Mailings",
-      "url": "{url}/civicrm/mailing/browse/unscheduled?reset=1&scheduled=false",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
       "label": "Scheduled and Sent Mailings",
       "url": "{url}/civicrm/mailing/browse/scheduled?reset=1&scheduled=true",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Archived Mailings",
-      "url": "{url}/civicrm/mailing/browse/archived?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
