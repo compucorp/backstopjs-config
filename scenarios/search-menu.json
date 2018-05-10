@@ -119,29 +119,6 @@
       "misMatchThreshold": 0.1
     },
     {
-      "label": "Find Pledges",
-      "url": "{url}/civicrm/pledge/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Find Pledges - result",
-      "url": "{url}/civicrm/pledge/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/find-pledge",
-      "misMatchThreshold": 0.1
-    },
-    {
       "label": "Find Activities",
       "url": "{url}/civicrm/activity/search?reset=1",
       "hideSelectors": ["#mainTabContainer"],
