@@ -8,7 +8,7 @@ module.exports = function (casper, scenario, vp) {
     page.clickFirst('#mark_x_3');
     this.wait(500);
     page.openSelect2DropDown('#s2id_task');
-    page.clickSelect2NthOption(14);
+    page.clickSelect2NthOption(16);
     this.wait(1000);
   });
 };
