@@ -94,7 +94,7 @@
     },
     {
       "label": "Message Templates",
-      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -102,7 +102,7 @@
     },
     {
       "label": "Message Templates - Sytem Workflow",
-      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
