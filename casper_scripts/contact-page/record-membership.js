@@ -6,7 +6,7 @@ module.exports = function (casper, scenario, vp) {
   require('./show-memberships')(casper, scenario, vp);
   casper.then(function () {
     page.clickFirst('#ui-id-7 a[accesskey="N"]');
-    this.waitWhileSelector('.blockUI.blockOverlay')
+    this.waitWhileSelector('.blockUI.blockOverlay');
     this.wait(1000);
   });
 };
