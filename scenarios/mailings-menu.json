@@ -144,11 +144,12 @@
     },
     {
       "label": "New A/B Test",
-      "url": "{url}/civicrm/a/#/abtest/2",
+      "url": "{url}/civicrm/a/#/abtest/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 2000,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/ab-test"
     },
     {
       "label": "Manage A/B Tests",
