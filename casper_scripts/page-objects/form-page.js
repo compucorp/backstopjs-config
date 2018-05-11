@@ -110,7 +110,7 @@ FormPage.prototype = Object.create(CrmPage.prototype, {
    */
   submit: {
     value: function () {
-      this.clickFirst('form .crm-form-submit');
+      this.clickFirst('#crm-main-content-wrapper form .crm-form-submit:not(.cancel)');
     }
   }
 });
