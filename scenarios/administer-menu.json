@@ -29,7 +29,8 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "administer-menu/system-status"
     },
     {
       "label": "Configuration Checklist",
