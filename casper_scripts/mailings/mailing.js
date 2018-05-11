@@ -4,6 +4,6 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    page.clickFirst('a[href="#tab-header"]');
+    this.waitUntilVisible('.crm-wizard');
   });
 };

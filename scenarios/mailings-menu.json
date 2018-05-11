@@ -13,7 +13,8 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js"
+      "onBeforeScript": "login.js",
+      "onReadyScript": "mailings/mailing"
     },
     {
       "label": "New Mailings - Attachments",
