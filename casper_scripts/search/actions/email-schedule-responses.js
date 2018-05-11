@@ -5,6 +5,6 @@ module.exports = function (casper, scenario, vp) {
 
   casper.then(function () {
     require('./email-schedule')(casper, scenario, vp);
-    page.changeTab('#ui-id-6');
+    page.clickFirst('a[href="#tab-response"]');
   });
 };
