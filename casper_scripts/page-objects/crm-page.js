@@ -20,33 +20,6 @@ CrmPage.prototype = Object.create({
   },
 
   /**
-   * Changes the current active tab.
-   *
-   * @param {String} targetSelector - the css selector for the new tab that will
-   * become the active one.
-   */
-  changeTab: function (targetSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
-      var ariaAttribute = '[aria-labelledby="' + selector.split('#')[1] + '"]';
-
-      document.querySelector('.ui-tabs-active')
-        .classList.remove('ui-tabs-active', 'ui-state-active');
-      document.querySelector('.crm-tab-button' + ariaAttribute)
-        .classList.add('ui-tabs-active', 'ui-state-active');
-
-      Array.prototype.map.call(
-        document.querySelectorAll('.ui-tabs-panel'), function (tab) {
-          tab.style.display = 'none';
-          return tab.style.display;
-        }
-      );
-
-      document.querySelector('.ui-tabs-panel' + ariaAttribute)
-        .style.display = 'block';
-    }, targetSelector);
-  },
-
-  /**
    * Waits and clicks every element that matches the target selector.
    *
    * @param {String} targetSelector - the css selector of the target elements to
