@@ -169,15 +169,7 @@
       "misMatchThreshold": 0.1
     },
     {
-      "label": "New Tag",
-      "url": "{url}/civicrm/tag?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Manage Tags",
+      "label": "Tags",
       "url": "{url}/civicrm/tag?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
@@ -185,12 +177,22 @@
       "misMatchThreshold": 0.1
     },
     {
-      "label": "Add Tag set",
-      "url": "{url}/civicrm/tag?action=add&reset=1&tagset=1",
+      "label": "Tags - Add Tag",
+      "url": "{url}/civicrm/tag?reset=1&action=add",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact/add-tag"
+    },
+    {
+      "label": "Tags - Add Tag set",
+      "url": "{url}/civicrm/tag?",
+      "selectors": ["body"],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "contact/add-tag-set"
     }
   ],
   "paths": {
