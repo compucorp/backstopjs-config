@@ -6,6 +6,7 @@ module.exports = function (casper, scenario, vp) {
   require('./show-events')(casper, scenario, vp);
   casper.then(function () {
     page.clickFirst('.CRM_Event_Form_Search a[accesskey="N"]');
+    this.waitWhileSelector('.blockUI.blockOverlay');
     this.wait(1000);
   });
 };
