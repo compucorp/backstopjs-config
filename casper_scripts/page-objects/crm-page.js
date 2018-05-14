@@ -59,7 +59,10 @@ CrmPage.prototype = Object.create({
    * Closes all active notifications.
    */
   closeErrorNotifications: function () {
-    this.clickAll('a.ui-notify-cross.ui-notify-close');
+    if (this.casper.exists('.ui-notify-message')) {
+      this.clickAll('a.ui-notify-cross.ui-notify-close');
+      this.casper.waitWhileSelector('.ui-notify-message');
+    }
   },
 
   /**

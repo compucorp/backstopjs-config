@@ -5,8 +5,6 @@ module.exports = function (casper, scenario, vp) {
 
   casper.then(function() {
     this.echo('Closing error notifications', 'INFO');
-    this.wait(1000);
     page.closeErrorNotifications();
-    this.wait(1000);
   });
 };
