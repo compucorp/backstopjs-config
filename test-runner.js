@@ -69,15 +69,17 @@ function createAllFile(scenarios) {
     "paths": {
       "bitmaps_reference": "./backstop_data/screenshots/all/reference",
       "bitmaps_test": "./backstop_data/screenshots/all/test",
-      "compare_data": "./backstop_data/screenshots/all/compare.json",
-      "casper_scripts": "./casper_scripts"
+      "engine_scripts": "./backstop_data/engine_scripts/casper",
+      "html_report": "./backstop_data/html_report/all",
+      "ci_report": "./backstop_data/ci_report/all"
     },
     "engine": "phantomjs",
     "report": ["browser"],
-    "cliExitOnFail": false,
-    "casperFlags": ["--log-level=info"],
+    "engineFlags": ["--log-level=info"],
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
     "debug": false,
-    "port": 3001
+    "debugWindow": false
   };
 
   scenarios[0]['onBeforeScript'] = 'login.js';
