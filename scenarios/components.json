@@ -18,13 +18,15 @@
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/components/reference",
     "bitmaps_test": "./backstop_data/screenshots/components/test",
-    "compare_data": "./backstop_data/screenshots/components/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "html_report": "./backstop_data/html_report/components",
+    "ci_report": "./backstop_data/ci_report/components"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }
