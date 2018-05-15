@@ -4,17 +4,17 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "CiviCRM Custom Data",
-      "url": "{url}/civicrm/admin/custom/group?reset=1",
-      "onBeforeScript": "login.js"
+      "url": "{url}/civicrm/admin/custom/group?reset=1"
     },
     {
       "label": "CiviCRM System Status",
       "url": "{url}/civicrm/a/#/status",
-      "onReadyScript": "administer-menu/system-status"
+      "onReadyScript": "administer-menu/system-status.js"
     },
     {
       "label": "Configuration Checklist",
@@ -39,7 +39,7 @@
     {
       "label": "Edit Multiple Choice Options",
       "url": "{url}/civicrm/admin/custom/group/field/option?reset=1&action=browse&gid=1&fid=1",
-      "onReadyScript": "administer-menu/edit-multiple-choice-options"
+      "onReadyScript": "administer-menu/edit-multiple-choice-options.js"
     },
     {
       "label": "New CiviCRM Profile",
@@ -200,7 +200,7 @@
     {
       "label": "System Settings - Connections",
       "url": "{url}/civicrm/a/#/cxn",
-      "onReadyScript": "administer-menu/connections"
+      "onReadyScript": "administer-menu/connections.js"
     },
     {
       "label": "System Settings - Extensions",
@@ -286,11 +286,11 @@
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/administer-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/administer-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/administer-menu",
     "ci_report": "./backstop_data/ci_report/administer-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
