@@ -9,303 +9,189 @@
     {
       "label": "Add activity",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onBeforeScript": "login.js",
       "onReadyScript": "search/actions/activity"
     },
     {
       "label": "Add relationship - to household",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/add-to-household"
     },
     {
       "label": "Add relationship - to organization",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/add-to-organization"
     },
     {
       "label": "Communications preferences",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/communications-preferences"
     },
     {
       "label": "Delete contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/delete-contacts"
     },
     {
       "label": "Delete contacts - modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/delete-contacts-modal"
     },
     {
       "label": "Delete permanently",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/delete-permanently"
     },
     {
       "label": "Delete permanently - modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/delete-permanently-modal"
     },
     {
       "label": "Email - schedule/send via CiviMail",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule"
     },
     {
       "label": "Email - schedule/send via CiviMail - Attachments",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".crm-tabset"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule-attachments"
     },
     {
       "label": "Email - schedule/send via CiviMail - Header and Footer",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".crm-tabset"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule-header-footer"
     },
     {
       "label": "Email - schedule/send via CiviMail - Publication",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".crm-tabset"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule-publication"
     },
     {
       "label": "Email - schedule/send via CiviMail - Responses",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".crm-tabset"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule-responses"
     },
     {
       "label": "Email - schedule/send via CiviMail - Tracking",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".crm-tabset"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-schedule-tracking"
     },
     {
       "label": "Email - unhold addresses",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-unhold-addresses"
     },
     {
       "label": "Email - unhold addresses - Modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/email-unhold-addresses-modal"
     },
     {
       "label": "Export contact",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/export-contact"
     },
     {
       "label": "Export contact - Step 3",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/export-contact-step-3"
     },
     {
       "label": "Add group",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/add-group"
     },
     {
       "label": "Add smart group",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/add-smart-group"
     },
     {
       "label": "Group - remove contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/remove-group"
     },
     {
       "label": "Mailing labels - print",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/mailing-labels"
     },
     {
       "label": "Merge contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/merge-contacts"
     },
     {
       "label": "Register participants for event",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/register-participants-for-event"
     },
     {
       "label": "Restore contacts from trash",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/restore-contacts-from-trash"
     },
     {
       "label": "Restore contacts from trash - Modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/restore-contacts-from-trash-modal"
     },
     {
       "label": "Tag - add to contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/tag-add-to-contacts"
     },
     {
       "label": "Tag - add to contacts - Modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/tag-add-to-contacts-modal"
     },
     {
       "label": "Tag - remove from contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/tag-remove-from-contacts"
     },
     {
       "label": "Tag - remove from contacts - Modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/tag-remove-from-contacts-modal"
     },
     {
       "label": "Update multiple contacts",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/update-multiple-contacts"
     },
     {
       "label": "Update multiple contacts - Modal",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
       "onReadyScript": "search/actions/update-multiple-contacts-modal"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/search-actions/reference",
     "bitmaps_test": "./backstop_data/screenshots/search-actions/test",
-    "compare_data": "./backstop_data/screenshots/search-actions/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "html_report": "./backstop_data/html_report/search-actions",
+    "ci_report": "./backstop_data/ci_report/search-actions"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }
