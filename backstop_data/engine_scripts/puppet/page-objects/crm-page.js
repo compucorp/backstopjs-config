@@ -23,18 +23,13 @@ module.exports = class CrmPage {
   /**
    * Waits and clicks every element that matches the target selector.
    *
-   * @param {String} targetSelector - the css selector of the target elements to
+   * @param {String} selector - the css selector of the target elements to
    * click.
    */
-  clickAll (targetSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
-      Array.prototype.forEach.call(
-        document.querySelectorAll(selector),
-        function (el) {
-          el.click();
-        }
-      );
-    }, targetSelector);
+  async clickAll (selector) {
+    this.waitForSelectorAndEvaluate(selector, selector => {
+      document.querySelectorAll(selector).forEach(element => element.click());
+    });
   }
 
   /**
@@ -98,18 +93,18 @@ module.exports = class CrmPage {
   /**
    * Waits for an element and then evaluates a function on the browser.
    *
-   * @param {Function} fnExecInBrowser - the callback function to be executed in
+   * @param {String} selector - the css selector for the element to wait
+   * @param {Function} fn - the callback function to be executed in
    * the browser after the target element is ready.
-   * @param {String} targetSelector - the css selector for the element to wait
    * for.
    */
-  waitForSelectorAndEvaluate (fnExecInBrowser, targetSelector) {
-    var args = arguments;
-    this.casper.waitForSelector(targetSelector, function () {
-      this.evaluate.apply(this, args);
-    }, function () {
-      this.echo('Selector "' + targetSelector + '" not found', 'WARN_BAR');
-    }, 8000);
+  async waitForSelectorAndEvaluate (selector, fn) {
+    try {
+      await this.engine.waitFor(selector, { timeout: 8000 });
+      await this.engine.evaluate(fn, selector);
+    } catch (e) {
+      console.log('Selector "' + selector + '" not found');
+    }
   }
 
   /**
