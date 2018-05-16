@@ -94,7 +94,7 @@ module.exports = class FormPage extends CrmPage {
    * Submits the current page form.
    */
   async submit() {
-    await this.engine.click('#crm-main-content-wrapper form .crm-form-submit:not(.cancel)');
+    await this.engine.click('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
     await this.engine.waitForNavigation();
   }
 }
