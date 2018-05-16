@@ -4,12 +4,12 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Events - Dashboard",
-      "url": "{url}/civicrm/event?reset=1",
-      "onBeforeScript": "login.js"
+      "url": "{url}/civicrm/event?reset=1"
     },
     {
       "label": "Register Event Participant",
@@ -22,7 +22,7 @@
     {
       "label": "Find Participants result",
       "url": "{url}/civicrm/event/search?reset=1",
-      "onReadyScript": "events/find-participants"
+      "onReadyScript": "events/find-participants.js"
     },
     {
       "label": "Event Reports",
@@ -76,11 +76,11 @@
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/events-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/events-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/events-menu",
     "ci_report": "./backstop_data/ci_report/events-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
