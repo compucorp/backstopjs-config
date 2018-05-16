@@ -4,38 +4,38 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "New Mailings",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onBeforeScript": "login.js",
-      "onReadyScript": "mailings/mailing"
+      "onReadyScript": "mailings/mailing.js"
     },
     {
       "label": "New Mailings - Attachments",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onReadyScript": "mailings/attachments"
+      "onReadyScript": "mailings/attachments.js"
     },
     {
       "label": "New Mailings - Header and Footer",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onReadyScript": "mailings/header-and-footer"
+      "onReadyScript": "mailings/header-and-footer.js"
     },
     {
       "label": "New Mailings - Publication",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onReadyScript": "mailings/publication"
+      "onReadyScript": "mailings/publication.js"
     },
     {
       "label": "New Mailings - Responses",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onReadyScript": "mailings/responses"
+      "onReadyScript": "mailings/responses.js"
     },
     {
       "label": "New Mailings - Tracking",
       "url": "{url}/civicrm/a/#/mailing/new",
-      "onReadyScript": "mailings/tracking"
+      "onReadyScript": "mailings/tracking.js"
     },
     {
       "label": "Scheduled and Sent Mailings",
@@ -58,9 +58,9 @@
       "url": "{url}/civicrm/admin/messageTemplates?reset=1"
     },
     {
-      "label": "Message Templates - Sytem Workflow",
+      "label": "Message Templates - System Workflow",
       "url": "{url}/civicrm/admin/messageTemplates?reset=1",
-      "onReadyScript": "mailings/message-workflow"
+      "onReadyScript": "mailings/message-workflow.js"
     },
     {
       "label": "Message Templates - Add Message Template",
@@ -74,7 +74,7 @@
       "label": "From Email Addresses - New",
       "url": "{url}/civicrm/admin/options/from_email_address?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "mailings/new-email-addresses"
+      "onReadyScript": "mailings/new-email-addresses.js"
     },
     {
       "label": "Find Mass SMS",
@@ -84,11 +84,12 @@
       "label": "New A/B Test",
       "url": "{url}/civicrm/a/#/abtest/new",
       "delay": 2000,
-      "onReadyScript": "mailings/ab-test"
+      "onReadyScript": "mailings/ab-test-new.js"
     },
     {
       "label": "Manage A/B Tests",
-      "url": "{url}/civicrm/a/#/abtest"
+      "url": "{url}/civicrm/a/#/abtest",
+      "onReadyScript": "mailings/ab-test-manage.js"
     },
     {
       "label": "Mail Accounts",
@@ -106,11 +107,11 @@
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/mailings-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/mailings-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/mailings-menu",
     "ci_report": "./backstop_data/ci_report/mailings-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
