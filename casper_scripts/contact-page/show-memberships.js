@@ -4,7 +4,7 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    page.clickFirst('a#ui-id-6');
+    page.clickFirst('.ui-tabs-anchor[title="Memberships"]');
     this.wait(1000);
   });
 };

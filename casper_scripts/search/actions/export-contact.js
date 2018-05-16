@@ -9,7 +9,7 @@ module.exports = function (casper, scenario, vp) {
     this.wait(500);
     page.openSelect2DropDown('#s2id_task');
     this.wait(500);
-    page.clickSelect2NthOption(10);
+    page.clickSelect2NthOption(12);
     this.wait(1000);
     require('../../common/close-notifications')(casper, scenario, vp);
   });

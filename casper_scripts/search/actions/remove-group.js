@@ -9,7 +9,7 @@ module.exports = function (casper, scenario, vp) {
     this.wait(500);
     page.openSelect2DropDown('#s2id_task');
     this.wait(500);
-    page.clickSelect2NthOption(13);
+    page.clickSelect2NthOption(15);
     this.wait(1000);
   });
 };

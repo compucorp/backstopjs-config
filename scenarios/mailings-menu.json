@@ -8,7 +8,7 @@
   "scenarios": [
     {
       "label": "New Mailings",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -17,7 +17,7 @@
     },
     {
       "label": "New Mailings - Attachments",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -26,7 +26,7 @@
     },
     {
       "label": "New Mailings - Header and Footer",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -35,7 +35,7 @@
     },
     {
       "label": "New Mailings - Publication",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -44,7 +44,7 @@
     },
     {
       "label": "New Mailings - Responses",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -53,7 +53,7 @@
     },
     {
       "label": "New Mailings - Tracking",
-      "url": "{url}/civicrm/a/#/mailing/493",
+      "url": "{url}/civicrm/a/#/mailing/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -61,24 +61,8 @@
       "onReadyScript": "mailings/tracking"
     },
     {
-      "label": "Draft and Unscheduled Mailings",
-      "url": "{url}/civicrm/mailing/browse/unscheduled?reset=1&scheduled=false",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
       "label": "Scheduled and Sent Mailings",
       "url": "{url}/civicrm/mailing/browse/scheduled?reset=1&scheduled=true",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
-    },
-    {
-      "label": "Archived Mailings",
-      "url": "{url}/civicrm/mailing/browse/archived?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -110,7 +94,7 @@
     },
     {
       "label": "Message Templates",
-      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -118,7 +102,7 @@
     },
     {
       "label": "Message Templates - Sytem Workflow",
-      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 0,
@@ -160,11 +144,12 @@
     },
     {
       "label": "New A/B Test",
-      "url": "{url}/civicrm/a/#/abtest/2",
+      "url": "{url}/civicrm/a/#/abtest/new",
       "selectors": ["body"],
       "readyEvent": null,
       "delay": 2000,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "mailings/ab-test"
     },
     {
       "label": "Manage A/B Tests",

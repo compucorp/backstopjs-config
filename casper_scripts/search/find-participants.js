@@ -5,5 +5,6 @@ module.exports = function (casper, scenario, vp) {
 
   casper.then(function () {
     page.clickFirst('#_qf_Search_refresh');
+    this.waitForSelector('.crm-results-block');
   });
 };

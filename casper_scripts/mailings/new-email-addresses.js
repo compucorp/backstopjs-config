@@ -5,5 +5,6 @@ module.exports = function (casper, scenario, vp) {
 
   casper.then(function () {
     page.clickFirst('.button.new-option');
+    this.waitWhileSelector('.blockUI.blockOverlay')
   });
 };

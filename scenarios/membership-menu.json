@@ -38,7 +38,7 @@
       "readyEvent": null,
       "delay": 0,
       "misMatchThreshold": 0.1,
-      "onBeforeScript": "membership/search-result"
+      "onReadyScript": "membership/search-result"
     },
     {
       "label": "Membership - Batch Data Entry",
