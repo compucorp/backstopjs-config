@@ -4,12 +4,12 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Membership - Dashboard",
-      "url": "{url}/civicrm/member?reset=1",
-      "onBeforeScript": "login.js"
+      "url": "{url}/civicrm/member?reset=1"
     },
     {
       "label": "Membership - Find Memberships",
@@ -22,7 +22,7 @@
     {
       "label": "Membership - Find Memberships - Results",
       "url": "{url}/civicrm/member/search?reset=1",
-      "onReadyScript": "membership/search-result"
+      "onReadyScript": "membership/search-result.js"
     },
     {
       "label": "Membership - Batch Data Entry",
@@ -44,11 +44,11 @@
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/membership-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/membership-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/membership-menu",
     "ci_report": "./backstop_data/ci_report/membership-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
