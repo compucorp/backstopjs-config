@@ -1,3 +1,4 @@
+.DS_Store
 node_modules/
 backstop_data/screenshots
 backstop_data/*_report
