@@ -27,7 +27,7 @@ module.exports = class CrmPage {
    * click.
    */
   async clickAll (selector) {
-    this.waitForSelectorAndEvaluate(selector, selector => {
+    await this.waitForSelectorAndEvaluate(selector, selector => {
       document.querySelectorAll(selector).forEach(element => element.click());
     });
   }
