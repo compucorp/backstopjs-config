@@ -37,14 +37,15 @@ module.exports = class FormPage extends CrmPage {
    * @param {Number} nth - the number of the option to click on. This is a zero
    * based index.
    */
-  clickSelect2NthOption(nth) {
-    var selector = '.select2-drop-active li:nth-of-type(' + nth + ')';
+  async clickSelect2NthOption(nth) {
+    const selector = `.select2-drop-active li:nth-of-type(${nth})`;
 
-    this.waitForSelectorAndEvaluate(function (selector) {
-      var event = document.createEvent('MouseEvent');
+    await this.waitForSelectorAndEvaluate(selector, selector => {
+      const event = document.createEvent('MouseEvent');
+
       event.initMouseEvent('mouseup', true, true);
       document.querySelector(selector).dispatchEvent(event);
-    }, selector);
+    });
   }
 
   /**
@@ -64,19 +65,15 @@ module.exports = class FormPage extends CrmPage {
    *
    * @param {String} select2ContainerSelector - the select2 dropdown to open.
    */
-  openSelect2DropDown(select2ContainerSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
-      /**
-       * Phantomjs doesn't support the following event syntax yet. SlimerJS does.
-       * (Leaving it here for reference)
-       */
-      // var event = new MouseEvent('mousedown', {
-      //   bubbles: true
-      // });
-      var event = document.createEvent('MouseEvent');
+  async openSelect2DropDown(select2ContainerSelector) {
+    const selector = `${select2ContainerSelector} .select2-choice`;
+
+    await this.waitForSelectorAndEvaluate(selector, selector => {
+      const event = document.createEvent('MouseEvent');
+
       event.initMouseEvent('mousedown', true, true);
       document.querySelector(selector).dispatchEvent(event);
-    }, select2ContainerSelector + ' .select2-choice');
+    });
   }
 
   /**
