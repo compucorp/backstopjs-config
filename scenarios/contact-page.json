@@ -4,60 +4,60 @@
     "width": 1920,
     "height": 3000
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Contact Summary",
-      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "onBeforeScript": "login.js"
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2"
     },
     {
       "label": "Contributions",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "onReadyScript": "contact-page/show-contributions"
+      "onReadyScript": "contact-page/show-contributions.js"
     },
     {
       "label": "Record Contribution",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact-page/record-contribution"
+      "onReadyScript": "contact-page/record-contribution.js"
     },
     {
       "label": "Memberships",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "onReadyScript": "contact-page/show-memberships"
+      "onReadyScript": "contact-page/show-memberships.js"
     },
     {
       "label": "Memberships - Add Membership",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact-page/record-membership"
+      "onReadyScript": "contact-page/record-membership.js"
     },
     {
       "label": "Events",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "onReadyScript": "contact-page/show-events"
+      "onReadyScript": "contact-page/show-events.js"
     },
     {
       "label": "Events - Add Membership",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact-page/record-event"
+      "onReadyScript": "contact-page/record-event.js"
     },
     {
       "label": "Tags",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
-      "onReadyScript": "contact-page/show-tags"
+      "onReadyScript": "contact-page/show-tags.js"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/contact-page/reference",
     "bitmaps_test": "./backstop_data/screenshots/contact-page/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/contact-page",
     "ci_report": "./backstop_data/ci_report/contact-page"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
