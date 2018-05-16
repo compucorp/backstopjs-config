@@ -4,38 +4,38 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "New Individual",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
-      "onBeforeScript": "login.js",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New Household",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Household",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New Organization",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Organization",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New activity",
       "url": "{url}/civicrm/activity?reset=1&action=add&context=standalone",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New email",
       "url": "{url}/civicrm/activity/email/add?atype=3&action=add&reset=1&context=standalone",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "Contact Reports",
       "url": "{url}/index.php?q=civicrm/report/list&compid=99&reset=1",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "Import Contact",
@@ -44,17 +44,12 @@
     {
       "label": "Import Contact - Step 2",
       "url": "{url}/civicrm/import/contact?reset=1",
-      "onReadyScript": "contact/step-2"
+      "onReadyScript": "contact/step-2.js"
     },
     {
       "label": "Import Contact - Step 3",
       "url": "{url}/civicrm/import/contact?reset=1",
-      "onReadyScript": "contact/step-3"
-    },
-    {
-      "label": "Import Contact - Step 4",
-      "url": "{url}/civicrm/import/contact?reset=1",
-      "onReadyScript": "contact/step-4"
+      "onReadyScript": "contact/step-3.js"
     },
     {
       "label": "Find and merge duplicates",
@@ -83,31 +78,32 @@
     {
       "label": "Manage Groups",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups"
+      "onReadyScript": "contact/manage-groups.js"
     },
     {
       "label": "Tags",
-      "url": "{url}/civicrm/tag?reset=1"
+      "url": "{url}/civicrm/tag?reset=1",
+      "onReadyScript": "contact/tags.js"
     },
     {
       "label": "Tags - Add Tag",
       "url": "{url}/civicrm/tag?reset=1&action=add",
-      "onReadyScript": "contact/add-tag"
+      "onReadyScript": "contact/add-tag.js"
     },
     {
       "label": "Tags - Add Tag set",
       "url": "{url}/civicrm/tag?",
-      "onReadyScript": "contact/add-tag-set"
+      "onReadyScript": "contact/add-tag-set.js"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/contact-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/contact-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/casper",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
     "html_report": "./backstop_data/html_report/contact-menu",
     "ci_report": "./backstop_data/ci_report/contact-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
   "casperFlags": ["--log-level=info"],
   "asyncCaptureLimit": 1,
