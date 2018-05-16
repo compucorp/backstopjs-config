@@ -4,6 +4,6 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    this.click('a#ui-id-3');
+    this.click('a[title="System Workflow Messages"]');
   });
 };

@@ -4,6 +4,6 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    page.changeTab('#ui-id-3');
+    page.clickFirst('a[href="#tab-attachment"]');
   });
 };

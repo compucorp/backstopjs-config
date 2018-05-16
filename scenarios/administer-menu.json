@@ -29,7 +29,8 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "administer-menu/system-status"
     },
     {
       "label": "Configuration Checklist",
@@ -101,7 +102,8 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "administer-menu/edit-multiple-choice-options"
     },
     {
       "label": "New CiviCRM Profile",
@@ -581,7 +583,8 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold": 0.1
+      "misMatchThreshold": 0.1,
+      "onReadyScript": "administer-menu/connections"
     },
     {
       "label": "System Settings - Extensions",

@@ -4,7 +4,7 @@ module.exports = function (casper, scenario, vp) {
   var page = new Page(casper, scenario, vp);
 
   casper.then(function () {
-    page.clickFirst('.crm-contact-tabs-list a[title="Contributions"]');
-    this.wait(1000);
+    page.clickFirst('a[href="#new-tagset"]');
+    this.waitWhileSelector('.blockUI.blockOverlay');
   });
 };
