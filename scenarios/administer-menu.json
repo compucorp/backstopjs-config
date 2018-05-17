@@ -116,7 +116,8 @@
     },
     {
       "label": "Customize Data and Screens - Navigation Preference",
-      "url": "{url}/civicrm/admin/menu?reset=1"
+      "url": "{url}/civicrm/admin/menu?reset=1",
+      "onReadyScript": "administer-menu/navigation-preference.js"
     },
     {
       "label": "Customize Data and Screens - Word Replacements",
