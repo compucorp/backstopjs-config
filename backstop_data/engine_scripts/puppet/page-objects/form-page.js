@@ -81,10 +81,12 @@ module.exports = class FormPage extends CrmPage {
    *
    * @param {String} select2ContainerSelector - the select2 dropdown to open.
    */
-  openSelect2MultipleDropDown(select2ContainerSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
+  async openSelect2MultipleDropDown(select2ContainerSelector) {
+    const selector = `${select2ContainerSelector} .select2-choices`;
+
+    this.waitForSelectorAndEvaluate(selector, selector => {
       document.querySelector(selector).click();
-    }, select2ContainerSelector + ' .select2-choices');
+    });
   }
 
   /**
