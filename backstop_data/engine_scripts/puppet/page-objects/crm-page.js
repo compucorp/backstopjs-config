@@ -109,4 +109,11 @@ module.exports = class CrmPage {
       console.log('Selector "' + selector + '" not found');
     }
   }
+
+  /**
+   * Waits for the WYSIWYG to be visible on the page
+   */
+  async waitForWYSIWYG () {
+    await this.engine.waitFor('.cke', { visible: true });
+  }
 }

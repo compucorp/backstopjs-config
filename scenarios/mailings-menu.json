@@ -55,7 +55,8 @@
     },
     {
       "label": "Message Templates",
-      "url": "{url}/civicrm/admin/messageTemplates?reset=1"
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Message Templates - System Workflow",

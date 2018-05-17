@@ -26,7 +26,8 @@
     },
     {
       "label": "New Custom Field Set",
-      "url": "{url}/civicrm/admin/custom/group?action=add&reset=1"
+      "url": "{url}/civicrm/admin/custom/group?action=add&reset=1",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Add Custom Field Set",
@@ -135,7 +136,8 @@
     },
     {
       "label": "Communications - New Message Template",
-      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1"
+      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Communications - Schedule Reminders",
