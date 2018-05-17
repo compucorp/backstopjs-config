@@ -9,18 +9,6 @@ module.exports = class CrmPage {
   }
 
   /**
-   * Adds a css class to the specified element.
-   *
-   * @param {String} targetSelector - the css selector for the target element.
-   * @param {String} className - the class name to add to the element.
-   */
-  addClassToElement (targetSelector, className) {
-    this.waitForSelectorAndEvaluate(function (selector, newClass) {
-      document.querySelector(selector).classList.add(newClass);
-    }, targetSelector, className);
-  }
-
-  /**
    * Waits and clicks every element that matches the target selector.
    *
    * @param {String} selector - the css selector of the target elements to
@@ -33,22 +21,20 @@ module.exports = class CrmPage {
   }
 
   /**
-   * Waits and clicks the first element that matches the target selector.
+   * Clicks on a specific option inside the currently active select2 dropdown.
    *
-   * @param {String} targetSelector - The css selector of the target element to
-   * click.
+   * @param {Number} nth - the number of the option to click on. This is a zero
+   * based index.
    */
-  clickFirst (targetSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
-      document.querySelector(selector).click();
-    }, targetSelector);
-  }
+  async clickSelect2NthOption(nth) {
+    const selector = `.select2-drop-active li:nth-of-type(${nth})`;
 
-  /**
-   * Closes all active alert messages.
-   */
-  closeAllAlertMsgBlocks () {
-    this.clickAll('.alert-danger > a.close');
+    await this.waitForSelectorAndEvaluate(selector, selector => {
+      const event = document.createEvent('MouseEvent');
+
+      event.initMouseEvent('mouseup', true, true);
+      document.querySelector(selector).dispatchEvent(event);
+    });
   }
 
   /**
@@ -64,30 +50,47 @@ module.exports = class CrmPage {
   }
 
   /**
-   * Hides the target element by setting its display property to none.
-   *
-   * @param {String} targetSelector - the css selector for the element to hide.
+   * Opens all the accordions on the page
    */
-  hideElement (targetSelector) {
-    this.waitForSelectorAndEvaluate(function (selector) {
-      document.querySelector(selector).style.display = 'none';
-    }, targetSelector);
+  async openAllAccordions() {
+    await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
   }
 
   /**
-   * Changes the width and height of the target element.
+   * Opens the speficied select2 dropdown.
    *
-   * @param {String} targetSelector - the css selector for the element that will
-   * be resized.
-   * @param {String|Number} width - the new width for the target element.
-   * @param {String|Number} height - the new height for the target element.
+   * @param {String} select2ContainerSelector - the select2 dropdown to open.
    */
-  resizeElement (targetSelector, width, height) {
-    this.waitForSelectorAndEvaluate(function (selector, width, height) {
-      var el = document.querySelector(selector);
-      el.style.width = width;
-      el.style.height = height;
-    }, targetSelector, width, height);
+  async openSelect2DropDown(select2ContainerSelector) {
+    const selector = `${select2ContainerSelector} .select2-choice`;
+
+    await this.waitForSelectorAndEvaluate(selector, selector => {
+      const event = document.createEvent('MouseEvent');
+
+      event.initMouseEvent('mousedown', true, true);
+      document.querySelector(selector).dispatchEvent(event);
+    });
+  }
+
+  /**
+   * Opens the specified select2 dropdown of the multiple type.
+   *
+   * @param {String} select2ContainerSelector - the select2 dropdown to open.
+   */
+  async openSelect2MultipleDropDown(select2ContainerSelector) {
+    const selector = `${select2ContainerSelector} .select2-choices`;
+
+    this.waitForSelectorAndEvaluate(selector, selector => {
+      document.querySelector(selector).click();
+    });
+  }
+
+  /**
+   * Submits the current page form.
+   */
+  async submit() {
+    await this.engine.click('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
+    await this.engine.waitForNavigation();
   }
 
   /**
@@ -105,16 +108,5 @@ module.exports = class CrmPage {
     } catch (e) {
       console.log('Selector "' + selector + '" not found');
     }
-  }
-
-  /**
-   * Waits for the URL to change.
-   */
-  waitForUrlChange () {
-    var oldUrl = this.casper.getCurrentUrl();
-
-    return this.casper.waitFor(function () {
-      return oldUrl !== this.casper.getCurrentUrl();
-    }.bind(this));
   }
 }
