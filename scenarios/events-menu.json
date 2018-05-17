@@ -30,7 +30,8 @@
     },
     {
       "label": "New Event",
-      "url": "{url}/civicrm/event/add?reset=1&action=add"
+      "url": "{url}/civicrm/event/add?reset=1&action=add",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Manage Events",
