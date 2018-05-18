@@ -48,7 +48,8 @@
     },
     {
       "label": "Customize Data and Screens - Profiles",
-      "url": "{url}/civicrm/admin/uf/group/add?action=add&reset=1"
+      "url": "{url}/civicrm/admin/uf/group/add?action=add&reset=1",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Name and Address - CiviCRM Profile Fields",
