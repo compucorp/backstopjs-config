@@ -65,7 +65,8 @@
     },
     {
       "label": "Message Templates - Add Message Template",
-      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1"
+      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "From Email Addresses",
