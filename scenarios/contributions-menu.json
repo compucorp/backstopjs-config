@@ -9,7 +9,8 @@
   "scenarios": [
     {
       "label": "Contributions - Dashboard",
-      "url": "{url}/civicrm/contribute?reset=1"
+      "url": "{url}/civicrm/contribute?reset=1",
+      "onReadyScript": "contributions/dashboard.js"
     },
     {
       "label": "Contributions - New Contribution",
