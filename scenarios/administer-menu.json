@@ -61,7 +61,9 @@
     },
     {
       "label": "Customize Data and Screens - Activity Types",
-      "url": "{url}/civicrm/admin/options/activity_type?reset=1"
+      "url": "{url}/civicrm/admin/options/activity_type?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js",
+      "requireSameDimensions": false
     },
     {
       "label": "Customize Data and Screens - Relationship Types",
@@ -69,39 +71,48 @@
     },
     {
       "label": "Customize Data and Screens - Contact Types",
-      "url": "{url}/civicrm/admin/options/subtype?reset=1"
+      "url": "{url}/civicrm/admin/options/subtype?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Gender Options",
-      "url": "{url}/civicrm/admin/options/gender?reset=1"
+      "url": "{url}/civicrm/admin/options/gender?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Individual contact prefixes Options",
-      "url": "{url}/civicrm/admin/options/individual_prefix?reset=1"
+      "url": "{url}/civicrm/admin/options/individual_prefix?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Individual contact suffixes Options",
-      "url": "{url}/civicrm/admin/options/individual_suffix?reset=1"
+      "url": "{url}/civicrm/admin/options/individual_suffix?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Instant Messenger (IM) screen-names Options",
-      "url": "{url}/civicrm/admin/options/instant_messenger_service?reset=1"
+      "url": "{url}/civicrm/admin/options/instant_messenger_service?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Location Types (Home, Work...)",
-      "url": "{url}/civicrm/admin/locationType?reset=1"
+      "url": "{url}/civicrm/admin/locationType?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Mobile Phone Providers Options",
-      "url": "{url}/civicrm/admin/options/mobile_provider?reset=1"
+      "url": "{url}/civicrm/admin/options/mobile_provider?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Phone Type Options",
-      "url": "{url}/civicrm/admin/options/phone_type?reset=1"
+      "url": "{url}/civicrm/admin/options/phone_type?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Website Type Options",
-      "url": "{url}/civicrm/admin/options/website_type?reset=1"
+      "url": "{url}/civicrm/admin/options/website_type?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Customize Data and Screens - Display Preference",
@@ -163,7 +174,8 @@
     },
     {
       "label": "Communications - Email Greeting Type Options",
-      "url": "{url}/civicrm/admin/options/email_greeting?reset=1"
+      "url": "{url}/civicrm/admin/options/email_greeting?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Communications - Postal Greeting Type Options",
@@ -248,7 +260,8 @@
     },
     {
       "label": "System Settings - Safe File Extension Options",
-      "url": "{url}/civicrm/admin/options/safe_file_extension?reset=1"
+      "url": "{url}/civicrm/admin/options/safe_file_extension?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "System Settings - Scheduled Jobs",
@@ -272,7 +285,8 @@
     },
     {
       "label": "Registered Templates",
-      "url": "{url}/civicrm/admin/report/options/report_template?reset=1"
+      "url": "{url}/civicrm/admin/report/options/report_template?reset=1",
+      "requireSameDimensions": false
     },
     {
       "label": "CiviMember - Membership Types",
