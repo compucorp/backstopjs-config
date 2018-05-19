@@ -27,14 +27,7 @@ module.exports = class CrmPage {
    * based index.
    */
   async clickSelect2NthOption(nth) {
-    const selector = `.select2-drop-active li:nth-of-type(${nth})`;
-
-    await this.waitForSelectorAndEvaluate(selector, selector => {
-      const event = document.createEvent('MouseEvent');
-
-      event.initMouseEvent('mouseup', true, true);
-      document.querySelector(selector).dispatchEvent(event);
-    });
+    await this.engine.click(`.select2-drop-active li:nth-of-type(${nth})`);
   }
 
   /**
@@ -62,14 +55,7 @@ module.exports = class CrmPage {
    * @param {String} select2ContainerSelector - the select2 dropdown to open.
    */
   async openSelect2DropDown(select2ContainerSelector) {
-    const selector = `${select2ContainerSelector} .select2-choice`;
-
-    await this.waitForSelectorAndEvaluate(selector, selector => {
-      const event = document.createEvent('MouseEvent');
-
-      event.initMouseEvent('mousedown', true, true);
-      document.querySelector(selector).dispatchEvent(event);
-    });
+    await this.engine.click(`${select2ContainerSelector} .select2-choice`);
   }
 
   /**
