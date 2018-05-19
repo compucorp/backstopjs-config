@@ -53,22 +53,12 @@ module.exports = class CrmPage {
    * Opens the speficied select2 dropdown.
    *
    * @param {String} select2ContainerSelector - the select2 dropdown to open.
+   * @param {Boolean} multiple - true if it's a select that allows multiple selected values
    */
-  async openSelect2DropDown(select2ContainerSelector) {
-    await this.engine.click(`${select2ContainerSelector} .select2-choice`);
-  }
+  async openSelect2DropDown(select2ContainerSelector, multiple=false) {
+    const choiceSelector = multiple ? '.select2-choices' : '.select2-choice';
 
-  /**
-   * Opens the specified select2 dropdown of the multiple type.
-   *
-   * @param {String} select2ContainerSelector - the select2 dropdown to open.
-   */
-  async openSelect2MultipleDropDown(select2ContainerSelector) {
-    const selector = `${select2ContainerSelector} .select2-choices`;
-
-    this.waitForSelectorAndEvaluate(selector, selector => {
-      document.querySelector(selector).click();
-    });
+    await this.engine.click(`${select2ContainerSelector} ${choiceSelector}`);
   }
 
   /**
