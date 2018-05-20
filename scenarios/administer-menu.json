@@ -179,11 +179,13 @@
     },
     {
       "label": "Communications - Postal Greeting Type Options",
-      "url": "{url}/civicrm/admin/options/postal_greeting?reset=1"
+      "url": "{url}/civicrm/admin/options/postal_greeting?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Communications - Addressee Type Options",
-      "url": "{url}/civicrm/admin/options/addressee?reset=1"
+      "url": "{url}/civicrm/admin/options/addressee?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Localization - Settings",
