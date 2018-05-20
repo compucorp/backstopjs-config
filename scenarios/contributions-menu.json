@@ -146,7 +146,8 @@
     },
     {
       "label": "Accepted Credit Cards Options",
-      "url": "{url}/civicrm/admin/options/accept_creditcard?reset=1"
+      "url": "{url}/civicrm/admin/options/accept_creditcard?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Soft Credit Types Options",
