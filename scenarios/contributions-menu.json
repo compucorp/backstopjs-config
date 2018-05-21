@@ -15,7 +15,7 @@
     {
       "label": "Contributions - New Contribution",
       "url": "{url}/civicrm/contribute/add?reset=1&action=add&context=standalone",
-      "onReadyScript": "common/open-accordions.js"
+      "onReadyScript": "contributions/new-contribution.js"
     },
     {
       "label": "Contributions - Dashboard - Table",
