@@ -12,5 +12,6 @@ module.exports = async (engine, scenario, vp) => {
   await page.openSelect2DropDown('#s2id_task');
   await page.clickSelect2NthOption(9);
   await engine.waitFor('.crm-wizard', { visible: true });
+  await engine.waitFor('.content > .select2-container.crm-group-ref', { visible: true });
   await require('../../common/close-notifications')(engine, scenario, vp);
 };
