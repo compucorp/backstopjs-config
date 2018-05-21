@@ -142,7 +142,8 @@
     },
     {
       "label": "Payment Methods Options",
-      "url": "{url}/civicrm/admin/options/payment_instrument?reset=1"
+      "url": "{url}/civicrm/admin/options/payment_instrument?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Accepted Credit Cards Options",
@@ -151,7 +152,8 @@
     },
     {
       "label": "Soft Credit Types Options",
-      "url": "{url}/civicrm/admin/options/soft_credit_type?reset=1"
+      "url": "{url}/civicrm/admin/options/soft_credit_type?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Payment Processor",

@@ -47,7 +47,8 @@
     },
     {
       "label": "Event Type Options",
-      "url": "{url}/civicrm/admin/options/event_type?reset=1"
+      "url": "{url}/civicrm/admin/options/event_type?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Participant Status",
