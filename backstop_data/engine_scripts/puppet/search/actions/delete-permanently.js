@@ -12,4 +12,5 @@ module.exports = async (engine, scenario, vp) => {
   await page.openSelect2DropDown('#s2id_task');
   await page.clickSelect2NthOption(8);
   await engine.waitForNavigation();
+  await page.closeErrorNotifications();
 };
