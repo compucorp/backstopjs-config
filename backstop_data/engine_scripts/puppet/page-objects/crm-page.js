@@ -21,13 +21,19 @@ module.exports = class CrmPage {
   }
 
   /**
-   * Clicks on a specific option inside the currently active select2 dropdown.
+   * Clicks on the select2 option with the given label.
    *
-   * @param {Number} nth - the number of the option to click on. This is a zero
-   * based index.
+   * @param {String} label
    */
-  async clickSelect2NthOption(nth) {
-    await this.engine.click(`.select2-drop-active li:nth-of-type(${nth})`);
+  async clickSelect2Option(label) {
+    await this.engine.evaluate(label => {
+      const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
+      const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+      const event = document.createEvent('MouseEvent');
+
+      event.initMouseEvent('mouseup', true, true);
+      item.dispatchEvent(event);
+    }, label)
   }
 
   /**

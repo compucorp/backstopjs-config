@@ -10,6 +10,6 @@ module.exports = async (engine, scenario, vp) => {
   await engine.click('#mark_x_3');
   await engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');
   await page.openSelect2DropDown('#s2id_task');
-  await page.clickSelect2NthOption(3);
+  await page.clickSelect2Option('Add relationship - to organization');
   await engine.waitForNavigation();
 };

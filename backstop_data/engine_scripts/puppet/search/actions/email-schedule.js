@@ -10,7 +10,7 @@ module.exports = async (engine, scenario, vp) => {
   await engine.click('#mark_x_3');
   await engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');
   await page.openSelect2DropDown('#s2id_task');
-  await page.clickSelect2NthOption(9);
+  await page.clickSelect2Option('Email - schedule/send via CiviMail');
   await engine.waitFor('.crm-wizard', { visible: true });
   await engine.waitFor('.content > .select2-container.crm-group-ref', { visible: true });
   await require('../../common/close-notifications')(engine, scenario, vp);
