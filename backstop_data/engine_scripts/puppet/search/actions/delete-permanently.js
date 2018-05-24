@@ -9,8 +9,7 @@ module.exports = async (engine, scenario, vp) => {
   await engine.waitForNavigation();
   await engine.click('#mark_x_3');
   await engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');
-  await page.openSelect2DropDown('#s2id_task');
-  await page.clickSelect2Option('Delete permanently');
+  await page.clickSelect2Option('#s2id_task', 'Delete permanently');
   await engine.waitForNavigation();
   await page.closeErrorNotifications();
 };

@@ -9,7 +9,6 @@ module.exports = async (engine, scenario, vp) => {
   await engine.waitForNavigation();
   await engine.click('#mark_x_3');
   await engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');
-  await page.openSelect2DropDown('#s2id_task');
-  await page.clickSelect2Option('Mailing labels - print');
+  await page.clickSelect2Option('#s2id_task', 'Mailing labels - print');
   await engine.waitForNavigation();
 };

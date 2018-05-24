@@ -23,9 +23,11 @@ module.exports = class CrmPage {
   /**
    * Clicks on the select2 option with the given label.
    *
+   * @param {String} selector - The selector that identifies the select2 dropdown
    * @param {String} label
    */
-  async clickSelect2Option(label) {
+  async clickSelect2Option(selector, label) {
+    await this.engine.click(`${selector} [class^="select2-choice"]`);
     await this.engine.evaluate(label => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
@@ -53,18 +55,6 @@ module.exports = class CrmPage {
    */
   async openAllAccordions() {
     await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
-  }
-
-  /**
-   * Opens the speficied select2 dropdown.
-   *
-   * @param {String} select2ContainerSelector - the select2 dropdown to open.
-   * @param {Boolean} multiple - true if it's a select that allows multiple selected values
-   */
-  async openSelect2DropDown(select2ContainerSelector, multiple=false) {
-    const choiceSelector = multiple ? '.select2-choices' : '.select2-choice';
-
-    await this.engine.click(`${select2ContainerSelector} ${choiceSelector}`);
   }
 
   /**
