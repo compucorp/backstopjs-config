@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 900
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Contributions - Dashboard",
@@ -163,19 +156,5 @@
       "label": "CiviContribute Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/contributions-menu",
-    "ci_report": "./backstop_data/ci_report/contributions-menu"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }

@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 3000
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Contact Summary",
@@ -49,19 +42,5 @@
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=tag",
       "onReadyScript": "contact-page/show-tags.js"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/contact-page/reference",
-    "bitmaps_test": "./backstop_data/screenshots/contact-page/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/contact-page",
-    "ci_report": "./backstop_data/ci_report/contact-page"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }
