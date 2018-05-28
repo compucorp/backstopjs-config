@@ -7,11 +7,11 @@
   "onBeforeScript": "onBefore.js",
   "onReadyScript": "common/close-notifications.js",
   "paths": {
-    "bitmaps_reference": "backstop_data/screenshots/reference",
-    "bitmaps_test": "backstop_data/screenshots/test",
+    "bitmaps_reference": "backstop_data/screenshots/{group}/reference",
+    "bitmaps_test": "backstop_data/screenshots/{group}/test",
     "engine_scripts": "backstop_data/engine_scripts/puppet",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
+    "html_report": "backstop_data/html_report/{group}",
+    "ci_report": "backstop_data/ci_report/{group}"
   },
   "engine": "puppeteer",
   "report": ["CLI", "browser"],

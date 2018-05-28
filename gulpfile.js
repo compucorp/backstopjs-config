@@ -27,22 +27,23 @@ const FILES = {
 });
 
 /**
- * Concatenates all the scenarios (if no specific scenario file is specified)
+ * Returns the list of the scenarios from
+ *   a. All the different groups if `group` is == '_all_',
+ *   b. Only the given group
  *
+ * @param {String} group
  * @return {Array}
  */
-function buildScenariosList () {
+function buildScenariosList (group) {
   const config = siteConfig();
   const dirPath = path.join('scenarios');
 
   return _(fs.readdirSync(dirPath))
     .filter(scenario => {
-      return argv.configFile ? scenario === argv.configFile : true && scenario.endsWith('.json');
+      return (group === '_all_' ? true : scenario === `${group}.json`) && scenario.endsWith('.json');
     })
-    .map(scenarioFile => {
-      const scenarioPath = path.join(dirPath, scenarioFile);
-
-      return JSON.parse(fs.readFileSync(scenarioPath)).scenarios;
+    .map(scenario => {
+      return JSON.parse(fs.readFileSync(path.join(dirPath, scenario))).scenarios;
     })
     .flatten()
     .map((scenario, index, scenarios) => {
@@ -79,10 +80,15 @@ function cleanUpAndNotify (success) {
  * @return {String}
  */
 function createTempConfig () {
-  const list = buildScenariosList();
+  const group = argv.group ? argv.group : '_all_';
+  const list = buildScenariosList(group);
   const content = JSON.parse(fs.readFileSync(FILES.tpl));
 
   content.scenarios = list;
+
+  ['bitmaps_reference', 'bitmaps_test', 'html_report', 'ci_report'].forEach(path => {
+    content.paths[path] = content.paths[path].replace('{group}', group);
+  });
 
   return JSON.stringify(content);
 }
