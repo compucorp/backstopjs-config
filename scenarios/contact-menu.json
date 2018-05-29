@@ -40,11 +40,6 @@
       "onReadyScript": "contact/step-2.js"
     },
     {
-      "label": "Import Contact - Step 3",
-      "url": "{url}/civicrm/import/contact?reset=1",
-      "onReadyScript": "contact/step-3.js"
-    },
-    {
       "label": "Find and merge duplicates",
       "url": "{url}/civicrm/contact/deduperules?reset=1"
     },
