@@ -49,6 +49,7 @@ function buildScenariosList (group) {
     .map((scenario, index, scenarios) => {
       return _.assign(scenario, {
         cookiePath: path.join(BACKSTOP_DIR, 'cookies', 'admin.json'),
+        count: '(' + (index + 1) + ' of ' + scenarios.length + ')',
         url: scenario.url.replace('{url}', config.url)
       });
     })
