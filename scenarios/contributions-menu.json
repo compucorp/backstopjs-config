@@ -72,7 +72,8 @@
     },
     {
       "label": "Batch Data Entry",
-      "url": "{url}/civicrm/batch?reset=1"
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/batches.js"
     },
     {
       "label": "New Batch Data Entry",
@@ -83,16 +84,19 @@
       "url": "{url}/civicrm/financial/batch?reset=1&action=add"
     },
     {
-      "label": "Accouting Batch - Open Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1"
+      "label": "Accounting Batch - Open Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1",
+      "onReadyScript": "contributions/batches.js"
     },
     {
-      "label": "Accouting Batch - Closed Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2"
+      "label": "Accounting Batch - Closed Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2",
+      "onReadyScript": "contributions/batches.js"
     },
     {
-      "label": "Accouting Batch - Exported Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5"
+      "label": "Accounting Batch - Exported Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5",
+      "onReadyScript": "contributions/batches.js"
     },
     {
       "label": "New Contribution Page",
