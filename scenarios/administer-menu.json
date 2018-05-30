@@ -138,7 +138,8 @@
     },
     {
       "label": "Communications - Preferred Communication Methods",
-      "url": "{url}/civicrm/admin/options/preferred_communication_method?reset=1"
+      "url": "{url}/civicrm/admin/options/preferred_communication_method?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Communications - Label Formats",
