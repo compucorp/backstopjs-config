@@ -18,14 +18,6 @@
       "onReadyScript": "membership/search-result.js"
     },
     {
-      "label": "Membership - Batch Data Entry",
-      "url": "{url}/civicrm/batch?reset=1"
-    },
-    {
-      "label": "Membership - New Data Entry Batch",
-      "url": "{url}/civicrm/batch/add?reset=1&action=add"
-    },
-    {
       "label": "Membership - Import Memberships",
       "url": "{url}/civicrm/member/import?reset=1"
     },

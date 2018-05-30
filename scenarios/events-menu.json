@@ -9,15 +9,6 @@
       "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone"
     },
     {
-      "label": "Find Participants",
-      "url": "{url}/civicrm/event/search?reset=1"
-    },
-    {
-      "label": "Find Participants result",
-      "url": "{url}/civicrm/event/search?reset=1",
-      "onReadyScript": "events/find-participants.js"
-    },
-    {
       "label": "Event Reports",
       "url": "{url}/civicrm/report/list?compid=1&reset=1"
     },

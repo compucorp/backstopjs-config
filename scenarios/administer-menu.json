@@ -49,10 +49,6 @@
       "url": "{url}/civicrm/admin/uf/group/field?reset=1&action=browse&gid=1"
     },
     {
-      "label": "Customize Data and Screens - Tags",
-      "url": "{url}/civicrm/tag?reset=1"
-    },
-    {
       "label": "Customize Data and Screens - Activity Types",
       "url": "{url}/civicrm/admin/options/activity_type?reset=1",
       "onReadyScript": "common/wait-for-editable-icon.js",
@@ -135,15 +131,6 @@
     {
       "label": "Communications - Organization Address and Contact Info",
       "url": "{url}/civicrm/admin/domain?action=update&reset=1"
-    },
-    {
-      "label": "Communications - Message Templates",
-      "url": "{url}/civicrm/admin/messageTemplates?reset=1"
-    },
-    {
-      "label": "Communications - New Message Template",
-      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
-      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Communications - Schedule Reminders",

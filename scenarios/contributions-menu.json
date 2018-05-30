@@ -153,10 +153,6 @@
       "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
-      "label": "Payment Processor",
-      "url": "{url}/civicrm/admin/paymentProcessor?reset=1"
-    },
-    {
       "label": "CiviContribute Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1"
     }
