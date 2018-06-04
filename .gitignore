@@ -1,4 +1,7 @@
+.DS_Store
 node_modules/
-backstop_data/
-crm-config.json
-tmp.json
+backstop_data/cookies
+backstop_data/screenshots
+backstop_data/*_report
+backstop.temp.json
+site-config.json
