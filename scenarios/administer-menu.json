@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 900
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "CiviCRM Custom Data",
@@ -54,10 +47,6 @@
     {
       "label": "Name and Address - CiviCRM Profile Fields",
       "url": "{url}/civicrm/admin/uf/group/field?reset=1&action=browse&gid=1"
-    },
-    {
-      "label": "Customize Data and Screens - Tags",
-      "url": "{url}/civicrm/tag?reset=1"
     },
     {
       "label": "Customize Data and Screens - Activity Types",
@@ -144,21 +133,13 @@
       "url": "{url}/civicrm/admin/domain?action=update&reset=1"
     },
     {
-      "label": "Communications - Message Templates",
-      "url": "{url}/civicrm/admin/messageTemplates?reset=1"
-    },
-    {
-      "label": "Communications - New Message Template",
-      "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
-      "onReadyScript": "common/wait-for-wysiwyg.js"
-    },
-    {
       "label": "Communications - Schedule Reminders",
       "url": "{url}/civicrm/admin/scheduleReminders?reset=1"
     },
     {
       "label": "Communications - Preferred Communication Methods",
-      "url": "{url}/civicrm/admin/options/preferred_communication_method?reset=1"
+      "url": "{url}/civicrm/admin/options/preferred_communication_method?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Communications - Label Formats",
@@ -303,19 +284,5 @@
       "label": "CiviMember - Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/member?reset=1"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/administer-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/administer-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/administer-menu",
-    "ci_report": "./backstop_data/ci_report/administer-menu"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }

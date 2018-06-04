@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 900
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "New Individual",
@@ -45,11 +38,6 @@
       "label": "Import Contact - Step 2",
       "url": "{url}/civicrm/import/contact?reset=1",
       "onReadyScript": "contact/step-2.js"
-    },
-    {
-      "label": "Import Contact - Step 3",
-      "url": "{url}/civicrm/import/contact?reset=1",
-      "onReadyScript": "contact/step-3.js"
     },
     {
       "label": "Find and merge duplicates",
@@ -95,19 +83,5 @@
       "url": "{url}/civicrm/tag?",
       "onReadyScript": "contact/add-tag-set.js"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/contact-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/contact-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/contact-menu",
-    "ci_report": "./backstop_data/ci_report/contact-menu"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }

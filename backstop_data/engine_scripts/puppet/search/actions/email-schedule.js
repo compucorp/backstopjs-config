@@ -10,4 +10,5 @@ module.exports = async (engine, scenario, vp) => {
   await engine.waitFor('.crm-wizard', { visible: true });
   await engine.waitFor('.content > .select2-container.crm-group-ref', { visible: true });
   await require('../../common/close-notifications')(engine, scenario, vp);
+  await engine.waitFor('.select2-search-choice', { visible: true });
 };

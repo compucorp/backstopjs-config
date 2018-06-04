@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 900
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Events - Dashboard",
@@ -14,15 +7,6 @@
     {
       "label": "Register Event Participant",
       "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone"
-    },
-    {
-      "label": "Find Participants",
-      "url": "{url}/civicrm/event/search?reset=1"
-    },
-    {
-      "label": "Find Participants result",
-      "url": "{url}/civicrm/event/search?reset=1",
-      "onReadyScript": "events/find-participants.js"
     },
     {
       "label": "Event Reports",
@@ -74,19 +58,5 @@
       "label": "CiviEvent Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/event?reset=1"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/events-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/events-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/events-menu",
-    "ci_report": "./backstop_data/ci_report/events-menu"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }

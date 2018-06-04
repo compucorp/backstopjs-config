@@ -1,31 +1,9 @@
 {
-  "viewports": [
-    {
-      "name": "desktop",
-      "width": 1920,
-      "height": 900
-    }
-  ],
-  "onBeforeScript": "login.js",
   "scenarios": [
     {
       "label": "Component - CRM Error",
       "url": "{url}/civicrm/group/add?reset=1",
       "onReadyScript": "components/crm-error.js"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/components/reference",
-    "bitmaps_test": "./backstop_data/screenshots/components/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/components",
-    "ci_report": "./backstop_data/ci_report/components"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }

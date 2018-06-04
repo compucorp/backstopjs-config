@@ -1,11 +1,4 @@
 {
-  "viewports": [{
-    "name": "desktop",
-    "width": 1920,
-    "height": 900
-  }],
-  "onBeforeScript": "login.js",
-  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Contributions - Dashboard",
@@ -79,7 +72,8 @@
     },
     {
       "label": "Batch Data Entry",
-      "url": "{url}/civicrm/batch?reset=1"
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/batches.js"
     },
     {
       "label": "New Batch Data Entry",
@@ -90,16 +84,19 @@
       "url": "{url}/civicrm/financial/batch?reset=1&action=add"
     },
     {
-      "label": "Accouting Batch - Open Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1"
+      "label": "Accounting Batch - Open Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1",
+      "onReadyScript": "contributions/batches.js"
     },
     {
-      "label": "Accouting Batch - Closed Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2"
+      "label": "Accounting Batch - Closed Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2",
+      "onReadyScript": "contributions/batches.js"
     },
     {
-      "label": "Accouting Batch - Exported Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5"
+      "label": "Accounting Batch - Exported Batches",
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5",
+      "onReadyScript": "contributions/batches.js"
     },
     {
       "label": "New Contribution Page",
@@ -156,26 +153,8 @@
       "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
-      "label": "Payment Processor",
-      "url": "{url}/civicrm/admin/paymentProcessor?reset=1"
-    },
-    {
       "label": "CiviContribute Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1"
     }
-  ],
-  "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
-    "engine_scripts": "./backstop_data/engine_scripts/puppet",
-    "html_report": "./backstop_data/html_report/contributions-menu",
-    "ci_report": "./backstop_data/ci_report/contributions-menu"
-  },
-  "engine": "puppeteer",
-  "report": ["CLI", "browser"],
-  "casperFlags": ["--log-level=info"],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+  ]
 }
