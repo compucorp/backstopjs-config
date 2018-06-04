@@ -4,18 +4,12 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Standard Search",
-      "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js"
+      "url": "{url}/civicrm/contact/search?reset=1"
     },
     {
       "label": "Standard Search - with many options",
@@ -23,352 +17,177 @@
       "selectors": [
         ".CRM_Contact_Form_Search_Basic"
       ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/with-many-options"
+      "onReadyScript": "search/with-many-options.js"
     },
     {
       "label": "Standard Search - result",
       "url": "{url}/civicrm/contact/search?reset=1",
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/find-contact"
+      "onReadyScript": "search/find-contact.js"
     },
     {
       "label": "Advanced Search",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "Advanced Search - result",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/advanced-find-contact"
+      "onReadyScript": "search/advanced-find-contact.js"
     },
     {
       "label": "Full-text Search",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1"
     },
     {
       "label": "Full-text Search - result",
       "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "search/full-text-result"
+      "onReadyScript": "search/full-text-result.js"
     },
     {
       "label": "Search builder",
       "url": "{url}/civicrm/contact/search/builder?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Find Participants",
       "url": "{url}/civicrm/event/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Find Participants - result",
       "url": "{url}/civicrm/event/search?reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/find-participants",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/find-participants.js"
     },
     {
       "label": "Find Activities",
       "url": "{url}/civicrm/activity/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Find Activities - result",
       "url": "{url}/civicrm/activity/search?reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/find-activities",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/find-activities.js"
     },
     {
       "label": "Custom Searches",
       "url": "{url}/civicrm/contact/search/custom/list?reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Household Name and State",
       "url": "{url}/civicrm/contact/search/custom?csid=1&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Household Name and State - result",
       "url": "{url}/civicrm/contact/search/custom?csid=1&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     },
     {
       "label": "Custom Searches - Contribution Aggregate",
       "url": "{url}/civicrm/contact/search/custom?csid=2&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Contribution Aggregate - result",
       "url": "{url}/civicrm/contact/search/custom?csid=2&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     },
     {
       "label": "Custom Searches - Basic Search",
       "url": "{url}/civicrm/contact/search/custom?csid=3&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Basic Search - result",
       "url": "{url}/civicrm/contact/search/custom?csid=3&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search-basic",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search-basic.js"
     },
     {
       "label": "Custom Searches - Include / Exclude Search",
       "url": "{url}/civicrm/contact/search/custom?csid=4&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Include / Exclude Search - result",
       "url": "{url}/civicrm/contact/search/custom?csid=4&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search-include-exclude",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search-include-exclude.js"
     },
     {
       "label": "Custom Searches - Postal Mailing",
       "url": "{url}/civicrm/contact/search/custom?csid=5&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Postal Mailing - result",
       "url": "{url}/civicrm/contact/search/custom?csid=5&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     },
     {
       "label": "Custom Searches - Proximity Search",
       "url": "{url}/civicrm/contact/search/custom?csid=6&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Event Aggregate",
       "url": "{url}/civicrm/contact/search/custom?csid=7&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Event Aggregate - result",
       "url": "{url}/civicrm/contact/search/custom?csid=7&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     },
     {
       "label": "Custom Searches - Activity Search",
       "url": "{url}/civicrm/contact/search/custom?csid=8&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Activity Search - result",
       "url": "{url}/civicrm/contact/search/custom?csid=8&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     },
     {
       "label": "Custom Searches - Zip Code Range",
       "url": "{url}/civicrm/contact/search/custom?csid=10&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Date Added to CiviCRM",
       "url": "{url}/civicrm/contact/search/custom?csid=11&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "hideSelectors": ["#mainTabContainer"]
     },
     {
       "label": "Custom Searches - Date Added to CiviCRM - result",
       "url": "{url}/civicrm/contact/search/custom?csid=11&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "onReadyScript": "search/custom-search",
-      "misMatchThreshold": 0.1
+      "onReadyScript": "search/custom-search.js"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/search-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/search-menu/test",
-    "compare_data": "./backstop_data/screenshots/search-menu/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
+    "html_report": "./backstop_data/html_report/search-menu",
+    "ci_report": "./backstop_data/ci_report/search-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }

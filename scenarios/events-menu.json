@@ -4,149 +4,89 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Events - Dashboard",
-      "url": "{url}/civicrm/event?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js"
+      "url": "{url}/civicrm/event?reset=1"
     },
     {
       "label": "Register Event Participant",
-      "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone"
     },
     {
       "label": "Find Participants",
-      "url": "{url}/civicrm/event/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/event/search?reset=1"
     },
     {
       "label": "Find Participants result",
       "url": "{url}/civicrm/event/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "events/find-participants"
+      "onReadyScript": "events/find-participants.js"
     },
     {
       "label": "Event Reports",
-      "url": "{url}/civicrm/report/list?compid=1&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/report/list?compid=1&reset=1"
     },
     {
       "label": "New Event",
       "url": "{url}/civicrm/event/add?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Manage Events",
-      "url": "{url}/civicrm/event/manage?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/event/manage?reset=1"
     },
     {
       "label": "Import Participants",
-      "url": "{url}/civicrm/event/import?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/event/import?reset=1"
     },
     {
       "label": "Event Templates",
-      "url": "{url}/civicrm/admin/eventTemplate?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/eventTemplate?reset=1"
     },
     {
       "label": "Event Type Options",
       "url": "{url}/civicrm/admin/options/event_type?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Participant Status",
-      "url": "{url}/civicrm/admin/participant_status?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/participant_status?reset=1"
     },
     {
       "label": "Participant Role Options",
-      "url": "{url}/civicrm/admin/options/participant_role?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/options/participant_role?reset=1"
     },
     {
       "label": "Participant Listing Options",
-      "url": "{url}/civicrm/admin/options/participant_listing?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/options/participant_listing?reset=1"
     },
     {
       "label": "Event Name Badge Layouts",
-      "url": "{url}/civicrm/admin/badgelayout?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/badgelayout?reset=1"
     },
     {
       "label": "New Event Name Badge Layout",
-      "url": "{url}/civicrm/admin/badgelayout?action=add&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/badgelayout?action=add&reset=1"
     },
     {
       "label": "CiviEvent Component Settings",
-      "url": "{url}/civicrm/admin/setting/preferences/event?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/setting/preferences/event?reset=1"
     }
   ],
   "paths": {
-    "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
-    "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
-    "compare_data": "./backstop_data/screenshots/contributions-menu/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "bitmaps_reference": "./backstop_data/screenshots/events-menu/reference",
+    "bitmaps_test": "./backstop_data/screenshots/events-menu/test",
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
+    "html_report": "./backstop_data/html_report/events-menu",
+    "ci_report": "./backstop_data/ci_report/events-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }

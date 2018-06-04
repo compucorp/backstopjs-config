@@ -3,7 +3,7 @@
 module.exports = function (casper, scenario, vp) {
   var config;
   try {
-    config = require('../configs/crm-config');
+    config = require('../../../configs/crm-config');
   } catch (e) {
     var sampleStructure =
       '{"url": "YOUR LOCAL URL", "credentials": {"name": "YOUR USERNAME", "pass": "YOUR PASSWORD"}}';

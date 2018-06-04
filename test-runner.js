@@ -66,22 +66,22 @@ function createAllFile(scenarios) {
       "width": 1920,
       "height": 3000
     }],
+    "onBeforeScript": "login.js",
+    "scenarios": scenarios,
     "paths": {
       "bitmaps_reference": "./backstop_data/screenshots/all/reference",
       "bitmaps_test": "./backstop_data/screenshots/all/test",
-      "compare_data": "./backstop_data/screenshots/all/compare.json",
-      "casper_scripts": "./casper_scripts"
+      "engine_scripts": "./backstop_data/engine_scripts/puppet",
+      "html_report": "./backstop_data/html_report/all",
+      "ci_report": "./backstop_data/ci_report/all"
     },
-    "engine": "phantomjs",
-    "report": ["browser"],
-    "cliExitOnFail": false,
-    "casperFlags": ["--log-level=info"],
+    "engine": "puppeteer",
+    "report": ["CLI", "browser"],
+    "asyncCaptureLimit": 1,
+    "asyncCompareLimit": 50,
     "debug": false,
-    "port": 3001
+    "debugWindow": false
   };
-
-  scenarios[0]['onBeforeScript'] = 'login.js';
-  tmpFileData['scenarios'] = scenarios;
 
   writeTmpFile(replaceURL(JSON.stringify(tmpFileData)));
 }

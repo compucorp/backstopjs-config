@@ -4,314 +4,178 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "Contributions - Dashboard",
       "url": "{url}/civicrm/contribute?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js"
+      "onReadyScript": "contributions/dashboard.js"
     },
     {
       "label": "Contributions - New Contribution",
       "url": "{url}/civicrm/contribute/add?reset=1&action=add&context=standalone",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "contributions/new-contribution.js"
     },
     {
       "label": "Contributions - Dashboard - Table",
-      "url": "{url}/civicrm/contribute?reset=1#table_layout",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 2000,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contribute?reset=1#table_layout"
     },
     {
       "label": "Contributions - Manage Contribution Pages",
-      "url": "{url}/civicrm/admin/contribute?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/contribute?reset=1"
     },
     {
       "label": "Contributions - Find Contributions",
       "url": "{url}/civicrm/contribute/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/search-result"
+      "onReadyScript": "contributions/search-result.js"
     },
     {
       "label": "Contribution Reports",
-      "url": "{url}/civicrm/report/list?compid=2&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/report/list?compid=2&reset=1"
     },
     {
       "label": "Import Contributions",
-      "url": "{url}/civicrm/contribute/import?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contribute/import?reset=1"
     },
     {
       "label": "Pledges - Dashboard",
-      "url": "{url}/civicrm/pledge?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/pledge?reset=1"
     },
     {
       "label": "Pledges - New Pledge",
-      "url": "{url}/civicrm/pledge/add?reset=1&action=add&context=standalone",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/pledge/add?reset=1&action=add&context=standalone"
     },
     {
       "label": "Pledges - Find Pledges",
-      "url": "{url}/civicrm/pledge/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/pledge/search?reset=1"
     },
     {
       "label": "Pledges - Find Pledges result",
       "url": "{url}/civicrm/pledge/search?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/find-pledges"
+      "onReadyScript": "contributions/find-pledges.js"
     },
     {
       "label": "Pledges - Pledge Reports",
-      "url": "{url}/civicrm/report/list?compid=6&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/report/list?compid=6&reset=1"
     },
     {
       "label": "Pledges - New Pledge Report",
-      "url": "{url}/civicrm/report/template/list?reset=1&compid=6",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/report/template/list?reset=1&compid=6"
     },
     {
       "label": "Pledges - New Pledge Detail Report",
-      "url": "{url}/civicrm/report/pledge/detail?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/report/pledge/detail?reset=1"
     },
     {
       "label": "Pledges - New Pledge Detail Report - Sorting",
       "url": "{url}/civicrm/report/pledge/detail?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/new-pledge-sorting"
+      "onReadyScript": "contributions/new-pledge-sorting.js"
     },
     {
       "label": "Pledges - New Pledge Detail Report - Filters",
       "url": "{url}/civicrm/report/pledge/detail?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/new-pledge-filters"
+      "onReadyScript": "contributions/new-pledge-filters.js"
     },
     {
       "label": "Batch Data Entry",
-      "url": "{url}/civicrm/batch?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/batch?reset=1"
     },
     {
       "label": "New Batch Data Entry",
-      "url": "{url}/civicrm/batch/add?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/batch/add?reset=1&action=add"
     },
     {
       "label": "New Financial Batch",
-      "url": "{url}/civicrm/financial/batch?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/financial/batch?reset=1&action=add"
     },
     {
       "label": "Accouting Batch - Open Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=1"
     },
     {
       "label": "Accouting Batch - Closed Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=2"
     },
     {
       "label": "Accouting Batch - Exported Batches",
-      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/financial/financialbatches?reset=1&batchStatus=5"
     },
     {
       "label": "New Contribution Page",
       "url": "{url}/civicrm/admin/contribute/add?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-wysiwyg.js"
     },
     {
       "label": "Personal Campaign Pages",
-      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute"
     },
     {
       "label": "Premiums (Thank-you Gifts)",
-      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1"
     },
     {
       "label": "Premiums (Thank-you Gifts) - Add Premium",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
       "selectors": [".ui-dialog"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contributions/new-premium"
+      "onReadyScript": "contributions/new-premium.js"
     },
     {
       "label": "New Price Set",
-      "url": "{url}/civicrm/admin/price?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/price?reset=1&action=add"
     },
     {
       "label": "Manage Price Set",
-      "url": "{url}/civicrm/admin/price?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/price?reset=1"
     },
     {
       "label": "Close Accounting Period",
-      "url": "{url}/civicrm/admin/contribute/closeaccperiod?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/contribute/closeaccperiod?reset=1"
     },
     {
       "label": "Financial Types",
-      "url": "{url}/civicrm/admin/financial/financialType?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/financial/financialType?reset=1"
     },
     {
       "label": "Financial Accounts",
-      "url": "{url}/civicrm/admin/financial/financialAccount?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/financial/financialAccount?reset=1"
     },
     {
       "label": "Payment Methods Options",
       "url": "{url}/civicrm/admin/options/payment_instrument?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Accepted Credit Cards Options",
       "url": "{url}/civicrm/admin/options/accept_creditcard?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Soft Credit Types Options",
       "url": "{url}/civicrm/admin/options/soft_credit_type?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "common/wait-for-editable-icon.js"
     },
     {
       "label": "Payment Processor",
-      "url": "{url}/civicrm/admin/paymentProcessor?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/paymentProcessor?reset=1"
     },
     {
       "label": "CiviContribute Component Settings",
-      "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/contributions-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/contributions-menu/test",
-    "compare_data": "./backstop_data/screenshots/contributions-menu/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
+    "html_report": "./backstop_data/html_report/contributions-menu",
+    "ci_report": "./backstop_data/ci_report/contributions-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }

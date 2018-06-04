@@ -4,208 +4,110 @@
     "width": 1920,
     "height": 900
   }],
-  "onReadyScript": "common/close-notifications",
+  "onBeforeScript": "login.js",
+  "onReadyScript": "common/close-notifications.js",
   "scenarios": [
     {
       "label": "New Individual",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Individual",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 3500,
-      "misMatchThreshold": 0.1,
-      "onBeforeScript": "login.js",
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New Household",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Household",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 3500,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New Organization",
       "url": "{url}/index.php?q=civicrm/contact/add&reset=1&ct=Organization",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 3500,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New activity",
       "url": "{url}/civicrm/activity?reset=1&action=add&context=standalone",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "New email",
       "url": "{url}/civicrm/activity/email/add?atype=3&action=add&reset=1&context=standalone",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "Contact Reports",
       "url": "{url}/index.php?q=civicrm/report/list&compid=99&reset=1",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        "body"
-      ],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "common/open-accordions"
+      "onReadyScript": "common/open-accordions.js"
     },
     {
       "label": "Import Contact",
-      "url": "{url}/civicrm/import/contact?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/import/contact?reset=1"
     },
     {
       "label": "Import Contact - Step 2",
       "url": "{url}/civicrm/import/contact?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/step-2"
+      "onReadyScript": "contact/step-2.js"
     },
     {
       "label": "Import Contact - Step 3",
       "url": "{url}/civicrm/import/contact?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/step-3"
-    },
-    {
-      "label": "Import Contact - Step 4",
-      "url": "{url}/civicrm/import/contact?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/step-4"
+      "onReadyScript": "contact/step-3.js"
     },
     {
       "label": "Find and merge duplicates",
-      "url": "{url}/civicrm/contact/deduperules?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contact/deduperules?reset=1"
     },
     {
       "label": "Find and merge duplicates - Dedupe Exceptions",
-      "url": "{url}/civicrm/dedupe/exception?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/dedupe/exception?reset=1"
     },
     {
       "label": "Find and merge duplicates - Add rule for Household",
-      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Household&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Household&reset=1"
     },
     {
       "label": "Find and merge duplicates - Add rule for Individuals",
-      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Individual&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Individual&reset=1"
     },
     {
       "label": "Find and merge duplicates - Add rule for Organizations",
-      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Organization&reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Organization&reset=1"
     },
     {
       "label": "New Group",
-      "url": "{url}/civicrm/group/add?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "url": "{url}/civicrm/group/add?reset=1"
     },
     {
       "label": "Manage Groups",
       "url": "{url}/civicrm/group?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/manage-groups"
+      "onReadyScript": "contact/manage-groups.js"
     },
     {
       "label": "Tags",
       "url": "{url}/civicrm/tag?reset=1",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1
+      "onReadyScript": "contact/tags.js"
     },
     {
       "label": "Tags - Add Tag",
       "url": "{url}/civicrm/tag?reset=1&action=add",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/add-tag"
+      "onReadyScript": "contact/add-tag.js"
     },
     {
       "label": "Tags - Add Tag set",
       "url": "{url}/civicrm/tag?",
-      "selectors": ["body"],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold": 0.1,
-      "onReadyScript": "contact/add-tag-set"
+      "onReadyScript": "contact/add-tag-set.js"
     }
   ],
   "paths": {
     "bitmaps_reference": "./backstop_data/screenshots/contact-menu/reference",
     "bitmaps_test": "./backstop_data/screenshots/contact-menu/test",
-    "compare_data": "./backstop_data/screenshots/contact-menu/compare.json",
-    "casper_scripts": "./casper_scripts"
+    "engine_scripts": "./backstop_data/engine_scripts/puppet",
+    "html_report": "./backstop_data/html_report/contact-menu",
+    "ci_report": "./backstop_data/ci_report/contact-menu"
   },
-  "engine": "phantomjs",
+  "engine": "puppeteer",
   "report": ["CLI", "browser"],
-  "cliExitOnFail": false,
   "casperFlags": ["--log-level=info"],
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3001
+  "debugWindow": false
 }
