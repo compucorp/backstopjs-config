@@ -39,6 +39,26 @@
       "onReadyScript": "search/full-text-result.js"
     },
     {
+      "label": "Full text Search - Contact - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contact"
+    },
+    {
+      "label": "Full text Search - Activities - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Activity"
+    }, 
+    {
+      "label": "Full text Search - Contributions - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contribution"
+    },   
+   {
+      "label": "Full text Search - Participants - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Participant"
+    },   
+    {
+      "label": "Full text Search - Memberships - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Membership"
+    },             
+    {
       "label": "Search builder",
       "url": "{url}/civicrm/contact/search/builder?reset=1",
       "hideSelectors": ["#mainTabContainer"]
