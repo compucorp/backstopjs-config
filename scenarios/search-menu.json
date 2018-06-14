@@ -44,6 +44,10 @@
       "hideSelectors": ["#mainTabContainer"]
     },
     {
+      "label": "Search Builder - Search result",
+      "url": "{url}/civicrm/contact/search/builder?reset=1"
+    },
+    {
       "label": "Find Participants",
       "url": "{url}/civicrm/event/search?reset=1",
       "hideSelectors": ["#mainTabContainer"]
