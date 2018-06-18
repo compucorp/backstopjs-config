@@ -9,6 +9,36 @@
       "url": "{url}/civicrm/member/search?reset=1"
     },
     {
+      "label": "Find Memberships - View Modal - Results ",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "membership/find-memberships-view.js"
+    },
+    {
+      "label": "Find Memberships - Edit Modal - Results ",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "membership/find-memberships-edit.js"
+    },
+    {
+      "label": "Find Memberships - Delete Modal - Results ",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "membership/find-memberships-delete.js"
+    },
+    {
+      "label": "Find Memberships - Renew Modal - Results ",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "membership/find-memberships-renew.js"
+    },
+    {
+      "label": "Find Memberships - Renew Credit Card Modal - Results ",
+      "url": "{url}/civicrm/member/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "membership/find-memberships-renew-cc.js"
+    },  
+    {
       "label": "Membership - New Membership",
       "url": "{url}/civicrm/member/add?reset=1&action=add&context=standalone"
     },
