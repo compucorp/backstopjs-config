@@ -64,6 +64,27 @@
       "url": "{url}/civicrm/group/add?reset=1"
     },
     {
+      "label": "New Group - Add a new Group (Step1) ",
+      "url": "{url}/civicrm/group/add?reset=1",
+      "onReadyScript": "contact/add-new-group-step1.js"
+    },
+    {
+      "label": "New Group - Add a new Group - Search Results (Step2)",
+      "url": "{url}/civicrm/group/add?reset=1",
+      "onReadyScript": "contact/add-new-group-step2.js"
+    },
+    {
+      "label": "New Group - Add to group - Search Results - Add Contact to group (Step3)",
+      "url": "{url}/civicrm/group/add?reset=1",
+      "onReadyScript": "contact/add-new-group-step3.js"
+    },
+    {
+      "label": "New Group - Add to group - Search Results - Add Contact to group - View selected contacts",
+      "url": "{url}/civicrm/group/add?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/add-new-group-view-selected-contacts.js"
+    },
+    {
       "label": "Manage Groups",
       "url": "{url}/civicrm/group?reset=1",
       "onReadyScript": "contact/manage-groups.js"
