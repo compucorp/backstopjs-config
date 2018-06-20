@@ -42,11 +42,14 @@ module.exports = class CrmPage {
    * Closes all active notifications.
    */
   async closeErrorNotifications () {
-    const exists = !!(await this.engine.$('.ui-notify-message'));
-
-    if (exists) {
-      await this.engine.click('a.ui-notify-cross.ui-notify-close');
-      await this.engine.waitFor('.ui-notify-message', { hidden: true });
+    while(1) {
+      const exists = !!(await this.engine.$('.ui-notify-message'));
+      if (exists) {
+        await this.engine.click('a.ui-notify-cross.ui-notify-close');
+      } else {
+        await this.engine.waitFor('.ui-notify-message', { hidden: true });
+        return;
+      }
     }
   }
 
