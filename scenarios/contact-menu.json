@@ -69,6 +69,50 @@
       "onReadyScript": "contact/manage-groups.js"
     },
     {
+      "label": "Manage Groups - Edit Group settings modal",
+      "url": "{url}/civicrm/group?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/manage-groups-settings-modal.js"
+    },
+    {
+      "label": "Manage Groups - Add Contacts screen - results",
+      "url": "{url}/civicrm/group?reset=1",
+      "onReadyScript": "contact/manage-groups-edit-group-add-contacts.js"
+    },
+    {
+      "label": "Manage Groups - Add Contacts to the group form - search form - results",
+      "url": "{url}/civicrm/group?reset=1",
+      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-search-form.js"
+    },
+    {
+      "label": "Manage Groups - Add Contacts to the group form - results form - results",
+      "url": "{url}/civicrm/group?reset=1",
+      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-results-form.js"
+    },
+    {
+      "label": "Manage Groups - Add Contacts to the group form - finalizing contacts to add - results",
+      "url": "{url}/civicrm/group?reset=1",
+      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-finalizing-contacts.js"
+    },
+    {
+      "label": "Manage Groups - Add Contacts to the group form - view selected contacts - results",
+      "url": "{url}/civicrm/group?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-view-selected-contacts.js"
+    },   
+    {
+      "label": "Manage Groups - Add Contacts to the group form - Add New group Modal",
+      "url": "{url}/civicrm/group?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/manage-groups-edit-group-add-new-group-modal.js"
+    },    
+    {
+      "label": "Manage Groups - Add Contacts to the group form - Delete group Modal",
+      "url": "{url}/civicrm/group?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/manage-groups-edit-group-delete-group-modal.js"
+    },
+    {
       "label": "Tags",
       "url": "{url}/civicrm/tag?reset=1",
       "onReadyScript": "contact/tags.js"
@@ -82,6 +126,18 @@
       "label": "Tags - Add Tag set",
       "url": "{url}/civicrm/tag?",
       "onReadyScript": "contact/add-tag-set.js"
+    },
+    {
+      "label": "Tags - Clone Tags",
+      "url": "{url}/civicrm/tag?",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/clone-tags-modal.js"
+    },
+    {
+      "label": "Tags - Delete Tags Modal",
+      "url": "{url}/civicrm/tag?",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "contact/delete-tags-modal.js"
     }
   ]
 }
