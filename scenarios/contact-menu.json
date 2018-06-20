@@ -60,6 +60,42 @@
       "url": "{url}/civicrm/contact/deduperules?action=add&contact_type=Organization&reset=1"
     },
     {
+      "label": "Find and Merge Duplicate Contacts - Edit Household Rule  - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-edit-rule-household.js"
+    },
+    {
+      "label": "Find and Merge Duplicate Contacts - Edit Individual Rule  - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-edit-rule-individual.js"
+    },
+    {
+      "label": "Find and Merge Duplicate Contacts - Edit Organisation Rule  - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-edit-rule-organisation.js"
+    },
+    {
+      "label": "Find and Merge Duplicate Contacts - Use Rule - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-use-rule.js"
+    },    
+    {
+      "label": "Find and Merge Duplicate Contacts - Use Rule - Show duplicate contacts - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-show-duplicates.js"
+    },
+    {
+      "label": "Find and Merge Duplicate Contacts - Use Rule - Merge duplicate contacts - results",
+      "url": "{url}/civicrm/contact/deduperules?reset=1",
+      "onReadyScript": "contact/find-and-merge-duplicate-contacts.js"
+    },
+    {
+    "label": "Find and Merge Duplicate Contacts - Use Rule - Not a Duplicate Modal - results",
+    "url": "{url}/civicrm/contact/deduperules?reset=1",
+    "selectors": [".ui-dialog"],
+    "onReadyScript": "contact/find-and-merge-not-duplicate-modal.js"
+    },
+    {
       "label": "New Group",
       "url": "{url}/civicrm/group/add?reset=1"
     },
