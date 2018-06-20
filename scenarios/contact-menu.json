@@ -21,7 +21,7 @@
       "onReadyScript": "common/open-accordions.js"
     },
     {
-      "label": "New email",
+      "label": "New Email",
       "url": "{url}/civicrm/activity/email/add?atype=3&action=add&reset=1&context=standalone",
       "onReadyScript": "common/open-accordions.js"
     },
@@ -66,51 +66,51 @@
     {
       "label": "Manage Groups",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups.js"
+      "onReadyScript": "manage-groups/manage-groups.js"
     },
     {
-      "label": "Manage Groups - Edit Group settings modal",
+      "label": "Manage Groups - Edit Group settings Modal",
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact/manage-groups-settings-modal.js"
+      "onReadyScript": "manage-groups/manage-groups-settings-modal.js"
     },
     {
       "label": "Manage Groups - Add Contacts screen - results",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups-edit-group-add-contacts.js"
+      "onReadyScript": "manage-groups/add-contacts-to-group.js"
     },
     {
-      "label": "Manage Groups - Add Contacts to the group form - search form - results",
+      "label": "Manage Groups - Add Contacts to the group form - Search form - results",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-search-form.js"
+      "onReadyScript": "manage-groups/add-contacts-to-group-search-form.js"
     },
     {
-      "label": "Manage Groups - Add Contacts to the group form - results form - results",
+      "label": "Manage Groups - Add Contacts to the group form - Results form - results",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-results-form.js"
+      "onReadyScript": "manage-groups/add-contacts-to-group-results.js"
     },
     {
-      "label": "Manage Groups - Add Contacts to the group form - finalizing contacts to add - results",
+      "label": "Manage Groups - Add Contacts to the group form - Confirm contacts to add - results",
       "url": "{url}/civicrm/group?reset=1",
-      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-finalizing-contacts.js"
+      "onReadyScript": "manage-groups/add-contacts-to-group-confirm.js"
     },
     {
-      "label": "Manage Groups - Add Contacts to the group form - view selected contacts - results",
+      "label": "Manage Groups - Add Contacts to the group form - View selected contacts - results",
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact/manage-groups-edit-group-add-contacts-to-group-view-selected-contacts.js"
+      "onReadyScript": "manage-groups/add-contacts-to-group-view-selected-contacts.js"
     },   
     {
-      "label": "Manage Groups - Add Contacts to the group form - Add New group Modal",
+      "label": "Manage Groups - Add Contacts to the group form - Add new group Modal",
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact/manage-groups-edit-group-add-new-group-modal.js"
+      "onReadyScript": "manage-groups/add-new-group-modal.js"
     },    
     {
       "label": "Manage Groups - Add Contacts to the group form - Delete group Modal",
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contact/manage-groups-edit-group-delete-group-modal.js"
+      "onReadyScript": "manage-groups/delete-group-modal.js"
     },
     {
       "label": "Tags",
