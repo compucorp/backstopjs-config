@@ -1,6 +1,9 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
-  engine.click('#browseValues_Individual a[title="Edit DedupeRule"]');
-  engine.waitForNavigation();
+  const page = new Page(engine, scenario, vp);
+  
+  await page.clickAndWaitForNavigation('#browseValues_Individual a[title="Edit DedupeRule"]');
 };

@@ -1,9 +1,10 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = new Page(engine, scenario, vp);
+
   await require('./manage-groups')(engine, scenario, vp);
-  await Promise.all([
-    engine.click('a[title="Group Contacts"]'),
-    engine.waitForNavigation()
-  ]);
+  await page.clickAndWaitForNavigation('a[title="Group Contacts"]');
 };

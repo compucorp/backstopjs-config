@@ -88,4 +88,16 @@ module.exports = class CrmPage {
   async waitForWYSIWYG () {
     await this.engine.waitFor('.cke', { visible: true });
   }
+  /**
+   * Waits for the Navigation to happens after some link (selector) is clicked.
+   *
+   * @param {String} selector - the css selector for the element to click and wait for navigation.
+   */
+  async clickAndWaitForNavigation (selector) {
+    await this.engine.waitForSelector(selector);
+    await Promise.all([
+      this.engine.click(selector),
+      this.engine.waitForNavigation()
+    ]);      
+  }
 }
