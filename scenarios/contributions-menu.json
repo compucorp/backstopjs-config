@@ -20,37 +20,41 @@
     },
     {
       "label": "Contributions - Find Contributions",
-      "url": "{url}/civicrm/contribute/search?reset=1",
-      "onReadyScript": "contributions/search-result.js"
+      "url": "{url}/civicrm/contribute/search?reset=1"
     },
     {
       "label": "Find Contributions - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
-      "onReadyScript": "contributions/find-contributions-results.js"
+      "onReadyScript": "find-contributions/search.js"
     },
     {
       "label": "Find Contributions  - View contribution modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/find-contributions-view-modal.js"
+      "onReadyScript": "find-contributions/view-modal.js"
     },
     {
       "label": "Find Contributions - Edit contribution modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/find-contributions-edit-modal.js"
+      "onReadyScript": "find-contributions/edit-modal.js"
     },    
     {
       "label": "Find Contributions - Delete contribution Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/find-contributions-delete-modal.js"
-    },    
+      "onReadyScript": "find-contributions/delete-modal.js"
+    },
+    {
+      "label": "Find Contributions - Show Individual Payments - Results",
+      "url": "{url}/civicrm/contribute/search?reset=1",
+      "onReadyScript": "find-contributions/show-individual-payment.js"
+    },
     {
       "label": "Find Contributions - Edit Payments Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/find-contributions-edit-payments-modal.js"
+      "onReadyScript": "find-contributions/edit-individual-payments-modal.js"
     }, 
     {
       "label": "Contribution Reports",
