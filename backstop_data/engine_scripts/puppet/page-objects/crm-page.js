@@ -27,15 +27,16 @@ module.exports = class CrmPage {
    * @param {String} label
    */
   async clickSelect2Option(selector, label) {
-    await this.engine.click(`${selector} [class^="select2-choice"]`);
-    await this.engine.evaluate(label => {
+    await this.engine.evaluate((label, selector) => {
+      document.querySelector(`${selector} [class^="select2-choice"]`).click();
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       const event = document.createEvent('MouseEvent');
 
       event.initMouseEvent('mouseup', true, true);
-      item.dispatchEvent(event);
-    }, label)
+      item.dispatchEvent(event);  
+      
+    }, label, selector)
   }
 
   /**
