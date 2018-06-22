@@ -113,6 +113,22 @@
       "url": "{url}/civicrm/batch/add?reset=1&action=add"
     },
     {
+      "label": "Batch Data Entry - Enter Records - results",
+      "url": "{url}/civicrm/batch?reset=1",
+      "selectors": ["#crm-batch-entry-table", "#content"],
+      "onReadyScript": "contributions/enter-records.js"
+    },
+    {
+      "label": "Batch Data Entry - Edit batch - results",
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/edit-batch.js"
+    },
+    {
+      "label": "Batch Data Entry - Delete batch - results",
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/delete-batch.js"
+    },
+    {
       "label": "New Financial Batch",
       "url": "{url}/civicrm/financial/batch?reset=1&action=add"
     },
@@ -141,7 +157,57 @@
       "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute"
     },
     {
-      "label": "Contributions - Premiums (Thank-you Gifts)",
+      "label": "Personal Campaign Pages - Edit Campaign",
+      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute",
+      "onReadyScript": "contributions/edit-campaign.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Title and Settings - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/title-and-settings.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Contribution Amount - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/contribution-amount.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Membership Settings - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/membership-settings.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Thank you and  Reciepting - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/thankyou-and-reciepting.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Tell a Friend - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/tell-a-friend.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Include Profile - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/include-profile.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Contribution Widget - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/contribution-widget.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Premiums - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/premiums.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Personal Campaign Pages - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/personal-campaign-pages.js"
+    },
+    {
+      "label": "Premiums (Thank-you Gifts)",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1"
     },
     {

@@ -89,6 +89,7 @@ module.exports = class CrmPage {
   async waitForWYSIWYG () {
     await this.engine.waitFor('.cke', { visible: true });
   }
+
   /**
    * Waits for the Navigation to happens after some link (selector) is clicked.
    *
@@ -101,4 +102,18 @@ module.exports = class CrmPage {
       this.engine.waitForNavigation()
     ]);      
   }
+
+  /**
+   * Checks if the checkbox is enabled and checks it if not.
+   *
+   * @param {String} selector - the css selector for the checkbox to be click and enabled
+   */
+  async enableCheckbox (selector) {
+    const  checkbox = await this.engine.$(selector);
+    const checked = await (await checkbox.getProperty('checked')).jsonValue();
+    
+    if (!checked) {
+      await this.engine.click(selector);
+    }
+  }  
 }
