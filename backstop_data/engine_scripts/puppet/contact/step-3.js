@@ -7,8 +7,12 @@
  * was not possible to figure out the source of the issue, so the scenario had been
  * removed to avoid false positives
  */
+
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = new Page(engine, scenario, vp);
+
   await require('./step-2')(engine, scenario, vp);
-  await engine.click('#_qf_MapField_next-bottom');
-  await engine.waitForNavigation();
+  await page.clickAndWaitForNavigation('#_qf_MapField_next-bottom');
 };

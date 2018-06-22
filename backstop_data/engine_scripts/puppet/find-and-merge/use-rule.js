@@ -4,7 +4,6 @@ const Page = require('../page-objects/crm-page.js');
 
 module.exports = async (engine, scenario, vp) => {
   const page = new Page(engine, scenario, vp);
-
-  await require('./manage-groups')(engine, scenario, vp);
-  await page.clickAndWaitForNavigation('a[title="Group Contacts"]');
+  
+  await page.clickAndWaitForNavigation('a[title="Use DedupeRule"]');
 };

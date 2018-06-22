@@ -43,9 +43,9 @@ module.exports = class CrmPage {
    */
   async closeErrorNotifications () {
     const exists = !!(await this.engine.$('.ui-notify-message'));
-
     if (exists) {
-      await this.engine.click('a.ui-notify-cross.ui-notify-close');
+      console.log('Closing error notifications');
+      await this.clickAll('a.ui-notify-cross.ui-notify-close');  
       await this.engine.waitFor('.ui-notify-message', { hidden: true });
     }
   }
@@ -87,5 +87,17 @@ module.exports = class CrmPage {
    */
   async waitForWYSIWYG () {
     await this.engine.waitFor('.cke', { visible: true });
+  }
+  /**
+   * Waits for the Navigation to happens after some link (selector) is clicked.
+   *
+   * @param {String} selector - the css selector for the element to click and wait for navigation.
+   */
+  async clickAndWaitForNavigation (selector) {
+    await this.engine.waitForSelector(selector);
+    await Promise.all([
+      this.engine.click(selector),
+      this.engine.waitForNavigation()
+    ]);      
   }
 }

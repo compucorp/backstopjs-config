@@ -1,7 +1,10 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = new Page(engine, scenario, vp);
+  
   await engine.click('label[for="CIVICRM_QFID_1_andOr"]');
-  await engine.click('#_qf_Custom_refresh-bottom');
-  await engine.waitForNavigation();
+  await page.clickAndWaitForNavigation('#_qf_Custom_refresh-bottom');
 };
