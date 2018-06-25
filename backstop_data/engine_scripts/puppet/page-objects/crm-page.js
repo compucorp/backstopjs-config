@@ -27,8 +27,13 @@ module.exports = class CrmPage {
    * @param {String} label
    */
   async clickSelect2Option(selector, label) {
-    await this.engine.click(`${selector} [class^="select2-choice"] .select2-search-field`);
-
+    // Initialize the dropdown element to assume that the select2 element is a multi select and selecting the li to be clicked in that case.
+    let dropDownElement = await this.engine.$(`${selector} .select2-choices .select2-search-field`);
+    if (!dropDownElement) {
+      // Initialize the dropdown element to assume that the select2 element is a single select.
+      dropDownElement = await this.engine.$(`${selector} .select2-choice`);
+    }
+    await dropDownElement.click();
     await this.engine.evaluate((label, selector) => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;

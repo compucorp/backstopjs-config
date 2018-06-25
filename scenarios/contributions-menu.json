@@ -38,7 +38,7 @@
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/edit-modal.js"
-    },    
+    },
     {
       "label": "Find Contributions - Delete contribution Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
@@ -205,6 +205,11 @@
       "label": "Manage Contributions - Configure Personal Campaign Pages - result",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/personal-campaign-pages.js"
+    },
+    {
+      "label": "Manage Contributions - Setup Personal campaign - result",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/setup-personal-campaign.js"
     },
     {
       "label": "Premiums (Thank-you Gifts)",
