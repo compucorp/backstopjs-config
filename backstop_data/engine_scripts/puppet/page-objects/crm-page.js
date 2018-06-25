@@ -109,7 +109,7 @@ module.exports = class CrmPage {
    * @param {String} selector - the css selector for the checkbox to be click and enabled
    */
   async enableCheckbox (selector) {
-    const  checkbox = await this.engine.$(selector);
+    const checkbox = await this.engine.$(selector);
     const checked = await (await checkbox.getProperty('checked')).jsonValue();
     
     if (!checked) {
