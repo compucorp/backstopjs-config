@@ -27,22 +27,18 @@ module.exports = class CrmPage {
    * @param {String} label
    */
   async clickSelect2Option(selector, label) {
-    // Initialize the dropdown element to assume that the select2 element is a multi select and selecting the li to be clicked in that case.
-    let dropDownElement = await this.engine.$(`${selector} .select2-choices .select2-search-field`);
-    if (!dropDownElement) {
-      // Initialize the dropdown element to assume that the select2 element is a single select.
-      dropDownElement = await this.engine.$(`${selector} .select2-choice`);
-    }
-    await dropDownElement.click();
-    await this.engine.evaluate((label, selector) => {
+    // Check if the select2Options is for multiselect
+    const isMultiple = !!(await this.engine.$(`${selector} .select2-choices`));
+    await this.engine.click(`${selector} ` +  ( isMultiple ? '.select2-choices .select2-search-field' : '.select2-choice' ));
+
+    await this.engine.evaluate((label) => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       const event = document.createEvent('MouseEvent');
 
       event.initMouseEvent('mouseup', true, true);
-      item.dispatchEvent(event);  
-      
-    }, label, selector)
+      item.dispatchEvent(event);
+    }, label)
   }
 
   /**
