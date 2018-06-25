@@ -141,14 +141,38 @@
       "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute"
     },
     {
-      "label": "Premiums (Thank-you Gifts)",
+      "label": "Contributions - Premiums (Thank-you Gifts)",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1"
     },
     {
-      "label": "Premiums (Thank-you Gifts) - Add Premium",
+      "label": "Contributions - Premiums Pages - add Premium Modal",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/new-premium.js"
+      "onReadyScript": "premiums/add-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - edit Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/edit-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - preview Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/preview-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - disable Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/disable-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - delete Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/delete-modal.js"
     },
     {
       "label": "New Price Set",
