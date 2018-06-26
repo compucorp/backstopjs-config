@@ -1,3 +1,5 @@
+/* globals XPathResult */
+
 'use strict';
 
 module.exports = class CrmPage {
@@ -29,7 +31,6 @@ module.exports = class CrmPage {
     await this.engine.click(`${selector} [class^="select2-choice"]`);
     await this.engine.evaluate(label => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
-      let XPathResult;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       const event = document.createEvent('MouseEvent');
 
@@ -104,14 +105,15 @@ module.exports = class CrmPage {
 
   /**
    * Checks if there are no price fields present on the page or not
+   * 
    * @param {String} type - the title of the message to be displayed
    */
   async checkIfPriceFieldsAreEmpty (type) {
-    // checks for the messages div - appears if the list is empty.
     const priceFieldsEmpty = await this.engine.$('#crm-main-content-wrapper .messages');
     if (priceFieldsEmpty) {
       console.warn('No Price list present!');
       console.log(`Taking the "Price ${type} List" Page screenshot..`);
+
       return Promise.reject(new Error('list empty'));
     } else {
       return Promise.resolve('list not empty');
