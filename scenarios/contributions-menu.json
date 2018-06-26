@@ -38,7 +38,7 @@
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/edit-modal.js"
-    },    
+    },
     {
       "label": "Find Contributions - Delete contribution Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
@@ -55,7 +55,7 @@
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/edit-individual-payments-modal.js"
-    }, 
+    },
     {
       "label": "Contribution Reports",
       "url": "{url}/civicrm/report/list?compid=2&reset=1"
@@ -175,12 +175,73 @@
       "onReadyScript": "premiums/delete-modal.js"
     },
     {
-      "label": "New Price Set",
+      "label": "Contributions - New Price Set",
       "url": "{url}/civicrm/admin/price?reset=1&action=add"
     },
     {
-      "label": "Manage Price Set",
+      "label": "Contributions - Manage Price Set",
       "url": "{url}/civicrm/admin/price?reset=1"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Add Price Fields",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/add-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Edit Price Fields Set - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/edit-price-set.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/view-and-edit-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Preview Price Fields - results",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/preview-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Disable Price Fields - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/disable-price-set.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Add price field Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/add-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Preview all fields Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/preview-all-fields-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Edit price field Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/edit-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Preview price field Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/preview-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Disable price field Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/disable-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Delete price field Modal - results ",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/delete-price-field-modal.js"
     },
     {
       "label": "Close Accounting Period",
