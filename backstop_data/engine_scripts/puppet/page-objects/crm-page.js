@@ -117,7 +117,7 @@ module.exports = class CrmPage {
 
       return Promise.reject(new Error('list empty'));
     } else {
-      return Promise.resolve('list not empty');
+      return Promise.resolve();
     }
   }
 };
