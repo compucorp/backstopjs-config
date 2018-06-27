@@ -1,6 +1,9 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
-  await engine.click('a[href="#new-tagset"]');
-  await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
+  const page = new Page(engine, scenario, vp);
+
+  await page.clickAndWaitForModal('a[href="#new-tagset"]');
 };

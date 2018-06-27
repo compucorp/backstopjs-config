@@ -61,8 +61,7 @@ module.exports = class CrmPage {
    * Submits the current page form.
    */
   async submit() {
-    await this.engine.click('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
-    await this.engine.waitForNavigation();
+    await this.clickAndWaitForNavigation('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
   }
 
   /**
@@ -88,6 +87,7 @@ module.exports = class CrmPage {
   async waitForWYSIWYG () {
     await this.engine.waitFor('.cke', { visible: true });
   }
+
   /**
    * Waits for the Navigation to happens after some link (selector) is clicked.
    *
@@ -98,6 +98,20 @@ module.exports = class CrmPage {
     await Promise.all([
       this.engine.click(selector),
       this.engine.waitForNavigation()
-    ]);      
+    ]);
+  }
+
+  /**
+  * Waits for Modal form to compelete rendering after some link to open modal is clicked
+  *
+  * @param {String} selector - the css selector for the element to click and wait for modal.
+  */
+  async clickAndWaitForModal(selector) {
+    await this.engine.waitForSelector(selector);
+    await this.engine.click(selector);
+    await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
+    await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
+    // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
+    await this.engine.waitFor(300);
   }
 }

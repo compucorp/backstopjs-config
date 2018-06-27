@@ -1,7 +1,10 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = new Page(engine, scenario, vp);
+
   await require('./search-result')(engine, scenario, vp);
-  await engine.click('tr:first-child a[title="View Membership"]');
-  await engine.waitFor('.CRM_Member_Form_MembershipView', { visible: true });
+  await page.clickAndWaitForModal('a[title="View Membership"]');
 };

@@ -1,8 +1,11 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = new Page(engine, scenario, vp);
+
   await engine.waitFor('a[href^="/civicrm/tag/edit?action=add"]', { visible: true });
   await engine.click('.jstree-node .jstree-wholerow');
-  await engine.click('a[title="Duplicate ths tag"');
-  await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
+  await page.clickAndWaitForModal('a[title="Duplicate ths tag"');
 };
