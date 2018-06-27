@@ -8,5 +8,6 @@ module.exports = async (engine, scenario, viewport) => {
   await page.checkIfPriceFieldsAreEmpty('Set').then(async () => {
     await engine.click('.crm-entity span.crm-hover-button');
     await page.clickAndWaitForNavigation('a[title="Edit Price Set"]');
-  }, async () => {});
+  })
+  .catch(async () => { });
 }

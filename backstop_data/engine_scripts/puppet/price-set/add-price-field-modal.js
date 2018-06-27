@@ -9,7 +9,6 @@ module.exports = async (engine, scenario, viewport) => {
     await require('./view-and-edit-price-fields')(engine, scenario, viewport);
     await engine.click('#newPriceField');
     await engine.waitFor('.CRM_Price_Form_Field');
-  }, async () => {
-    await page.clickAndWaitForNavigation('a[href="/civicrm/admin/price?action=add&reset=1"]');
   })
+  .catch(async () => {});
 };

@@ -1,4 +1,5 @@
 'use strict';
+
 const Page = require('../page-objects/crm-page.js');
 
 module.exports = async (engine, scenario, viewport) => {
@@ -10,5 +11,6 @@ module.exports = async (engine, scenario, viewport) => {
     await engine.click('a[title="Disable Price"]');
     await engine.waitFor('.crm-confirm-dialog.crm-ajax-container', { visible: true });
     await engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
-  }, async () => {});
+  })
+  .catch(async () => { });
 };

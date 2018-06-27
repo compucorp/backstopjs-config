@@ -7,5 +7,6 @@ module.exports = async (engine, scenario, viewport) => {
 
   await page.checkIfPriceFieldsAreEmpty('Set').then(async () => {
     await page.clickAndWaitForNavigation('a[title="View and Edit Price Fields"]');
-  }, async () => {});
+  })
+  .catch(async () => {});
 }

@@ -110,6 +110,7 @@ module.exports = class CrmPage {
    */
   async checkIfPriceFieldsAreEmpty (type) {
     const priceFieldsEmpty = await this.engine.$('#crm-main-content-wrapper .messages');
+    
     if (priceFieldsEmpty) {
       console.warn('No Price list present!');
       console.log(`Taking the "Price ${type} List" Page screenshot..`);

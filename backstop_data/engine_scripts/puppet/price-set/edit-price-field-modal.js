@@ -9,5 +9,6 @@ module.exports = async (engine, scenario, viewport) => {
   await page.checkIfPriceFieldsAreEmpty('Fields').then(async () => {
     await engine.click('a[title="Edit Price"]');
     await engine.waitForSelector('.CRM_Price_Form_Field');
-  }, async () => {});
+  })
+  .catch(async () => { });
 }
