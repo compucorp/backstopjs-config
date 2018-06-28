@@ -113,18 +113,18 @@
       "url": "{url}/civicrm/batch/add?reset=1&action=add"
     },
     {
-      "label": "Batch Data Entry - Enter Records - results",
+      "label": "Batch Data Entry - Enter Record",
       "url": "{url}/civicrm/batch?reset=1",
       "selectors": ["#crm-batch-entry-table", "#content"],
       "onReadyScript": "contributions/enter-records.js"
     },
     {
-      "label": "Batch Data Entry - Edit batch - results",
+      "label": "Batch Data Entry - Edit batch",
       "url": "{url}/civicrm/batch?reset=1",
       "onReadyScript": "contributions/edit-batch.js"
     },
     {
-      "label": "Batch Data Entry - Delete batch - results",
+      "label": "Batch Data Entry - Delete batch",
       "url": "{url}/civicrm/batch?reset=1",
       "onReadyScript": "contributions/delete-batch.js"
     },

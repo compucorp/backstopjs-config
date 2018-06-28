@@ -1,6 +1,6 @@
 'use strict';
 
-const Page = require('../page-objects/crm-page.js');
+const Page = require('../page-objects/crm-configure-contribution-page.js');
 
 module.exports = async (engine, scenario, viewPort) => {
   const page = new Page(engine, scenario, viewPort);
