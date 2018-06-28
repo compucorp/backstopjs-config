@@ -102,22 +102,4 @@ module.exports = class CrmPage {
       this.engine.waitForNavigation()
     ]);
   }
-
-  /**
-   * Checks if there are no price fields present on the page or not
-   * 
-   * @param {String} type - the title of the message to be displayed
-   */
-  async checkIfPriceFieldsAreEmpty (type) {
-    const priceFieldsEmpty = await this.engine.$('#crm-main-content-wrapper .messages');
-    
-    if (priceFieldsEmpty) {
-      console.warn('No Price list present!');
-      console.log(`Taking the "Price ${type} List" Page screenshot..`);
-
-      return Promise.reject(new Error('list empty'));
-    } else {
-      return Promise.resolve();
-    }
-  }
 };

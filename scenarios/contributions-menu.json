@@ -188,24 +188,31 @@
       "onReadyScript": "price-set/add-price-fields.js"
     },
     {
-      "label": "Contributions - Manage Price Set - Edit Price Fields Set - results ",
+      "label": "Contributions - Manage Price Set - Edit Price Fields Set",
       "url": "{url}/civicrm/admin/price?reset=1",
       "onReadyScript": "price-set/edit-price-set.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - results ",
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set",
       "url": "{url}/civicrm/admin/price?reset=1",
       "onReadyScript": "price-set/view-and-edit-price-fields.js"
     },
     {
-      "label": "Contributions - Manage Price Set - Preview Price Fields - results",
+      "label": "Contributions - Manage Price Set - Preview Price Fields Set",
       "url": "{url}/civicrm/admin/price?reset=1",
       "onReadyScript": "price-set/preview-price-fields.js"
     },
     {
-      "label": "Contributions - Manage Price Set - Disable Price Fields - results ",
+      "label": "Contributions - Manage Price Set - Disable Price Fields Set",
+      "selectors": [".ui-dialog"],
       "url": "{url}/civicrm/admin/price?reset=1",
       "onReadyScript": "price-set/disable-price-set.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Preview all fields Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/preview-all-fields-modal.js"
     },
     {
       "label": "Contributions - Manage Price Set - View and Edit Price Fields - Add price field Modal - results ",
@@ -214,31 +221,25 @@
       "onReadyScript": "price-set/add-price-field-modal.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Preview all fields Modal - results ",
-      "url": "{url}/civicrm/admin/price?reset=1",
-      "selectors": [".ui-dialog"],
-      "onReadyScript": "price-set/preview-all-fields-modal.js"
-    },
-    {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Edit price field Modal - results ",
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set- Edit price field Modal",
       "url": "{url}/civicrm/admin/price?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "price-set/edit-price-field-modal.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Preview price field Modal - results ",
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Preview price field Modal",
       "url": "{url}/civicrm/admin/price?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "price-set/preview-price-field-modal.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Disable price field Modal - results ",
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Disable price field Modal",
       "url": "{url}/civicrm/admin/price?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "price-set/disable-price-field-modal.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Delete price field Modal - results ",
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Delete price field Modal",
       "url": "{url}/civicrm/admin/price?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "price-set/delete-price-field-modal.js"
