@@ -208,7 +208,7 @@
     },
     {
       "label": "Manage Contributions - Setup Personal campaign",
-      "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute",
+      "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute"
     },
     {
       "label": "Premiums (Thank-you Gifts)",
