@@ -1,3 +1,9 @@
+# Requirements
+A CiviCRM site installed with sample data (check the "Load sample data" option when running the installer).
+
+### Additional data needed
+* At least one Price Set added with at least one price field (/civicrm/admin/price/field)
+
 # How to use it
 1. Create a `backstop_data/site-config.json` file with the following content.
     ```json
