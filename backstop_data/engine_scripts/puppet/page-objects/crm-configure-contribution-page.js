@@ -6,7 +6,6 @@ module.exports = class ConfigureContributionsPage extends CRMPage {
 
   constructor(engine, scenario, viewPort) {
     super(...arguments);
-    this.engine = engine;
 
     enablePointerEvents.call(this);
   }
