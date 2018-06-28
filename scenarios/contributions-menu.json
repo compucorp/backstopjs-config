@@ -215,12 +215,6 @@
       "onReadyScript": "price-set/preview-all-fields-modal.js"
     },
     {
-      "label": "Contributions - Manage Price Set - View and Edit Price Fields - Add price field Modal - results ",
-      "url": "{url}/civicrm/admin/price?reset=1",
-      "selectors": [".ui-dialog"],
-      "onReadyScript": "price-set/add-price-field-modal.js"
-    },
-    {
       "label": "Contributions - Manage Price Set - View and Edit Price Fields Set- Edit price field Modal",
       "url": "{url}/civicrm/admin/price?reset=1",
       "selectors": [".ui-dialog"],
