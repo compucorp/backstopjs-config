@@ -162,52 +162,52 @@
       "onReadyScript": "contributions/edit-campaign.js"
     },
     {
-      "label": "Manage Contributions - Configure Title and Settings - result",
+      "label": "Manage Contributions - Configure Title and Settings",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/title-and-settings.js"
     },
     {
-      "label": "Manage Contributions - Configure Contribution Amount - result",
+      "label": "Manage Contributions - Configure Contribution Amount",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/contribution-amount.js"
     },
     {
-      "label": "Manage Contributions - Configure Membership Settings - result",
+      "label": "Manage Contributions - Configure Membership Settings",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/membership-settings.js"
     },
     {
-      "label": "Manage Contributions - Configure Thank you and  Reciepting - result",
+      "label": "Manage Contributions - Configure Thank you and  Reciepting",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/thankyou-and-reciepting.js"
     },
     {
-      "label": "Manage Contributions - Configure Tell a Friend - result",
+      "label": "Manage Contributions - Configure Tell a Friend",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/tell-a-friend.js"
     },
     {
-      "label": "Manage Contributions - Configure Include Profile - result",
+      "label": "Manage Contributions - Configure Include Profile",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/include-profile.js"
     },
     {
-      "label": "Manage Contributions - Configure Contribution Widget - result",
+      "label": "Manage Contributions - Configure Contribution Widget",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/contribution-widget.js"
     },
     {
-      "label": "Manage Contributions - Configure Premiums - result",
+      "label": "Manage Contributions - Configure Premiums",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/premiums.js"
     },
     {
-      "label": "Manage Contributions - Configure Personal Campaign Pages - result",
+      "label": "Manage Contributions - Configure Personal Campaign Pages",
       "url": "{url}/civicrm/admin/contribute?reset=1",
       "onReadyScript": "configure-contributions/personal-campaign-pages.js"
     },
     {
-      "label": "Manage Contributions - Setup Personal campaign - result",
+      "label": "Manage Contributions - Setup Personal campaign",
       "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute",
     },
     {
