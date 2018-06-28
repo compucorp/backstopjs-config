@@ -28,8 +28,11 @@ module.exports = class CrmPage {
    * @param {String} label
    */
   async clickSelect2Option (selector, label) {
-    await this.engine.click(`${selector} [class^="select2-choice"]`);
-    await this.engine.evaluate(label => {
+    // Check if the select2Options is for multiselect
+    const isMultiple = !!(await this.engine.$(`${selector} .select2-choices`));
+
+    await this.engine.click(`${selector} ` + (isMultiple ? '.select2-choices .select2-search-field' : '.select2-choice'));
+    await this.engine.evaluate((label) => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       const event = document.createEvent('MouseEvent');
@@ -101,5 +104,19 @@ module.exports = class CrmPage {
       this.engine.click(selector),
       this.engine.waitForNavigation()
     ]);
+  }
+
+  /**
+   * Checks if the checkbox is enabled and checks it if not.
+   *
+   * @param {String} selector - the css selector for the checkbox to be click and enabled
+   */
+  async enableCheckbox (selector) {
+    const checkbox = await this.engine.$(selector);
+    const checked = await (await checkbox.getProperty('checked')).jsonValue();
+
+    if (!checked) {
+      await this.engine.click(selector);
+    }
   }
 };
