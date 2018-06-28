@@ -38,7 +38,7 @@
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/edit-modal.js"
-    },    
+    },
     {
       "label": "Find Contributions - Delete contribution Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
@@ -55,7 +55,7 @@
       "url": "{url}/civicrm/contribute/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/edit-individual-payments-modal.js"
-    }, 
+    },
     {
       "label": "Contribution Reports",
       "url": "{url}/civicrm/report/list?compid=2&reset=1"
@@ -113,6 +113,22 @@
       "url": "{url}/civicrm/batch/add?reset=1&action=add"
     },
     {
+      "label": "Batch Data Entry - Enter Record",
+      "url": "{url}/civicrm/batch?reset=1",
+      "selectors": ["#crm-batch-entry-table", "#content"],
+      "onReadyScript": "contributions/enter-records.js"
+    },
+    {
+      "label": "Batch Data Entry - Edit batch",
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/edit-batch.js"
+    },
+    {
+      "label": "Batch Data Entry - Delete batch",
+      "url": "{url}/civicrm/batch?reset=1",
+      "onReadyScript": "contributions/delete-batch.js"
+    },
+    {
       "label": "New Financial Batch",
       "url": "{url}/civicrm/financial/batch?reset=1&action=add"
     },
@@ -141,22 +157,156 @@
       "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute"
     },
     {
+      "label": "Personal Campaign Pages - Edit Campaign",
+      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute",
+      "onReadyScript": "contributions/edit-campaign.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Title and Settings",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/title-and-settings.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Contribution Amount",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/contribution-amount.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Membership Settings",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/membership-settings.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Thank you and  Reciepting",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/thankyou-and-reciepting.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Tell a Friend",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/tell-a-friend.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Include Profile",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/include-profile.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Contribution Widget",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/contribution-widget.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Premiums",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/premiums.js"
+    },
+    {
+      "label": "Manage Contributions - Configure Personal Campaign Pages",
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "configure-contributions/personal-campaign-pages.js"
+    },
+    {
+      "label": "Manage Contributions - Setup Personal campaign",
+      "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute",
+    },
+    {
       "label": "Premiums (Thank-you Gifts)",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1"
     },
     {
-      "label": "Premiums (Thank-you Gifts) - Add Premium",
+      "label": "Contributions - Premiums Pages - add Premium Modal",
       "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
       "selectors": [".ui-dialog"],
-      "onReadyScript": "contributions/new-premium.js"
+      "onReadyScript": "premiums/add-modal.js"
     },
     {
-      "label": "New Price Set",
+      "label": "Contributions - Premiums Pages - edit Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/edit-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - preview Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/preview-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - disable Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/disable-modal.js"
+    },
+    {
+      "label": "Contributions - Premiums Pages - delete Premium Modal - results",
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "premiums/delete-modal.js"
+    },
+    {
+      "label": "Contributions - New Price Set",
       "url": "{url}/civicrm/admin/price?reset=1&action=add"
     },
     {
-      "label": "Manage Price Set",
+      "label": "Contributions - Manage Price Set",
       "url": "{url}/civicrm/admin/price?reset=1"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Add Price Fields",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/add-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Edit Price Fields Set",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/edit-price-set.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/view-and-edit-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Preview Price Fields Set",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/preview-price-fields.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - Disable Price Fields Set",
+      "selectors": [".ui-dialog"],
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "price-set/disable-price-set.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Preview all fields Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/preview-all-fields-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set- Edit price field Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/edit-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Preview price field Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/preview-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Disable price field Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/disable-price-field-modal.js"
+    },
+    {
+      "label": "Contributions - Manage Price Set - View and Edit Price Fields Set - Delete price field Modal",
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "price-set/delete-price-field-modal.js"
     },
     {
       "label": "Close Accounting Period",

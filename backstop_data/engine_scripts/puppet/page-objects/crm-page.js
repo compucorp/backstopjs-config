@@ -1,8 +1,9 @@
+/* globals XPathResult */
+
 'use strict';
 
 module.exports = class CrmPage {
-
-  constructor(engine, scenario, viewPort) {
+  constructor (engine, scenario, viewPort) {
     this.engine = engine;
     this.scenario = scenario;
     this.viewPort = viewPort;
@@ -26,16 +27,19 @@ module.exports = class CrmPage {
    * @param {String} selector - The selector that identifies the select2 dropdown
    * @param {String} label
    */
-  async clickSelect2Option(selector, label) {
-    await this.engine.click(`${selector} [class^="select2-choice"]`);
-    await this.engine.evaluate(label => {
+  async clickSelect2Option (selector, label) {
+    // Check if the select2Options is for multiselect
+    const isMultiple = !!(await this.engine.$(`${selector} .select2-choices`));
+
+    await this.engine.click(`${selector} ` + (isMultiple ? '.select2-choices .select2-search-field' : '.select2-choice'));
+    await this.engine.evaluate((label) => {
       const xPath = `.//div[contains(@class, "select2-result-label")][text()="${label}"]/parent::*`;
       const item = document.evaluate(xPath, document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       const event = document.createEvent('MouseEvent');
 
       event.initMouseEvent('mouseup', true, true);
       item.dispatchEvent(event);
-    }, label)
+    }, label);
   }
 
   /**
@@ -45,7 +49,7 @@ module.exports = class CrmPage {
     const exists = !!(await this.engine.$('.ui-notify-message'));
     if (exists) {
       console.log('Closing error notifications');
-      await this.clickAll('a.ui-notify-cross.ui-notify-close');  
+      await this.clickAll('a.ui-notify-cross.ui-notify-close');
       await this.engine.waitFor('.ui-notify-message', { hidden: true });
     }
   }
@@ -53,14 +57,14 @@ module.exports = class CrmPage {
   /**
    * Opens all the accordions on the page
    */
-  async openAllAccordions() {
+  async openAllAccordions () {
     await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
   }
 
   /**
    * Submits the current page form.
    */
-  async submit() {
+  async submit () {
     await this.clickAndWaitForNavigation('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
   }
 
@@ -106,7 +110,7 @@ module.exports = class CrmPage {
   *
   * @param {String} selector - the css selector for the element to click and wait for modal.
   */
-  async clickAndWaitForModal(selector) {
+  async clickAndWaitForModal (selector) {
     await this.engine.waitForSelector(selector);
     await this.engine.click(selector);
     await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
@@ -114,4 +118,18 @@ module.exports = class CrmPage {
     // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
     await this.engine.waitFor(300);
   }
-}
+
+  /**
+   * Checks if the checkbox is enabled and checks it if not.
+   *
+   * @param {String} selector - the css selector for the checkbox to be click and enabled
+   */
+  async enableCheckbox (selector) {
+    const checkbox = await this.engine.$(selector);
+    const checked = await (await checkbox.getProperty('checked')).jsonValue();
+
+    if (!checked) {
+      await this.engine.click(selector);
+    }
+  }
+};
