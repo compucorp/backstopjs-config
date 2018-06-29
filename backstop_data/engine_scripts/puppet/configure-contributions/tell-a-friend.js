@@ -9,4 +9,4 @@ module.exports = async (engine, scenario, viewPort) => {
   await page.clickAndWaitForNavigation('a[title="Tell a Friend"]');
   await engine.waitForSelector('.CRM_Friend_Form_Contribute');
   await page.enableCheckbox('input#tf_is_active');
-}
+};

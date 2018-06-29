@@ -12,7 +12,7 @@ module.exports = async (engine, scenario, vp) => {
   try {
     await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
     await engine.waitFor('.loading-text', { hidden: true, timeout: 8000 });
-    await engine.waitFor('[alt="loading"]', { hidden: true });  
+    await engine.waitFor('[alt="loading"]', { hidden: true });
     // wait for reedjustment of the modal after ajax content load after opening accordion
     await engine.waitFor(500);
     console.log('All accordion blocks loaded');

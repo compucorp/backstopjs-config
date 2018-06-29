@@ -8,4 +8,4 @@ module.exports = async (engine, scenario, viewPort) => {
   await engine.click('.crm-contribution-page-configure-actions .crm-hover-button');
   await page.clickAndWaitForNavigation('a[title="Thank-you and Receipting"]');
   await engine.waitForSelector('.CRM_Contribute_Form_ContributionPage_ThankYou');
-}
+};

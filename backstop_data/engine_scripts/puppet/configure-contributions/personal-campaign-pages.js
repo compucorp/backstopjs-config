@@ -9,4 +9,4 @@ module.exports = async (engine, scenario, viewPort) => {
   await page.clickAndWaitForNavigation('a[title="Personal Campaign Pages"]');
   await engine.waitForSelector('.CRM_PCP_Form_Contribute');
   await page.enableCheckbox('input#pcp_active');
-}
+};

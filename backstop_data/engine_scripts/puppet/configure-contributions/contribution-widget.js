@@ -10,4 +10,4 @@ module.exports = async (engine, scenario, viewPort) => {
   await engine.waitForSelector('.CRM_Contribute_Form_ContributionPage_Widget');
   await page.enableCheckbox('input#is_active');
   await require('../common/open-accordions')(engine, scenario, viewPort);
-}
+};

@@ -92,10 +92,10 @@ module.exports = class CrmPage {
     const isWysiwygEnabled = !!(await this.engine.$('.crm-wysiwyg-enabled'));
     if (isWysiwygEnabled) {
       await this.engine.waitFor('.cke', { visible: true });
-    }    
+    }
   }
 
-   /**
+  /**
    * Waits for the date picker to be visible on the page
    */
   async waitForDatePicker () {

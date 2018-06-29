@@ -9,4 +9,4 @@ module.exports = async (engine, scenario, viewPort) => {
   await page.clickAndWaitForNavigation('a[title="Membership Settings"]');
   await engine.waitForSelector('.CRM_Member_Form_MembershipBlock');
   await page.enableCheckbox('input#member_is_active');
-}
+};

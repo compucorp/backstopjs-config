@@ -7,4 +7,4 @@ module.exports = async (engine, scenario, viewport) => {
 
   await require('./view-and-edit-price-fields')(engine, scenario, viewport);
   await page.clickAndWaitForModal('a[href*="/civicrm/admin/price?action=preview"]');
-}
+};
