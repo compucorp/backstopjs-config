@@ -89,7 +89,20 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    await this.engine.waitFor('.cke', { visible: true });
+    const isWysiwygEnabled = !!(await this.engine.$('.crm-wysiwyg-enabled'));
+    if (isWysiwygEnabled) {
+      await this.engine.waitFor('.cke', { visible: true });
+    }    
+  }
+
+   /**
+   * Waits for the date picker to be visible on the page
+   */
+  async waitForDatePicker () {
+    const hasDatepicker = !!(await this.engine.$('.hasDatepicker'));
+    if (hasDatepicker) {
+      this.engine.waitForSelector('.fa-calendar');
+    }
   }
 
   /**
@@ -103,6 +116,9 @@ module.exports = class CrmPage {
       this.engine.click(selector),
       this.engine.waitForNavigation()
     ]);
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+    await this.fixLayoutForTables();
   }
 
   /**
@@ -115,6 +131,8 @@ module.exports = class CrmPage {
     await this.engine.click(selector);
     await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
     await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
     // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
     await this.engine.waitFor(300);
   }
@@ -131,5 +149,14 @@ module.exports = class CrmPage {
     if (!checked) {
       await this.engine.click(selector);
     }
+  }
+
+  /**
+   * Override table-layout property to fixed for each search result table layouts
+   */
+  async fixLayoutForTables () {
+    await this.engine.addStyleTag({
+      'content': '.crm-search-results > table, .dataTable { table-layout: fixed !important;}'
+    });
   }
 };

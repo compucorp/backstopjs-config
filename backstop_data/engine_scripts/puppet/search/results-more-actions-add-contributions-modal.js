@@ -8,5 +8,4 @@ module.exports = async (engine, scenario, vp) => {
   await require('./results-more-actions-dropdown')(engine, scenario, vp);
   await page.clickAndWaitForModal('span.crm-hover-button a[title="Add Contribution"]');
   await require('../common/open-accordions')(engine, scenario, vp);
-  await engine.waitFor('[alt="loading"]', { hidden: true });  
 };
