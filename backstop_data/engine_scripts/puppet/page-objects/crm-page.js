@@ -147,9 +147,10 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    const isWysiwygEnabled = !!(await this.engine.$('.crm-wysiwyg-enabled'));
+    const isWysiwygEnabled = !!(await this.engine.$('.crm-form-wysiwyg'));
+
     if (isWysiwygEnabled) {
-      await this.engine.waitFor('.cke', { visible: true });
+      await this.engine.waitForSelector('.cke .cke_contents', { visible: true });
     }
   }
 
@@ -158,6 +159,7 @@ module.exports = class CrmPage {
    */
   async waitForDatePicker () {
     const hasDatepicker = !!(await this.engine.$('.hasDatepicker'));
+    
     if (hasDatepicker) {
       this.engine.waitForSelector('.fa-calendar');
     }
