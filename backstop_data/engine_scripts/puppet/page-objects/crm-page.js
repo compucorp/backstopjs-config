@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = class CrmPage {
-  constructor (engine, scenario, viewPort) {
+  async   constructor (engine, scenario, viewPort) {
     this.engine = engine;
     this.scenario = scenario;
     this.viewPort = viewPort;
@@ -54,8 +54,7 @@ module.exports = class CrmPage {
       this.engine.click(selector),
       this.engine.waitForNavigation()
     ]);
-    await this.waitForWYSIWYG();
-    await this.waitForDatePicker();
+    await this.waitForJSLibraries();
     await this.fixLayoutForTables();
   }
 
@@ -69,8 +68,7 @@ module.exports = class CrmPage {
     await this.engine.click(selector);
     await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
     await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
-    await this.waitForWYSIWYG();
-    await this.waitForDatePicker();
+    await this.waitForJSLibraries();
     // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
     await this.engine.waitFor(300);
   }
@@ -150,7 +148,7 @@ module.exports = class CrmPage {
     const isWysiwygEnabled = !!(await this.engine.$('.crm-form-wysiwyg'));
 
     if (isWysiwygEnabled) {
-      await this.engine.waitForSelector('.cke .cke_contents', { visible: true });
+      await this.engine.waitFor('.cke .cke_contents', { visible: true });
     }
   }
 
@@ -164,4 +162,12 @@ module.exports = class CrmPage {
       this.engine.waitForSelector('.fa-calendar');
     }
   }
+
+  /**
+    * Waits for Js libraries to complete their magic on the page
+   */
+   async waitForJSLibraries () {
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+   }
 };

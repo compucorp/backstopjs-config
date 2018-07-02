@@ -108,7 +108,7 @@
       "label": "Full-text Search - result",
       "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
       "hideSelectors": ["#mainTabContainer"],
-      "onReadyScript": "search/full-text-result-activity.js"
+      "onReadyScript": "search/full-text-result.js"
     },
     {
       "label": "Full text Search - Contact - Results",
