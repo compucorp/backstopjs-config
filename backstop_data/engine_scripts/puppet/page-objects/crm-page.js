@@ -42,6 +42,39 @@ module.exports = class CrmPage {
     }, label);
   }
 
+
+  /**
+   * Waits for the Navigation to happens after some link (selector) is clicked.
+   *
+   * @param {String} selector - the css selector for the element to click and wait for navigation.
+   */
+  async clickAndWaitForNavigation (selector) {
+    await this.engine.waitForSelector(selector);
+    await Promise.all([
+      this.engine.click(selector),
+      this.engine.waitForNavigation()
+    ]);
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+    await this.fixLayoutForTables();
+  }
+
+  /**
+  * Waits for Modal form to compelete rendering after some link to open modal is clicked
+  *
+  * @param {String} selector - the css selector for the element to click and wait for modal.
+  */
+  async clickAndWaitForModal (selector) {
+    await this.engine.waitForSelector(selector);
+    await this.engine.click(selector);
+    await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
+    await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+    // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
+    await this.engine.waitFor(300);
+  }
+
   /**
    * Closes all active notifications.
    */
@@ -52,6 +85,31 @@ module.exports = class CrmPage {
       await this.clickAll('a.ui-notify-cross.ui-notify-close');
       await this.engine.waitFor('.ui-notify-message', { hidden: true });
     }
+  }
+
+  /**
+   * Checks if the checkbox is enabled and checks it if not.
+   *
+   * @param {String} selector - the css selector for the checkbox to be click and enabled
+   */
+  async enableCheckbox (selector) {
+    const checkbox = await this.engine.$(selector);
+    const checked = await (await checkbox.getProperty('checked')).jsonValue();
+
+    if (!checked) {
+      await this.engine.click(selector);
+    }
+  }
+
+  /**
+   * Override table-layout property to fixed for each search result table layouts
+   * Reason - Since tables without fixed layout sometimes takes more width (becomes fluid) and
+   * hence breaks the test case without any reason.
+   */
+  async fixLayoutForTables () {
+    await this.engine.addStyleTag({
+      'content': '.crm-search-results > table, .dataTable { table-layout: fixed !important;}'
+    });
   }
 
   /**
@@ -103,60 +161,5 @@ module.exports = class CrmPage {
     if (hasDatepicker) {
       this.engine.waitForSelector('.fa-calendar');
     }
-  }
-
-  /**
-   * Waits for the Navigation to happens after some link (selector) is clicked.
-   *
-   * @param {String} selector - the css selector for the element to click and wait for navigation.
-   */
-  async clickAndWaitForNavigation (selector) {
-    await this.engine.waitForSelector(selector);
-    await Promise.all([
-      this.engine.click(selector),
-      this.engine.waitForNavigation()
-    ]);
-    await this.waitForWYSIWYG();
-    await this.waitForDatePicker();
-    await this.fixLayoutForTables();
-  }
-
-  /**
-  * Waits for Modal form to compelete rendering after some link to open modal is clicked
-  *
-  * @param {String} selector - the css selector for the element to click and wait for modal.
-  */
-  async clickAndWaitForModal (selector) {
-    await this.engine.waitForSelector(selector);
-    await this.engine.click(selector);
-    await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
-    await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
-    await this.waitForWYSIWYG();
-    await this.waitForDatePicker();
-    // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
-    await this.engine.waitFor(300);
-  }
-
-  /**
-   * Checks if the checkbox is enabled and checks it if not.
-   *
-   * @param {String} selector - the css selector for the checkbox to be click and enabled
-   */
-  async enableCheckbox (selector) {
-    const checkbox = await this.engine.$(selector);
-    const checked = await (await checkbox.getProperty('checked')).jsonValue();
-
-    if (!checked) {
-      await this.engine.click(selector);
-    }
-  }
-
-  /**
-   * Override table-layout property to fixed for each search result table layouts
-   */
-  async fixLayoutForTables () {
-    await this.engine.addStyleTag({
-      'content': '.crm-search-results > table, .dataTable { table-layout: fixed !important;}'
-    });
   }
 };

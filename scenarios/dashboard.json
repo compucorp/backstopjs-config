@@ -2,7 +2,7 @@
   "scenarios": [{
     "label": "Dashboard",
     "url": "{url}/civicrm/dashboard",
-    "onReadyScript": "dashboard/main.js"
+    "onReadyScript": "dashboard/show.js"
   },
   {
     "label": "Dashboard - Configure",

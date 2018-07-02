@@ -117,7 +117,7 @@
     {
       "label": "Full text Search - Activities - Results",
       "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
-      "onReadyScript": "search/structure-table.js"
+      "onReadyScript": "search/full-text-result-activity.js"
     }, 
     {
       "label": "Full text Search - Contributions - Results",
