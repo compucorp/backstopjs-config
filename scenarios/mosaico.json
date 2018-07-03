@@ -1,0 +1,13 @@
+{
+  "scenarios": [
+    {
+    "label": "Mosiaco - Main Screen",
+    "url": "{url}/civicrm/mosaico/index?reset=1"
+    },
+    {
+      "label": "Mosiaco - Editor Screen",
+      "url": "{url}/civicrm/mosaico/index?reset=1",
+      "onReadyScript": "mosaico/editor.js"
+    }
+  ]
+}
