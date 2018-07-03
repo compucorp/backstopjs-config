@@ -5,8 +5,16 @@ const CRMPage = require('./crm-page.js');
 module.exports = class ConfigureContributionsPage extends CRMPage {
   constructor (engine, scenario, viewPort) {
     super(...arguments);
+  }
 
-    enablePointerEvents.call(this);
+  /**
+   * Overriding main cleanup function
+   * Enable pointer events function to the clean up process
+   * For detail definition check CRMPage class in ./crm-page.js
+   */
+  async cleanups () {
+    await super.cleanups();
+    await enablePointerEvents.call(this);
   }
 };
 

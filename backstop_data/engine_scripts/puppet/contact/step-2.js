@@ -3,7 +3,7 @@
 const Page = require('../page-objects/crm-page.js');
 
 module.exports = async (engine, scenario, vp) => {
-  const page = new Page(engine, scenario, vp);
+  const page = await Page.build(engine, scenario, vp);
   const filePath = `${__dirname}/../../../../mocks/CiviCRM_Contact_Search.csv`;
   const fileInput = await engine.$('#uploadFile');
 

@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = class CrmPage {
-  async   constructor (engine, scenario, viewPort) {
+  constructor (engine, scenario, viewPort) {
     this.engine = engine;
     this.scenario = scenario;
     this.viewPort = viewPort;
@@ -42,7 +42,6 @@ module.exports = class CrmPage {
     }, label);
   }
 
-
   /**
    * Waits for the Navigation to happens after some link (selector) is clicked.
    *
@@ -54,8 +53,7 @@ module.exports = class CrmPage {
       this.engine.click(selector),
       this.engine.waitForNavigation()
     ]);
-    await this.waitForJSLibraries();
-    await this.fixLayoutForTables();
+    await this.cleanups();
   }
 
   /**
@@ -68,7 +66,7 @@ module.exports = class CrmPage {
     await this.engine.click(selector);
     await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
     await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
-    await this.waitForJSLibraries();
+    await this.cleanups();
     // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
     await this.engine.waitFor(300);
   }
@@ -100,21 +98,23 @@ module.exports = class CrmPage {
   }
 
   /**
-   * Override table-layout property to fixed for each search result table layouts
-   * Reason - Since tables without fixed layout sometimes takes more width (becomes fluid) and
-   * hence breaks the test case without any reason.
-   */
-  async fixLayoutForTables () {
-    await this.engine.addStyleTag({
-      'content': '.crm-search-results > table, .dataTable { table-layout: fixed !important;}'
-    });
-  }
-
-  /**
    * Opens all the accordions on the page
    */
   async openAllAccordions () {
-    await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
+    const areAccordionsOpen = !!(await this.engine.$('body.all-accordions-open'));
+
+    if (!areAccordionsOpen) {
+      const isSubAccordionExist = !!(await this.engine.$('.collapsible-title'));
+
+      await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
+      if (isSubAccordionExist) {
+        await this.clickAll('.collapsible-title');
+      }
+      await this.engine.addScriptTag({
+        'content': 'document.body.classList.add("all-accordions-open")'
+      });
+      await this.cleanups();
+    }
   }
 
   /**
@@ -145,9 +145,9 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    const isWysiwygEnabled = !!(await this.engine.$('.crm-form-wysiwyg'));
+    const isWysiwygVisible = await isElementVisible.call(this, '.crm-form-wysiwyg');
 
-    if (isWysiwygEnabled) {
+    if (isWysiwygVisible) {
       await this.engine.waitFor('.cke .cke_contents', { visible: true });
     }
   }
@@ -156,18 +156,48 @@ module.exports = class CrmPage {
    * Waits for the date picker to be visible on the page
    */
   async waitForDatePicker () {
-    const hasDatepicker = !!(await this.engine.$('.hasDatepicker'));
-    
+    const hasDatepicker = await isElementVisible.call(this, '.hasDatepicker');
+
     if (hasDatepicker) {
       this.engine.waitForSelector('.fa-calendar');
     }
   }
 
   /**
-    * Waits for Js libraries to complete their magic on the page
+    * Waits for Js libraries and other cleanups
    */
-   async waitForJSLibraries () {
+  async cleanups () {
     await this.waitForWYSIWYG();
     await this.waitForDatePicker();
-   }
+    await this.closeErrorNotifications();
+  }
+
+  /**
+   * Static builder class for creating new object thereby doing intial cleanup
+   */
+  static async build (engine, scenario, vp) {
+    const page = new this(engine, scenario, vp);
+
+    await page.cleanups();
+
+    return page;
+  }
 };
+
+/**
+  * Checks if element is visible on screen
+  * @param {String} selector - the css selector for the element to checkfor
+  */
+async function isElementVisible (selector) {
+  return this.engine.evaluate((selector) => {
+    const e = document.querySelector(selector);
+
+    if (!e) {
+      return false;
+    }
+
+    const style = window.getComputedStyle(e);
+
+    return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && e.offsetHeight > 0;
+  },selector);
+}

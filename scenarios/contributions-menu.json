@@ -337,7 +337,8 @@
     },
     {
       "label": "CiviContribute Component Settings",
-      "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1"
+      "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1",
+      "onReadyScript": "contributions/component-settings.js"
     }
   ]
 }
