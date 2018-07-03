@@ -3,10 +3,6 @@
 const CRMPage = require('./crm-page.js');
 
 module.exports = class CRMSearchPage extends CRMPage {
-  constructor (engine, scenario, viewPort) {
-    super(...arguments);
-  }
-
   /**
    * Overriding main cleanup function
    * Calling fix layout css override
@@ -14,16 +10,6 @@ module.exports = class CRMSearchPage extends CRMPage {
    */
   async cleanups () {
     await super.cleanups();
-    await fixLayoutForTables.call(this);
-  }
-
-  /**
-   * Overriding main clickAndWaitForNavigation
-   * Calling fix layout css override
-   * For detail definition check CRMPage class in ./crm-page.js
-   */
-  async clickAndWaitForNavigation (selector) {
-    await super.clickAndWaitForNavigation(selector);
     await fixLayoutForTables.call(this);
   }
 };

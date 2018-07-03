@@ -3,10 +3,6 @@
 const CRMPage = require('./crm-page.js');
 
 module.exports = class ConfigureContributionsPage extends CRMPage {
-  constructor (engine, scenario, viewPort) {
-    super(...arguments);
-  }
-
   /**
    * Overriding main cleanup function
    * Enable pointer events function to the clean up process

@@ -10,6 +10,26 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Static builder class for creating new object thereby doing intial cleanup
+   */
+  static async build (engine, scenario, vp) {
+    const page = new this(engine, scenario, vp);
+
+    await page.cleanups();
+
+    return page;
+  }
+
+  /**
+    * Waits for Js libraries and other cleanups
+   */
+  async cleanups () {
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+    await this.closeErrorNotifications();
+  }
+
+  /**
    * Waits and clicks every element that matches the target selector.
    *
    * @param {String} selector - the css selector of the target elements to
@@ -98,21 +118,53 @@ module.exports = class CrmPage {
   }
 
   /**
+    * Checks if element is visible on screen
+    * @param {String} selector - the css selector for the element to checkfor
+    */
+  async isElementVisible (selector) {
+    return this.engine.evaluate((selector) => {
+      const e = document.querySelector(selector);
+
+      if (!e) {
+        return false;
+      }
+
+      const style = window.getComputedStyle(e);
+
+      return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && e.offsetHeight > 0;
+    }, selector);
+  }
+
+  /**
    * Opens all the accordions on the page
+   * Logic - to make sure that Accordion dont toggle (open and then close) multiple times, the code checks for the class
+   * 'backstop-all-accordions-open' and if not added (which won't be added initially) it excutes the open logic and adds a class
+   * prevventing future toggling.
    */
   async openAllAccordions () {
-    const areAccordionsOpen = !!(await this.engine.$('body.all-accordions-open'));
+    const areAccordionsOpen = !!(await this.engine.$('body.backstop-all-accordions-open'));
 
     if (!areAccordionsOpen) {
       const isSubAccordionExist = !!(await this.engine.$('.collapsible-title'));
 
+      console.log('Clicking all accordion headers');
       await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
       if (isSubAccordionExist) {
         await this.clickAll('.collapsible-title');
       }
       await this.engine.addScriptTag({
-        'content': 'document.body.classList.add("all-accordions-open")'
+        'content': 'document.body.classList.add("backstop-all-accordions-open")'
       });
+      try {
+        await this.engine.waitFor('.blockUI.blockOverlay', { hidden: true });
+        await this.engine.waitFor('.loading-text', { hidden: true, timeout: 8000 });
+        await this.engine.waitFor('[alt="loading"]', { hidden: true });
+        // wait for reedjustment of the modal after ajax content load after opening accordion
+        await this.engine.waitFor(500);
+        console.log('All accordion blocks loaded');
+      } catch (e) {
+        console.log('Loaders still visible and timeout reached!');
+      }
       await this.cleanups();
     }
   }
@@ -145,7 +197,7 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    const isWysiwygVisible = await isElementVisible.call(this, '.crm-form-wysiwyg');
+    const isWysiwygVisible = await this.isElementVisible(this, '.crm-form-wysiwyg');
 
     if (isWysiwygVisible) {
       await this.engine.waitFor('.cke .cke_contents', { visible: true });
@@ -156,48 +208,10 @@ module.exports = class CrmPage {
    * Waits for the date picker to be visible on the page
    */
   async waitForDatePicker () {
-    const hasDatepicker = await isElementVisible.call(this, '.hasDatepicker');
+    const hasDatepicker = await this.isElementVisible(this, '.hasDatepicker');
 
     if (hasDatepicker) {
       this.engine.waitForSelector('.fa-calendar');
     }
   }
-
-  /**
-    * Waits for Js libraries and other cleanups
-   */
-  async cleanups () {
-    await this.waitForWYSIWYG();
-    await this.waitForDatePicker();
-    await this.closeErrorNotifications();
-  }
-
-  /**
-   * Static builder class for creating new object thereby doing intial cleanup
-   */
-  static async build (engine, scenario, vp) {
-    const page = new this(engine, scenario, vp);
-
-    await page.cleanups();
-
-    return page;
-  }
 };
-
-/**
-  * Checks if element is visible on screen
-  * @param {String} selector - the css selector for the element to checkfor
-  */
-async function isElementVisible (selector) {
-  return this.engine.evaluate((selector) => {
-    const e = document.querySelector(selector);
-
-    if (!e) {
-      return false;
-    }
-
-    const style = window.getComputedStyle(e);
-
-    return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && e.offsetHeight > 0;
-  },selector);
-}
