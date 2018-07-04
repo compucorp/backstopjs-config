@@ -1,8 +1,10 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = await Page.build(engine, scenario, vp);
+
   await require('./show-memberships')(engine, scenario, vp);
-  await engine.click('a[accesskey="N"][href$="context=membership"]');
-  await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
-  await engine.waitFor('.CRM_Member_Form_Membership', { visible: true });
+  await page.clickAndWaitForModal('a[accesskey="N"][href$="context=membership"]');
 };

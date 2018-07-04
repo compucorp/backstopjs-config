@@ -5,4 +5,4 @@ module.exports = async (engine, scenario, veiwPort) => {
   await engine.click('a[title="Disable Premium"]');
   await engine.waitFor('.crm-confirm-dialog.crm-ajax-container', { visible: true });
   await engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
-}
+};

@@ -18,73 +18,73 @@
       "onReadyScript": "search/find-contact.js"
     },
     {
-      "label": "Search Results  - More Actions dropdown",
+      "label": "Search Results - More Actions dropdown",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": ["span.crm-hover-button .panel"],
       "onReadyScript": "search/results-more-actions-dropdown.js"
     },
     {
-      "label": "Search Results  - Delete Contact Modal - more actions",
+      "label": "Search Results - Delete Contact Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-delete-contact-modal.js"
     },
     {
-      "label": "Search Results  - Add Contributions Modal - more actions",
+      "label": "Search Results - Add Contributions Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-contributions-modal.js"
     },
     {
-      "label": "Search Results  - Register for Event Modal - more actions",
+      "label": "Search Results - Register for Event Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-register-for-event-modal.js"
     },
     {
-      "label": "Search Results  - Add Pledge Modal - more actions",
+      "label": "Search Results - Add Pledge Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-pledge-modal.js"
     },
     {
-      "label": "Search Results  - Add Membership Modal - more actions",
+      "label": "Search Results - Add Membership Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-membership-modal.js"
     },
     {
-      "label": "Search Results  - Add Relationship Modal - more actions",
+      "label": "Search Results - Add Relationship Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-relationship-modal.js"
     },
     {
-      "label": "Search Results  - Record Activity Modal - more actions",
+      "label": "Search Results - Record Activity Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-record-activity-modal.js"
     },
     {
-      "label": "Search Results  - Add Note Modal - more actions",
+      "label": "Search Results - Add Note Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-note-modal.js"
     },
     {
-      "label": "Search Results  - Send an Email Modal - more actions",
+      "label": "Search Results - Send an Email Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-send-email-modal.js"
     },
     {
-      "label": "Search Results  - Add to Group Modal - more actions",
+      "label": "Search Results - Add to Group Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-add-to-group-modal.js"
     },
     {
-      "label": "Search Results  - Tag Contact Modal - more actions",
+      "label": "Search Results - Tag Contact Modal - more actions",
       "url": "{url}/civicrm/contact/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "search/results-more-actions-tag-contact-modal.js"
@@ -116,7 +116,8 @@
     },
     {
       "label": "Full text Search - Activities - Results",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Activity"
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
+      "onReadyScript": "search/full-text-result-activity.js"
     }, 
     {
       "label": "Full text Search - Contributions - Results",

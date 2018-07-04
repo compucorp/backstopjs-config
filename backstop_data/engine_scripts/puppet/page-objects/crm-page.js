@@ -10,6 +10,26 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Static builder class for creating new object thereby doing intial cleanup
+   */
+  static async build (engine, scenario, vp) {
+    const page = new this(engine, scenario, vp);
+
+    await page.cleanups();
+
+    return page;
+  }
+
+  /**
+    * Waits for Js libraries and other cleanups
+   */
+  async cleanups () {
+    await this.waitForWYSIWYG();
+    await this.waitForDatePicker();
+    await this.closeErrorNotifications();
+  }
+
+  /**
    * Waits and clicks every element that matches the target selector.
    *
    * @param {String} selector - the css selector of the target elements to
@@ -43,6 +63,35 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Waits for the Navigation to happens after some link (selector) is clicked.
+   *
+   * @param {String} selector - the css selector for the element to click and wait for navigation.
+   */
+  async clickAndWaitForNavigation (selector) {
+    await this.engine.waitForSelector(selector);
+    await Promise.all([
+      this.engine.click(selector),
+      this.engine.waitForNavigation()
+    ]);
+    await this.cleanups();
+  }
+
+  /**
+  * Waits for Modal form to compelete rendering after some link to open modal is clicked
+  *
+  * @param {String} selector - the css selector for the element to click and wait for modal.
+  */
+  async clickAndWaitForModal (selector) {
+    await this.engine.waitForSelector(selector);
+    await this.engine.click(selector);
+    await this.engine.waitForSelector('.modal-dialog > form', { visible: true });
+    await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
+    await this.cleanups();
+    // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
+    await this.engine.waitFor(300);
+  }
+
+  /**
    * Closes all active notifications.
    */
   async closeErrorNotifications () {
@@ -55,18 +104,76 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Checks if the checkbox is enabled and checks it if not.
+   *
+   * @param {String} selector - the css selector for the checkbox to be click and enabled
+   */
+  async enableCheckbox (selector) {
+    const checkbox = await this.engine.$(selector);
+    const checked = await (await checkbox.getProperty('checked')).jsonValue();
+
+    if (!checked) {
+      await this.engine.click(selector);
+    }
+  }
+
+  /**
+    * Checks if element is visible on screen
+    * @param {String} selector - the css selector for the element to checkfor
+    */
+  async isElementVisible (selector) {
+    return this.engine.evaluate((selector) => {
+      const e = document.querySelector(selector);
+
+      if (!e) {
+        return false;
+      }
+
+      const style = window.getComputedStyle(e);
+
+      return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && e.offsetHeight > 0;
+    }, selector);
+  }
+
+  /**
    * Opens all the accordions on the page
+   * Logic - to make sure that Accordion dont toggle (open and then close) multiple times, the code checks for the class
+   * 'backstop-all-accordions-open' and if not added (which won't be added initially) it excutes the open logic and adds a class
+   * prevventing future toggling.
    */
   async openAllAccordions () {
-    await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
+    const areAccordionsOpen = !!(await this.engine.$('body.backstop-all-accordions-open'));
+
+    if (!areAccordionsOpen) {
+      const isSubAccordionExist = !!(await this.engine.$('.collapsible-title'));
+
+      console.log('Clicking all accordion headers');
+      await this.clickAll('div.crm-accordion-wrapper.collapsed > div');
+      if (isSubAccordionExist) {
+        await this.clickAll('.collapsible-title');
+      }
+      await this.engine.addScriptTag({
+        'content': 'document.body.classList.add("backstop-all-accordions-open")'
+      });
+      try {
+        await this.engine.waitFor('.blockUI.blockOverlay', { hidden: true });
+        await this.engine.waitFor('.loading-text', { hidden: true, timeout: 8000 });
+        await this.engine.waitFor('[alt="loading"]', { hidden: true });
+        // wait for reedjustment of the modal after ajax content load after opening accordion
+        await this.engine.waitFor(500);
+        console.log('All accordion blocks loaded');
+      } catch (e) {
+        console.log('Loaders still visible and timeout reached!');
+      }
+      await this.cleanups();
+    }
   }
 
   /**
    * Submits the current page form.
    */
   async submit () {
-    await this.engine.click('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
-    await this.engine.waitForNavigation();
+    await this.clickAndWaitForNavigation('#crm-main-content-wrapper form .crm-submit-buttons:last-of-type .crm-form-submit:not(.cancel)');
   }
 
   /**
@@ -90,33 +197,21 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    await this.engine.waitFor('.cke', { visible: true });
+    const isWysiwygVisible = await this.isElementVisible(this, '.crm-form-wysiwyg');
+
+    if (isWysiwygVisible) {
+      await this.engine.waitFor('.cke .cke_contents', { visible: true });
+    }
   }
 
   /**
-   * Waits for the Navigation to happens after some link (selector) is clicked.
-   *
-   * @param {String} selector - the css selector for the element to click and wait for navigation.
+   * Waits for the date picker to be visible on the page
    */
-  async clickAndWaitForNavigation (selector) {
-    await this.engine.waitForSelector(selector);
-    await Promise.all([
-      this.engine.click(selector),
-      this.engine.waitForNavigation()
-    ]);
-  }
+  async waitForDatePicker () {
+    const hasDatepicker = await this.isElementVisible(this, '.hasDatepicker');
 
-  /**
-   * Checks if the checkbox is enabled and checks it if not.
-   *
-   * @param {String} selector - the css selector for the checkbox to be click and enabled
-   */
-  async enableCheckbox (selector) {
-    const checkbox = await this.engine.$(selector);
-    const checked = await (await checkbox.getProperty('checked')).jsonValue();
-
-    if (!checked) {
-      await this.engine.click(selector);
+    if (hasDatepicker) {
+      this.engine.waitForSelector('.fa-calendar');
     }
   }
 };
