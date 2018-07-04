@@ -197,7 +197,7 @@ module.exports = class CrmPage {
    * Waits for the WYSIWYG to be visible on the page
    */
   async waitForWYSIWYG () {
-    const isWysiwygVisible = await this.isElementVisible(this, '.crm-form-wysiwyg');
+    const isWysiwygVisible = await this.isElementVisible('.crm-form-wysiwyg');
 
     if (isWysiwygVisible) {
       await this.engine.waitFor('.cke .cke_contents', { visible: true });
@@ -208,7 +208,7 @@ module.exports = class CrmPage {
    * Waits for the date picker to be visible on the page
    */
   async waitForDatePicker () {
-    const hasDatepicker = await this.isElementVisible(this, '.hasDatepicker');
+    const hasDatepicker = await this.isElementVisible('.hasDatepicker');
 
     if (hasDatepicker) {
       this.engine.waitForSelector('.fa-calendar');
