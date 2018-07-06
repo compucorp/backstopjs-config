@@ -18,6 +18,78 @@
       "onReadyScript": "search/find-contact.js"
     },
     {
+      "label": "Search Results - More Actions dropdown",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": ["span.crm-hover-button .panel"],
+      "onReadyScript": "search/results-more-actions-dropdown.js"
+    },
+    {
+      "label": "Search Results - Delete Contact Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-delete-contact-modal.js"
+    },
+    {
+      "label": "Search Results - Add Contributions Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-contributions-modal.js"
+    },
+    {
+      "label": "Search Results - Register for Event Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-register-for-event-modal.js"
+    },
+    {
+      "label": "Search Results - Add Pledge Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-pledge-modal.js"
+    },
+    {
+      "label": "Search Results - Add Membership Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-membership-modal.js"
+    },
+    {
+      "label": "Search Results - Add Relationship Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-relationship-modal.js"
+    },
+    {
+      "label": "Search Results - Record Activity Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-record-activity-modal.js"
+    },
+    {
+      "label": "Search Results - Add Note Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-note-modal.js"
+    },
+    {
+      "label": "Search Results - Send an Email Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-send-email-modal.js"
+    },
+    {
+      "label": "Search Results - Add to Group Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-add-to-group-modal.js"
+    },
+    {
+      "label": "Search Results - Tag Contact Modal - more actions",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/results-more-actions-tag-contact-modal.js"
+    },
+    {
       "label": "Advanced Search",
       "url": "{url}/index.php?q=civicrm/contact/search/advanced&reset=1",
       "onReadyScript": "common/open-accordions.js"
@@ -39,9 +111,34 @@
       "onReadyScript": "search/full-text-result.js"
     },
     {
+      "label": "Full text Search - Contact - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contact"
+    },
+    {
+      "label": "Full text Search - Activities - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
+      "onReadyScript": "search/full-text-result-activity.js"
+    }, 
+    {
+      "label": "Full text Search - Contributions - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contribution"
+    },   
+   {
+      "label": "Full text Search - Participants - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Participant"
+    },   
+    {
+      "label": "Full text Search - Memberships - Results",
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Membership"
+    },             
+    {
       "label": "Search builder",
       "url": "{url}/civicrm/contact/search/builder?reset=1",
       "hideSelectors": ["#mainTabContainer"]
+    },
+    {
+      "label": "Search Builder - Search result",
+      "url": "{url}/civicrm/contact/search/builder?reset=1"
     },
     {
       "label": "Find Participants",
@@ -55,6 +152,24 @@
       "onReadyScript": "search/find-participants.js"
     },
     {
+      "label": "Find Participants - View Modal - results",
+      "url": "{url}/civicrm/event/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-participants-view-modal.js"
+    },
+    {
+      "label": "Find Participants - Edit Modal - results",
+      "url": "{url}/civicrm/event/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-participants-edit-modal.js"
+    },
+    {
+      "label": "Find Participants - Delete Modal - results",
+      "url": "{url}/civicrm/event/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-participants-delete-modal.js"
+    },
+    {
       "label": "Find Activities",
       "url": "{url}/civicrm/activity/search?reset=1",
       "hideSelectors": ["#mainTabContainer"]
@@ -64,6 +179,24 @@
       "url": "{url}/civicrm/activity/search?reset=1",
       "hideSelectors": ["#mainTabContainer"],
       "onReadyScript": "search/find-activities.js"
+    },
+    {
+      "label": "Find Activities - View Modal - results",
+      "url": "{url}/civicrm/activity/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-activities-view-modal.js"
+    },
+    {
+      "label": "Find Activities - Edit Modal - results",
+      "url": "{url}/civicrm/activity/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-activities-edit-modal.js"
+    },
+    {
+      "label": "Find Activities - Delete Modal - results",
+      "url": "{url}/civicrm/activity/search?reset=1",
+      "selectors": [".ui-dialog"],
+      "onReadyScript": "search/find-activities-delete-modal.js"
     },
     {
       "label": "Custom Searches",

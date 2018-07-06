@@ -5,7 +5,7 @@
     "height": 3000
   }],
   "onBeforeScript": "onBefore.js",
-  "onReadyScript": "common/close-notifications.js",
+  "onReadyScript": "onReady.js",
   "paths": {
     "bitmaps_reference": "backstop_data/screenshots/{group}/reference",
     "bitmaps_test": "backstop_data/screenshots/{group}/test",

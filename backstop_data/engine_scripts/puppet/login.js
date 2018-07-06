@@ -1,6 +1,10 @@
 'use strict';
 
-module.exports = async engine => {
+const Page = require('../page-objects/crm-page.js');
+
+module.exports = async (engine, scenario, vp) => {
+  const page = await Page.build(engine, scenario, vp);
+
   let config;
   const formSelector = 'form#user-login-form';
 
@@ -17,9 +21,8 @@ module.exports = async engine => {
   console.log('Logging in before starting...');
 
   await engine.goto(config.url);
-  await engine.waitFor('form#user-login-form');
+  await engine.waitFor(formSelector);
   await engine.type('[name="name"]', config.credentials.name);
   await engine.type('[name="pass"]', config.credentials.pass);
-  await engine.click('#edit-submit');
-  await engine.waitForNavigation();
+  await page.clickAndWaitForNavigation('#edit-submit');
 };

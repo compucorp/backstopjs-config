@@ -1,9 +1,11 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
+  const page = await Page.build(engine, scenario, vp);
+
   await require('./show-contributions')(engine, scenario, vp);
-  await engine.click('.CRM_Contribute_Form_Search a[accesskey="N"]');
-  await engine.waitFor('.crm-contribution-form-block', { visible: true });
+  await page.clickAndWaitForModal('.CRM_Contribute_Form_Search a[accesskey="N"]');
   await require('../common/open-accordions')(engine, scenario, vp);
-  await engine.waitFor('[alt="loading"]', { hidden: true });
 };

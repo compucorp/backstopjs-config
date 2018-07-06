@@ -3,7 +3,7 @@
 const Page = require('../../page-objects/crm-page.js');
 
 module.exports = async (engine, scenario, vp) => {
-  const page = new Page(engine, scenario, vp);
+  const page = await Page.build(engine, scenario, vp);
 
   await require('./common')(page, ['3', '199']);
   await engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');

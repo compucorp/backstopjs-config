@@ -1,0 +1,12 @@
+{
+  "scenarios": [{
+    "label": "Dashboard",
+    "url": "{url}/civicrm/dashboard",
+    "onReadyScript": "dashboard/show.js"
+  },
+  {
+    "label": "Dashboard - Configure",
+    "url": "{url}/civicrm/dashboard",
+    "onReadyScript": "dashboard/configure-dashboard.js"
+  }]
+}

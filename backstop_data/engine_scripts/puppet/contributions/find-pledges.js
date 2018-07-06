@@ -1,6 +1,9 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
-  await engine.click('#_qf_Search_refresh');
-  await engine.waitFor('.crm-results-block');
+  const page = await Page.build(engine, scenario, vp);
+
+  await page.clickAndWaitForNavigation('#_qf_Search_refresh');
 };

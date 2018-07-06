@@ -1,7 +1,9 @@
 'use strict';
 
+const Page = require('../page-objects/crm-page.js');
+
 module.exports = async (engine, scenario, vp) => {
-  await engine.click('.button.new-option');
-  await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
-  await require('../common/wait-for-wysiwyg')(engine, scenario, vp);
+  const page = await Page.build(engine, scenario, vp);
+
+  await page.clickAndWaitForModal('.button.new-option');
 };
