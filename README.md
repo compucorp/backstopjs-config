@@ -2,7 +2,10 @@
 A CiviCRM site installed with sample data (check the "Load sample data" option when running the installer).
 
 ### Additional data needed
+* Enable Clean URL for the Drupal site. [Enable Clean URL for Drupal7](https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls)
 * At least one Price Set added with at least one price set (/civicrm/admin/price/), with at least one price field (/civicrm/admin/price/field)
+* At least one Batch Data Entry Set with type 'Contribution'
+* On Contact search page ( go to /civicrm/contact/search and hit Search) , the first result should have a valid email address field
 
 # How to use it
 1. Create a `backstop_data/site-config.json` file with the following content.
