@@ -36,11 +36,6 @@
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=participant",
       "selectors": [".ui-dialog"],
       "onReadyScript": "contact-page/record-event.js"
-    },
-    {
-      "label": "Tags",
-      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=tag",
-      "onReadyScript": "contact-page/show-tags.js"
     }
   ]
 }
