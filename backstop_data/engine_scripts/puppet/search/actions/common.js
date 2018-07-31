@@ -12,7 +12,7 @@
 module.exports = async (page, checkboxIds = ['103']) => {
   await page.clickSelect2Option('#s2id_contact_type', 'Organization');
   await page.clickAndWaitForNavigation('#_qf_Basic_refresh');
-
+  await page.engine.type('#sort_name', 'Alliance');
   for (const id of checkboxIds) {
     await page.engine.click(`#mark_x_${id}`);
   }
