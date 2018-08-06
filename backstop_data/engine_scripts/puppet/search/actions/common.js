@@ -16,6 +16,8 @@ module.exports = async (page, checkboxIds = ['103']) => {
 
   /**
    * For parallel captures the search page redirects to advance search.
+   * Reason -  Civicrm invalidates qf_key parameter as the same page is accessed with
+   * different Drupal login sessions with multiple qf_keys passed at the same time.
    * To fix the bug we are checking if page redirects to advance search.
    */
   const onAdvanceSearchPage = !!(await page.engine.$('.CRM_Contact_Form_Search_Advanced'));
