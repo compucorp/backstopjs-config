@@ -17,6 +17,7 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 
 ### Drupal
 * [Clean URLs](https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls) enabled
+* The user name for admin should be `admin`
 
 # How to use it
 1. Create a `backstop_data/site-config.json` file with the following content.
