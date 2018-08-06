@@ -13,10 +13,10 @@ module.exports = async (page, checkboxIds = ['103']) => {
   await page.clickSelect2Option('#s2id_contact_type', 'Organization');
   await page.engine.type('#sort_name', 'Alliance');
   await page.clickAndWaitForNavigation('#_qf_Basic_refresh');
-  
+
   const onAdvanceSearchPage = !!(await page.engine.$('.CRM_Contact_Form_Search_Advanced'));
 
-  if(onAdvanceSearchPage) {
+  if (onAdvanceSearchPage) {
     await page.clickSelect2Option('#s2id_contact_type', 'Organization');
     await page.engine.type('#sort_name', 'Alliance');
     await page.clickAndWaitForNavigation('#_qf_Advanced_refresh-top');
