@@ -15,7 +15,7 @@
   },
   "engine": "puppeteer",
   "report": ["CLI", "browser"],
-  "asyncCaptureLimit": 1,
+  "asyncCaptureLimit": 2,
   "asyncCompareLimit": 50,
   "debug": false,
   "debugWindow": false,
