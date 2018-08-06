@@ -14,8 +14,13 @@ module.exports = async (page, checkboxIds = ['103']) => {
   await page.engine.type('#sort_name', 'Alliance');
   await page.clickAndWaitForNavigation('#_qf_Basic_refresh');
 
+  /**
+   * For parallel captures the search page redirects to advance search.
+   * To fix the bug we are checking if page redirects to advance search.
+   */
   const onAdvanceSearchPage = !!(await page.engine.$('.CRM_Contact_Form_Search_Advanced'));
 
+  // if page redirects, refill it and submit
   if (onAdvanceSearchPage) {
     await page.clickSelect2Option('#s2id_contact_type', 'Organization');
     await page.engine.type('#sort_name', 'Alliance');
