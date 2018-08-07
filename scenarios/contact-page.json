@@ -12,7 +12,6 @@
     {
       "label": "Record Contribution",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=contribute",
-      "selectors": [".ui-dialog"],
       "onReadyScript": "contact-page/record-contribution.js"
     },
     {
@@ -23,7 +22,6 @@
     {
       "label": "Memberships - Add Membership",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=member",
-      "selectors": [".ui-dialog"],
       "onReadyScript": "contact-page/record-membership.js"
     },
     {
@@ -34,7 +32,6 @@
     {
       "label": "Events - Add Membership",
       "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2&selectedChild=participant",
-      "selectors": [".ui-dialog"],
       "onReadyScript": "contact-page/record-event.js"
     }
   ]
