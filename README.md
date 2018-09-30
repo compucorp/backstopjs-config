@@ -15,6 +15,9 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 * At least one Batch Data Entry Set with type 'Contribution' (/civicrm/batch/add?reset=1&action=add)
 * On Contact search page (/civicrm/contact/search) , the first result should have a valid email address field
 
+### Extensions
+* The [uk.co.vedaconsulting.mosaico](https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico) extension should not be enabled on the site. In case it is, either momentarily disable it or remove the *mailings_menu.json* scenarios group
+
 ### Drupal
 * [Clean URLs](https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls) enabled
 * The user name for admin should be `admin`
