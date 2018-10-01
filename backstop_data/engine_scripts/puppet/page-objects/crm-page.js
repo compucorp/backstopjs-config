@@ -92,6 +92,30 @@ module.exports = class CrmPage {
   }
 
   /**
+   * CiviCRM doesn't like when multiple searches are being submitted at
+   * the same time (which happens when running parallel captures), causing either
+   * a fatal error or a redirect to the search form.
+   *
+   * This loop simply keeps submitting the search until it goes through
+   *
+   * @param {String} [submitBtn] The submit button to press
+   */
+  async clickAndWaitForSuccessfulSearch (submitBtn) {
+    let trySubmit = true;
+    submitBtn = submitBtn || '.crm-form-submit[value="Search"]';
+
+    while (trySubmit) {
+      await this.clickAndWaitForNavigation(submitBtn);
+
+      if (await this.engine.$('[class*="search-results"]')) {
+        trySubmit = false;
+      } else {
+        await this.engine.goto(this.scenario.url);
+      }
+    }
+  }
+
+  /**
    * Closes all active notifications.
    */
   async closeErrorNotifications () {
