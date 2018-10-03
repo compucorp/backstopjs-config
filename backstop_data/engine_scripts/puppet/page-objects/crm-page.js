@@ -160,6 +160,20 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Waits for the selector to be clearly visible on the screen.
+   *
+   * @param {String} selector - the css selector of the target elements to
+   * look for.
+   */
+  async waitForVisibility (selector) {
+    await this.engine.waitFor((selector) => {
+      const uiBlock = document.querySelector(selector);
+
+      return uiBlock.style.display === 'block';
+    }, {}, selector);
+  }
+
+  /**
    * Opens all the accordions on the page
    * Logic - to make sure that Accordion dont toggle (open and then close) multiple times, the code checks for the class
    * 'backstop-all-accordions-open' and if not added (which won't be added initially) it excutes the open logic and adds a class
