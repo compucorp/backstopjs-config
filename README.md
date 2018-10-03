@@ -17,6 +17,7 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 
 ### Extensions
 * The [uk.co.vedaconsulting.mosaico](https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico) extension should not be enabled on the site. In case it is, either momentarily disable it or remove the *mailings_menu.json* scenarios group
+* Enable `CiviCase` component (admin/setting/component?reset=1) which is the part of core vanilla civicrm. The test suite contains screens for civicase component
 
 ### Drupal
 * [Clean URLs](https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls) enabled
