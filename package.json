@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "ansi-colors": "^2.0.2",
-    "backstopjs": "^3.6.1",
+    "backstopjs": "^3.7.0",
     "clean": "^4.0.2",
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
