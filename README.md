@@ -7,7 +7,6 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 
 ### Technical
 * [Node.js](https://nodejs.org/en/) v8.9.0
-* [Gulp](https://gulpjs.com/) installed globally
 * [Drush](https://www.drush.org/) installed globally
 
 ### Data
@@ -33,17 +32,17 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
     ```
 2. Create the reference screenshots
     ```shell
-    gulp backstopjs:reference
+    npx gulp backstopjs:reference
     ```
 3. Create the test screenshots and compare
     ```shell
-    gulp backstopjs:test
+    npx gulp backstopjs:test
     ```
 
 ## Testing a single group
 In case you want to run backstop only for the scenarios of a specific group (ie. `administer-menu.json`), pass the `--group` argument to the gulp task (without the `.json` extension)
 ```shell
-gulp backstopjs:test --group administer-menu
+npx gulp backstopjs:test --group administer-menu
 ```
 
 ## Parallel capturing
@@ -57,7 +56,7 @@ This backstop test suite relies on session cookies to be present in the `backsto
 If you want to skip the cookie creation phase (in case the cookies are already present in the folder and are not expired yet), pass a `--skipCookies` argument to the task
 
 ```shell
-gulp backstopjs:reference --skipCookies
+npx gulp backstopjs:reference --skipCookies
 ```
 
 # Covered pages
