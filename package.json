@@ -2,10 +2,9 @@
   "name": "backstopjs-test",
   "version": "1.0.0",
   "description": "BackstopJS configuration for CiviHR",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "precommit": "lint-staged",
-    "test": "node test-runner.js"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -13,12 +12,12 @@
       "git add"
     ]
   },
-  "devDependencies": {
+  "dependencies": {
     "ansi-colors": "^2.0.2",
-    "backstopjs": "^3.3.1",
+    "backstopjs": "^3.7.0",
     "clean": "^4.0.2",
     "fs": "0.0.1-security",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-file": "^0.4.0",
     "gulp-notify": "^3.2.0",

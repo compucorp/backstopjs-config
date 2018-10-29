@@ -182,7 +182,9 @@
     },
     {
       "label": "Localization - Languages Options",
-      "url": "{url}/civicrm/admin/options/languages?reset=1"
+      "url": "{url}/civicrm/admin/options/languages?reset=1",
+      "onReadyScript": "common/wait-for-editable-icon.js",
+      "requireSameDimensions": false
     },
     {
       "label": "Users and Permissions - Access Control",
