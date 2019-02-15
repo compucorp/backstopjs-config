@@ -22,7 +22,7 @@
     "gulp-file": "^0.4.0",
     "gulp-notify": "^3.2.0",
     "lint-staged": "^6.1.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "path": "^0.12.7",
     "plugin-error": "^1.0.1",
     "semistandard": "^12.0.0",
