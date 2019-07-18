@@ -7,5 +7,5 @@ module.exports = async (engine, scenario, vp) => {
 
   await engine.waitFor('a[href*="/civicrm/tag/edit?action=add"]', { visible: true });
   await engine.click('.jstree-node .jstree-wholerow');
-  await page.clickAndWaitForModal('a[title="Duplicate ths tag"');
+  await page.clickAndWaitForModal('a[title="Duplicate this tag"');
 };
