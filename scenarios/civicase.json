@@ -7,7 +7,8 @@
     },
     {
       "label": "Civicase - Find Cases - Search",
-      "url": "{url}/civicrm/case/search?reset=1"
+      "url": "{url}/civicrm/case/search?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Find My Cases",
@@ -43,15 +44,18 @@
     },
     {
       "label": "Civicase - Case Report",
-      "url": "{url}/civicrm/report/list?compid=7&reset=1"
+      "url": "{url}/civicrm/report/list?compid=7&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - New Case Report",
-      "url": "{url}/civicrm/report/template/list?reset=1&compid=7"
+      "url": "{url}/civicrm/report/template/list?reset=1&compid=7",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Case Summary Report - Columns",
-      "url": "{url}/civicrm/report/case/summary"
+      "url": "{url}/civicrm/report/case/summary",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Case Summary Report - Sorting",
@@ -90,7 +94,8 @@
     },
     {
       "label": "Civicase - Settings",
-      "url": "{url}/civicrm/admin/setting/case?reset=1"
+      "url": "{url}/civicrm/admin/setting/case?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Settings - Case Type",
@@ -119,7 +124,8 @@
     },
     {
       "label": "Civicase - Settings - Redaction Rule Options",
-      "url": "{url}/civicrm/admin/options/redaction_rule?reset=1"
+      "url": "{url}/civicrm/admin/options/redaction_rule?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Settings - Redaction Rule Options - Add New Redaction Rule",
@@ -135,7 +141,8 @@
     },
     {
       "label": "Civicase - Settings - Case Status Options",
-      "url": "{url}/civicrm/admin/options/case_status?reset=1"
+      "url": "{url}/civicrm/admin/options/case_status?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Settings - Case Status Options - Edit",
@@ -156,8 +163,9 @@
       "selectors": [".ui-dialog"]
     },
     {
-    "label": "Civicase - Settings - Encounter Medium Options",
-    "url": "{url}/civicrm/admin/options/encounter_medium?reset=1"
+      "label": "Civicase - Settings - Encounter Medium Options",
+      "url": "{url}/civicrm/admin/options/encounter_medium?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Civicase - Settings - Encounter Medium Options - Edit",

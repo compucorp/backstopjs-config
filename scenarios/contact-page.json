@@ -2,7 +2,8 @@
   "scenarios": [
     {
       "label": "Contact Summary",
-      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2"
+      "url": "{url}/index.php?q=civicrm/contact/view&reset=1&cid=2",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions",

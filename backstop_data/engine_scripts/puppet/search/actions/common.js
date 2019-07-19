@@ -9,7 +9,7 @@
  * @param {CrmPage} page
  * @param {Array} checkboxIds
  */
-module.exports = async (page, checkboxIds = ['103']) => {
+module.exports = async (page, checkboxIds = ['151']) => {
   await page.clickSelect2Option('#s2id_contact_type', 'Organization');
   await page.engine.type('#sort_name', 'Alliance');
   await page.clickAndWaitForNavigation('#_qf_Basic_refresh');

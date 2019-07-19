@@ -2,32 +2,38 @@
   "scenarios": [
     {
       "label": "Events - Dashboard",
-      "url": "{url}/civicrm/event?reset=1"
+      "url": "{url}/civicrm/event?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Register Event Participant",
-      "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone"
+      "url": "{url}/civicrm/participant/add?reset=1&action=add&context=standalone",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Event Reports",
-      "url": "{url}/civicrm/report/list?compid=1&reset=1"
+      "url": "{url}/civicrm/report/list?compid=1&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "New Event",
       "url": "{url}/civicrm/event/add?reset=1&action=add",
-      "onReadyScript": "common/wait-for-wysiwyg.js"
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Manage Events",
-      "url": "{url}/civicrm/event/manage?reset=1"
+      "url": "{url}/civicrm/event/manage?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Import Participants",
-      "url": "{url}/civicrm/event/import?reset=1"
+      "url": "{url}/civicrm/event/import?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Event Templates",
-      "url": "{url}/civicrm/admin/eventTemplate?reset=1"
+      "url": "{url}/civicrm/admin/eventTemplate?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Event Type Options",
@@ -36,27 +42,33 @@
     },
     {
       "label": "Participant Status",
-      "url": "{url}/civicrm/admin/participant_status?reset=1"
+      "url": "{url}/civicrm/admin/participant_status?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Participant Role Options",
-      "url": "{url}/civicrm/admin/options/participant_role?reset=1"
+      "url": "{url}/civicrm/admin/options/participant_role?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Participant Listing Options",
-      "url": "{url}/civicrm/admin/options/participant_listing?reset=1"
+      "url": "{url}/civicrm/admin/options/participant_listing?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Event Name Badge Layouts",
-      "url": "{url}/civicrm/admin/badgelayout?reset=1"
+      "url": "{url}/civicrm/admin/badgelayout?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "New Event Name Badge Layout",
-      "url": "{url}/civicrm/admin/badgelayout?action=add&reset=1"
+      "url": "{url}/civicrm/admin/badgelayout?action=add&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "CiviEvent Component Settings",
-      "url": "{url}/civicrm/admin/setting/preferences/event?reset=1"
+      "url": "{url}/civicrm/admin/setting/preferences/event?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     }
   ]
 }

@@ -2,11 +2,13 @@
   "scenarios": [
     {
       "label": "Membership - Dashboard",
-      "url": "{url}/civicrm/member?reset=1"
+      "url": "{url}/civicrm/member?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Membership - Find Memberships",
-      "url": "{url}/civicrm/member/search?reset=1"
+      "url": "{url}/civicrm/member/search?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Find Memberships - View Modal - Results ",
@@ -37,10 +39,11 @@
       "url": "{url}/civicrm/member/search?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "membership/find-memberships-renew-cc.js"
-    },  
+    },
     {
       "label": "Membership - New Membership",
-      "url": "{url}/civicrm/member/add?reset=1&action=add&context=standalone"
+      "url": "{url}/civicrm/member/add?reset=1&action=add&context=standalone",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Membership - Find Memberships - Results",
@@ -49,11 +52,13 @@
     },
     {
       "label": "Membership - Import Memberships",
-      "url": "{url}/civicrm/member/import?reset=1"
+      "url": "{url}/civicrm/member/import?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Membership Reports",
-      "url": "{url}/civicrm/report/list?compid=3&reset=1"
+      "url": "{url}/civicrm/report/list?compid=3&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     }
   ]
 }

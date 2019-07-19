@@ -32,23 +32,28 @@
     },
     {
       "label": "Scheduled and Sent Mailings",
-      "url": "{url}/civicrm/mailing/browse/scheduled?reset=1&scheduled=true"
+      "url": "{url}/civicrm/mailing/browse/scheduled?reset=1&scheduled=true",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Mailing Reports",
-      "url": "{url}/civicrm/report/list?compid=4&reset=1"
+      "url": "{url}/civicrm/report/list?compid=4&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Headers, Footers, and Automated Messages",
-      "url": "{url}/civicrm/admin/component?reset=1"
+      "url": "{url}/civicrm/admin/component?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Headers, Footers, and Automated Messages - Add mailing Component",
-      "url": "{url}/civicrm/admin/component?action=add&reset=1"
+      "url": "{url}/civicrm/admin/component?action=add&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Message Templates",
-      "url": "{url}/civicrm/admin/messageTemplates?reset=1"
+      "url": "{url}/civicrm/admin/messageTemplates?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Message Templates - System Workflow",
@@ -58,11 +63,12 @@
     {
       "label": "Message Templates - Add Message Template",
       "url": "{url}/civicrm/admin/messageTemplates/add?action=add&reset=1",
-      "onReadyScript": "common/wait-for-wysiwyg.js"
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "From Email Addresses",
-      "url": "{url}/civicrm/admin/options/from_email_address?reset=1"
+      "url": "{url}/civicrm/admin/options/from_email_address?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "From Email Addresses - New",
@@ -72,7 +78,8 @@
     },
     {
       "label": "Find Mass SMS",
-      "url": "{url}/civicrm/mailing/browse?reset=1&sms=1"
+      "url": "{url}/civicrm/mailing/browse?reset=1&sms=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "New A/B Test",
@@ -87,15 +94,18 @@
     },
     {
       "label": "Mail Accounts",
-      "url": "{url}/civicrm/admin/mailSettings?reset=1"
+      "url": "{url}/civicrm/admin/mailSettings?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "CiviMail Settings",
-      "url": "{url}/civicrm/admin/mail?reset=1"
+      "url": "{url}/civicrm/admin/mail?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "CiviMail Component Settings",
-      "url": "{url}/civicrm/admin/setting/preferences/mailing?reset=1"
+      "url": "{url}/civicrm/admin/setting/preferences/mailing?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     }
   ]
 }
