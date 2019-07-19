@@ -2,7 +2,8 @@
   "scenarios": [
     {
       "label": "Standard Search",
-      "url": "{url}/civicrm/contact/search?reset=1"
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Standard Search - with many options",
@@ -102,7 +103,8 @@
     },
     {
       "label": "Full-text Search",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1"
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Full-text Search - result",
@@ -112,25 +114,29 @@
     },
     {
       "label": "Full text Search - Contact - Results",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contact"
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contact",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Full text Search - Activities - Results",
       "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1",
       "onReadyScript": "search/full-text-result-activity.js"
-    }, 
+    },
     {
       "label": "Full text Search - Contributions - Results",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contribution"
-    },   
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Contribution",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
+    },
    {
       "label": "Full text Search - Participants - Results",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Participant"
-    },   
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Participant",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
+    },
     {
       "label": "Full text Search - Memberships - Results",
-      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Membership"
-    },             
+      "url": "{url}/civicrm/contact/search/custom?csid=15&reset=1&force=1&table=Membership",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
+    },
     {
       "label": "Search builder",
       "url": "{url}/civicrm/contact/search/builder?reset=1",
@@ -138,12 +144,14 @@
     },
     {
       "label": "Search Builder - Search result",
-      "url": "{url}/civicrm/contact/search/builder?reset=1"
+      "url": "{url}/civicrm/contact/search/builder?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Find Participants",
       "url": "{url}/civicrm/event/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Find Participants - result",
@@ -172,7 +180,8 @@
     {
       "label": "Find Activities",
       "url": "{url}/civicrm/activity/search?reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Find Activities - result",
@@ -201,12 +210,14 @@
     {
       "label": "Custom Searches",
       "url": "{url}/civicrm/contact/search/custom/list?reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Household Name and State",
       "url": "{url}/civicrm/contact/search/custom?csid=1&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Household Name and State - result",
@@ -217,7 +228,8 @@
     {
       "label": "Custom Searches - Contribution Aggregate",
       "url": "{url}/civicrm/contact/search/custom?csid=2&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Contribution Aggregate - result",
@@ -228,7 +240,8 @@
     {
       "label": "Custom Searches - Basic Search",
       "url": "{url}/civicrm/contact/search/custom?csid=3&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Basic Search - result",
@@ -239,7 +252,8 @@
     {
       "label": "Custom Searches - Include / Exclude Search",
       "url": "{url}/civicrm/contact/search/custom?csid=4&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Include / Exclude Search - result",
@@ -250,7 +264,8 @@
     {
       "label": "Custom Searches - Postal Mailing",
       "url": "{url}/civicrm/contact/search/custom?csid=5&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Postal Mailing - result",
@@ -261,12 +276,14 @@
     {
       "label": "Custom Searches - Proximity Search",
       "url": "{url}/civicrm/contact/search/custom?csid=6&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Event Aggregate",
       "url": "{url}/civicrm/contact/search/custom?csid=7&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Event Aggregate - result",
@@ -277,7 +294,8 @@
     {
       "label": "Custom Searches - Activity Search",
       "url": "{url}/civicrm/contact/search/custom?csid=8&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Activity Search - result",
@@ -288,12 +306,14 @@
     {
       "label": "Custom Searches - Zip Code Range",
       "url": "{url}/civicrm/contact/search/custom?csid=10&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Date Added to CiviCRM",
       "url": "{url}/civicrm/contact/search/custom?csid=11&reset=1",
-      "hideSelectors": ["#mainTabContainer"]
+      "hideSelectors": ["#mainTabContainer"],
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Custom Searches - Date Added to CiviCRM - result",

@@ -24,6 +24,7 @@ module.exports = class CrmPage {
     * Waits for Js libraries and other cleanups
    */
   async cleanups () {
+    await this.waitForKAMMenu();
     await this.waitForWYSIWYG();
     await this.waitForDatePicker();
     await this.closeErrorNotifications();
@@ -157,6 +158,13 @@ module.exports = class CrmPage {
 
       return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && e.offsetHeight > 0;
     }, selector);
+  }
+
+  /**
+   * Waits for the KAM menu to appear on the screen.
+   */
+  async waitForKAMMenu () {
+    await this.engine.waitFor('#crm-qsearch', { visible: true });
   }
 
   /**

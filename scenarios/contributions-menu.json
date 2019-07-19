@@ -12,15 +12,18 @@
     },
     {
       "label": "Contributions - Dashboard - Table",
-      "url": "{url}/civicrm/contribute?reset=1#table_layout"
+      "url": "{url}/civicrm/contribute?reset=1#table_layout",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions - Manage Contribution Pages",
-      "url": "{url}/civicrm/admin/contribute?reset=1"
+      "url": "{url}/civicrm/admin/contribute?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions - Find Contributions",
-      "url": "{url}/civicrm/contribute/search?reset=1"
+      "url": "{url}/civicrm/contribute/search?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Find Contributions - Results",
@@ -58,23 +61,28 @@
     },
     {
       "label": "Contribution Reports",
-      "url": "{url}/civicrm/report/list?compid=2&reset=1"
+      "url": "{url}/civicrm/report/list?compid=2&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Import Contributions",
-      "url": "{url}/civicrm/contribute/import?reset=1"
+      "url": "{url}/civicrm/contribute/import?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - Dashboard",
-      "url": "{url}/civicrm/pledge?reset=1"
+      "url": "{url}/civicrm/pledge?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - New Pledge",
-      "url": "{url}/civicrm/pledge/add?reset=1&action=add&context=standalone"
+      "url": "{url}/civicrm/pledge/add?reset=1&action=add&context=standalone",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - Find Pledges",
-      "url": "{url}/civicrm/pledge/search?reset=1"
+      "url": "{url}/civicrm/pledge/search?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - Find Pledges result",
@@ -83,15 +91,18 @@
     },
     {
       "label": "Pledges - Pledge Reports",
-      "url": "{url}/civicrm/report/list?compid=6&reset=1"
+      "url": "{url}/civicrm/report/list?compid=6&reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - New Pledge Report",
-      "url": "{url}/civicrm/report/template/list?reset=1&compid=6"
+      "url": "{url}/civicrm/report/template/list?reset=1&compid=6",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - New Pledge Detail Report",
-      "url": "{url}/civicrm/report/pledge/detail?reset=1"
+      "url": "{url}/civicrm/report/pledge/detail?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Pledges - New Pledge Detail Report - Sorting",
@@ -110,7 +121,8 @@
     },
     {
       "label": "New Batch Data Entry",
-      "url": "{url}/civicrm/batch/add?reset=1&action=add"
+      "url": "{url}/civicrm/batch/add?reset=1&action=add",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Batch Data Entry - Enter Record",
@@ -130,7 +142,8 @@
     },
     {
       "label": "New Financial Batch",
-      "url": "{url}/civicrm/financial/batch?reset=1&action=add"
+      "url": "{url}/civicrm/financial/batch?reset=1&action=add",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Accounting Batch - Open Batches",
@@ -150,11 +163,12 @@
     {
       "label": "New Contribution Page",
       "url": "{url}/civicrm/admin/contribute/add?reset=1&action=add",
-      "onReadyScript": "common/wait-for-wysiwyg.js"
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Personal Campaign Pages",
-      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute"
+      "url": "{url}/civicrm/admin/pcp?reset=1&page_type=contribute",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Personal Campaign Pages - Edit Campaign",
@@ -208,11 +222,13 @@
     },
     {
       "label": "Manage Contributions - Setup Personal campaign",
-      "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute"
+      "url": "{url}/civicrm/contribute/campaign?action=add&reset=1&pageId=1&component=contribute",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Premiums (Thank-you Gifts)",
-      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1"
+      "url": "{url}/civicrm/admin/contribute/managePremiums?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions - Premiums Pages - add Premium Modal",
@@ -246,11 +262,13 @@
     },
     {
       "label": "Contributions - New Price Set",
-      "url": "{url}/civicrm/admin/price?reset=1&action=add"
+      "url": "{url}/civicrm/admin/price?reset=1&action=add",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions - Manage Price Set",
-      "url": "{url}/civicrm/admin/price?reset=1"
+      "url": "{url}/civicrm/admin/price?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Contributions - Manage Price Set - Add Price Fields",
@@ -310,15 +328,18 @@
     },
     {
       "label": "Close Accounting Period",
-      "url": "{url}/civicrm/admin/contribute/closeaccperiod?reset=1"
+      "url": "{url}/civicrm/admin/contribute/closeaccperiod?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Financial Types",
-      "url": "{url}/civicrm/admin/financial/financialType?reset=1"
+      "url": "{url}/civicrm/admin/financial/financialType?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Financial Accounts",
-      "url": "{url}/civicrm/admin/financial/financialAccount?reset=1"
+      "url": "{url}/civicrm/admin/financial/financialAccount?reset=1",
+      "onReadyScript": "common/wait-for-civicrm-page.js"
     },
     {
       "label": "Payment Methods Options",
