@@ -40,6 +40,16 @@
       "onReadyScript": "contact/step-2.js"
     },
     {
+      "label": "Import Contact - Step 3",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "onReadyScript": "contact/step-3.js"
+    },
+    {
+      "label": "Import Contact - Step 4",
+      "url": "{url}/civicrm/import/contact?reset=1",
+      "onReadyScript": "contact/step-4.js"
+    },
+    {
       "label": "Find and merge duplicates",
       "url": "{url}/civicrm/contact/deduperules?reset=1"
     },
@@ -78,7 +88,7 @@
       "label": "Find and Merge Duplicate Contacts - Use Rule - results",
       "url": "{url}/civicrm/contact/deduperules?reset=1",
       "onReadyScript": "find-and-merge/use-rule.js"
-    },    
+    },
     {
       "label": "Find and Merge Duplicate Contacts - Use Rule - Show duplicate contacts - results",
       "url": "{url}/civicrm/contact/deduperules?reset=1",
@@ -135,13 +145,13 @@
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "manage-groups/add-contacts-to-group-view-selected-contacts.js"
-    },   
+    },
     {
       "label": "Manage Groups - Add Contacts to the group form - Add new group Modal",
       "url": "{url}/civicrm/group?reset=1",
       "selectors": [".ui-dialog"],
       "onReadyScript": "manage-groups/add-new-group-modal.js"
-    },    
+    },
     {
       "label": "Manage Groups - Add Contacts to the group form - Delete group Modal",
       "url": "{url}/civicrm/group?reset=1",
