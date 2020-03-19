@@ -360,6 +360,16 @@
       "label": "CiviContribute Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/contribute?reset=1",
       "onReadyScript": "contributions/component-settings.js"
+    },
+    {
+      "label": "Contributions - Completed contributions - New tab",
+      "url": "{url}/civicrm/contribute/search?reset=1",
+      "onReadyScript": "contributions/new-tab-completed-contribution.js"
+    },
+    {
+      "label": "Contributions - Pending contributions - New tab",
+      "url": "{url}/civicrm/contribute/search?reset=1",
+      "onReadyScript": "contributions/new-tab-pending-contribution.js"
     }
   ]
 }
