@@ -115,6 +115,11 @@
       "onReadyScript": "contributions/new-pledge-filters.js"
     },
     {
+      "label": "Pledges - View Pledge - New tab",
+      "url": "{url}/civicrm/pledge/search?reset=1",
+      "onReadyScript": "contributions/new-tab-view-pledge.js"
+    },
+    {
       "label": "Batch Data Entry",
       "url": "{url}/civicrm/batch?reset=1",
       "onReadyScript": "contributions/batches.js"
