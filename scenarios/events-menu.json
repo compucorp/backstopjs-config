@@ -69,6 +69,11 @@
       "label": "CiviEvent Component Settings",
       "url": "{url}/civicrm/admin/setting/preferences/event?reset=1",
       "onReadyScript": "common/wait-for-civicrm-page.js"
+    },
+    {
+      "label": "Events - View events - New tab",
+      "url": "{url}/civicrm/event?reset=1",
+      "onReadyScript": "events/new-tab-view-events.js"
     }
   ]
 }

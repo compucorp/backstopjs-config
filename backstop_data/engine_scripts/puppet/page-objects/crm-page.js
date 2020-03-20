@@ -216,6 +216,19 @@ module.exports = class CrmPage {
   }
 
   /**
+   * Opens a fresh page with the link attached to the passed selector. This mimmicks open in a new
+   * tab functionality
+   *
+   * @param {String} selector - the css selector for the element to open in a new tab
+   */
+  async openInNewTab (selector) {
+    const pageUrl = await this.engine.$eval(selector, el => window.location.origin + '/' + el.getAttribute('href'));
+
+    // Open the page url to mimmick open in new tab
+    await this.engine.goto(pageUrl, {waitUntil: 'load'});
+  }
+
+  /**
    * Submits the current page form.
    */
   async submit () {
