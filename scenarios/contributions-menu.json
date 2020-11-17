@@ -45,7 +45,6 @@
     {
       "label": "Find Contributions - Delete contribution Modal - Results",
       "url": "{url}/civicrm/contribute/search?reset=1",
-      "selectors": [".ui-dialog"],
       "onReadyScript": "find-contributions/delete-modal.js"
     },
     {
