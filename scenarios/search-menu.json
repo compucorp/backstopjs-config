@@ -238,18 +238,6 @@
       "onReadyScript": "search/custom-search.js"
     },
     {
-      "label": "Custom Searches - Basic Search",
-      "url": "{url}/civicrm/contact/search/custom?csid=3&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "onReadyScript": "common/wait-for-civicrm-page.js"
-    },
-    {
-      "label": "Custom Searches - Basic Search - result",
-      "url": "{url}/civicrm/contact/search/custom?csid=3&reset=1",
-      "hideSelectors": ["#mainTabContainer"],
-      "onReadyScript": "search/custom-search-basic.js"
-    },
-    {
       "label": "Custom Searches - Include / Exclude Search",
       "url": "{url}/civicrm/contact/search/custom?csid=4&reset=1",
       "hideSelectors": ["#mainTabContainer"],
