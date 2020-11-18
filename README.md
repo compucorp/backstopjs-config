@@ -13,7 +13,6 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 * At least one Price Set added with at least one price set (/civicrm/admin/price/), with at least one price field (/civicrm/admin/price/field)
 * At least one Batch Data Entry Set with type 'Contribution' (/civicrm/batch/add?reset=1&action=add)
 * On Contact search page (/civicrm/contact/search) , the first result should have a valid email address field
-* "Adams Family" contact must be added to Administators group (/civicrm/group/search?context=amtg&amtgID=1&reset=1)
 * At least one pending contribution with a contact.
 
 ### Extensions
