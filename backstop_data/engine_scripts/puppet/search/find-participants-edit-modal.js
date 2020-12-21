@@ -7,5 +7,5 @@ module.exports = async (engine, scenario, vp) => {
 
   await require('./find-participants')(engine, scenario, vp);
   await page.clickAndWaitForModal('a[title="Edit Participation"]');
-  await engine.waitFor('.crm-event-eventfees-form-block-line_items', { visible: true });
+  await engine.waitFor('.CRM_Event_Form_Participant', { visible: true });
 };
