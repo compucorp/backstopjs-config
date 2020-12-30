@@ -14,13 +14,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const PluginError = require('plugin-error');
 
-const BACKSTOP_DIR = 'backstop_data';
-const CONFIG_TPL = { 'url': 'http://%{site-host}', 'root': '%{path-to-site-root}' };
-const FILES = {
-  siteConfig: path.join(BACKSTOP_DIR, 'site-config.json'),
-  temp: path.join(BACKSTOP_DIR, 'backstop.temp.json'),
-  tpl: path.join(BACKSTOP_DIR, 'backstop.tpl.json')
-};
+const CONFIGS = require('./utils/configs.js');
 
 /**
  * Returns the list of the scenarios from
@@ -31,7 +25,7 @@ const FILES = {
  * @return {Array}
  */
 function buildScenariosList (group) {
-  const config = siteConfig();
+  const config = CONFIGS.getSiteConfig();
   const dirPath = path.join('scenarios');
 
   return _(fs.readdirSync(dirPath))
@@ -44,7 +38,7 @@ function buildScenariosList (group) {
     .flatten()
     .map((scenario, index, scenarios) => {
       return _.assign(scenario, {
-        cookiePath: path.join(BACKSTOP_DIR, 'cookies', 'admin.json'),
+        cookiePath: path.join(CONFIGS.BACKSTOP_DIR, 'cookies', 'admin.json'),
         count: '(' + (index + 1) + ' of ' + scenarios.length + ')',
         url: scenario.url.replace('{url}', config.url)
       });
@@ -60,7 +54,7 @@ function buildScenariosList (group) {
  */
 function cleanUpAndNotify (success) {
   gulp
-    .src(FILES.temp, { read: false })
+    .src(CONFIGS.FILES.temp, { read: false })
     .pipe(clean())
     .pipe(notify({
       message: success ? 'Success' : 'Error',
@@ -79,7 +73,7 @@ function cleanUpAndNotify (success) {
 function createTempConfig () {
   const group = argv.group ? argv.group : '_all_';
   const list = buildScenariosList(group);
-  const content = JSON.parse(fs.readFileSync(FILES.tpl));
+  const content = JSON.parse(fs.readFileSync(CONFIGS.FILES.tpl));
 
   content.scenarios = list;
 
@@ -103,7 +97,7 @@ function runBackstopJS (command) {
   if (touchSiteConfigFile()) {
     throwError(
       'No site-config.json file detected!\n' +
-      `\tOne has been created for you under ${path.basename(BACKSTOP_DIR)}\n` +
+      `\tOne has been created for you under ${path.basename(CONFIGS.BACKSTOP_DIR)}\n` +
       '\tPlease insert the real value for each placeholder and try again'
     );
   }
@@ -111,15 +105,17 @@ function runBackstopJS (command) {
   return new Promise((resolve, reject) => {
     let success = false;
 
-    gulp.src(FILES.tpl)
-      .pipe(file(path.basename(FILES.temp), createTempConfig()))
-      .pipe(gulp.dest(BACKSTOP_DIR))
+    gulp.src(CONFIGS.FILES.tpl)
+      .pipe(file(path.basename(CONFIGS.FILES.temp), createTempConfig()))
+      .pipe(gulp.dest(CONFIGS.BACKSTOP_DIR))
       .on('end', async () => {
         try {
           (typeof argv.skipCookies === 'undefined') && await writeCookies();
-          await backstopjs(command, { configPath: FILES.temp, filter: argv.filter });
+          await backstopjs(command, { configPath: CONFIGS.FILES.temp, filter: argv.filter });
 
           success = true;
+        } catch (e) {
+          console.log(e);
         } finally {
           cleanUpAndNotify(success);
 
@@ -133,15 +129,6 @@ function runBackstopJS (command) {
 }
 
 /**
- * Returns the content of site config file
- *
- * @return {Object}
- */
-function siteConfig () {
-  return JSON.parse(fs.readFileSync(FILES.siteConfig));
-}
-
-/**
  * Creates the site config file is in the backstopjs folder, if it doesn't exists yet
  *
  * @return {Boolean} Whether the file had to be created or not
@@ -150,9 +137,9 @@ function touchSiteConfigFile () {
   let created = false;
 
   try {
-    fs.readFileSync(FILES.siteConfig);
+    fs.readFileSync(CONFIGS.FILES.siteConfig);
   } catch (err) {
-    fs.writeFileSync(FILES.siteConfig, JSON.stringify(CONFIG_TPL, null, 2));
+    fs.writeFileSync(CONFIGS.FILES.siteConfig, JSON.stringify(CONFIGS.CONFIG_TPL, null, 2));
 
     created = true;
   }
@@ -187,9 +174,9 @@ function throwError (msg) {
  * @return {Promise}
  */
 async function writeCookies () {
-  const cookiesDir = path.join(BACKSTOP_DIR, 'cookies');
+  const cookiesDir = path.join(CONFIGS.BACKSTOP_DIR, 'cookies');
   const cookieFilePath = path.join(cookiesDir, 'admin.json');
-  const config = siteConfig();
+  const config = CONFIGS.getSiteConfig();
 
   const loginUrl = execSync(`drush uli --name=admin --uri=${config.url} --browser=0`, { encoding: 'utf8', cwd: config.root });
   const browser = await puppeteer.launch();
