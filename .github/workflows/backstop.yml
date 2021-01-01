@@ -1,13 +1,23 @@
 name: Backstop Tests
 
 on:
-  pull_request:
-    types:
-      - labeled
+  workflow_dispatch:
+    inputs:
+      civicrm_version:
+        description: CiviCRM Version
+        default: master
+        required: true
+      reference_branch:
+        description: Reference Branch/Tag Name
+        default: master
+        required: true
+      test_branch:
+        description: Test Branch/Tag Name
+        default: master
+        required: true
 
 jobs:
   run-backstop-tests:
-    if: github.event.label.name == 'run backstop'
     runs-on: ubuntu-latest
     container:
       image: compucorp/civicrm-buildkit:1.1.0-php7.2-chrome
@@ -38,12 +48,12 @@ jobs:
           /usr/sbin/apache2ctl restart
       - name: Build Drupal site
         run: |
-          civibuild create drupal-clean --civi-ver 5.28.3 --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/site
+          civibuild create drupal-clean --civi-ver ${{ github.event.inputs.civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/site
           chmod -R 777 $GITHUB_WORKSPACE/site
       - name: Installing Shoreditch & Backstop
         working-directory: ${{ env.CIVICRM_EXTENSIONS_DIR }}
         run: |
-          git clone https://github.com/compucorp/backstopjs-config.git --branch "${{ github.head_ref }}"
+          git clone https://github.com/compucorp/backstopjs-config.git --branch CPS-393-automate-data-generation
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git
           cv en shoreditch
           drush en civicrmtheme -y
@@ -73,15 +83,15 @@ jobs:
         continue-on-error: true
         working-directory: ${{ env.SHOREDITCH_DIR }}
         run: |
-          git checkout master
+          git checkout ${{ github.event.inputs.reference_branch }}
           cd ..
           cd backstopjs-config
           npx gulp backstopjs:reference
-      - name: Test Screenshots in master Branch
+      - name: Test Screenshots in ${{ github.event.inputs.test_branch }} Branch
         working-directory: ${{ env.SHOREDITCH_DIR }}
         continue-on-error: true
         run: |
-          git checkout master
+          git checkout ${{ github.event.inputs.test_branch }}
           cd ..
           cd backstopjs-config
           npx gulp backstopjs:test
