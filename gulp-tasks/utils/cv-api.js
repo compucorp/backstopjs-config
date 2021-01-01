@@ -29,11 +29,18 @@ function cvApi (entityName, action, queryData) {
 function cvApiBatch (queriesData) {
   var config = CONFIGS.getSiteConfig();
   var cmd = `echo '${JSON.stringify(queriesData)}' | cv api:batch -U ${LOGGED_IN_USER_NAME}`;
-  var responses = JSON.parse(execSync(cmd, { cwd: config.root }));
-
+  var responses = JSON.parse(execSync(jsonEscape(cmd), { cwd: config.root }));
   checkAndThrowApiResponseErrors(responses);
 
   return responses;
+}
+
+/**
+ * @param {string} str string
+ * @returns {string} escaped string
+ */
+function jsonEscape(str)  {
+  return str.split('\\n').join('\\\\n');
 }
 
 /**
