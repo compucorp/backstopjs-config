@@ -20,6 +20,9 @@
   "debug": false,
   "debugWindow": false,
   "engineOptions": {
-    "waitTimeout": 120000
+    "waitTimeout": 120000,
+    "args": [
+      "--no-sandbox"
+    ]
   }
 }

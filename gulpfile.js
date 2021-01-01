@@ -8,4 +8,4 @@ const setupDataTask = require('./gulp-tasks/setup-data.js');
   });
 });
 
-gulp.task('setupData', setupDataTask);
+gulp.task('backstopjs:setup-data', setupDataTask);

@@ -179,7 +179,10 @@ async function writeCookies () {
   const config = CONFIGS.getSiteConfig();
 
   const loginUrl = execSync(`drush uli --name=admin --uri=${config.url} --browser=0`, { encoding: 'utf8', cwd: config.root });
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox']
+  });
   const page = await browser.newPage();
   await page.goto(loginUrl);
   const cookies = await page.cookies();
