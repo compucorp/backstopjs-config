@@ -27,7 +27,7 @@ module.exports = async (page, numberOfRecords = 1) => {
     await page.clickAndWaitForNavigation('#_qf_Advanced_refresh-top');
   }
 
-  for(var i = 1; i <= numberOfRecords; i++) {
+  for(let i = 1; i <= numberOfRecords; i++) {
     await page.engine.click(`.crm-search-results tbody tr:nth-child(${i}) .crm-form-checkbox`);
   }
 
