@@ -23,5 +23,3 @@ module.exports = {
 function getSiteConfig () {
   return JSON.parse(fs.readFileSync(FILES.siteConfig));
 }
-
-

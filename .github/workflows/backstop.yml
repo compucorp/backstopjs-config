@@ -8,12 +8,11 @@ on:
         default: master
         required: true
       reference_branch:
-        description: Reference Branch/Tag Name
+        description: Shoreditch Reference Branch/Tag Name
         default: master
         required: true
       test_branch:
-        description: Test Branch/Tag Name
-        default: master
+        description: Shoreditch Test Branch/Tag Name
         required: true
 
 jobs:
@@ -53,6 +52,7 @@ jobs:
       - name: Installing Shoreditch & Backstop
         working-directory: ${{ env.CIVICRM_EXTENSIONS_DIR }}
         run: |
+          # Branch name below needs to be removed before merging, its only to test
           git clone https://github.com/compucorp/backstopjs-config.git --branch CPS-393-automate-data-generation
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git
           cv en shoreditch
@@ -79,7 +79,7 @@ jobs:
           cd ..
           npm install
           npx gulp backstopjs:setup-data
-      - name: Reference Screenshots in "master" Branch
+      - name: Reference Screenshots in ${{ github.event.inputs.reference_branch }} Branch/Tag
         continue-on-error: true
         working-directory: ${{ env.SHOREDITCH_DIR }}
         run: |
@@ -87,7 +87,7 @@ jobs:
           cd ..
           cd backstopjs-config
           npx gulp backstopjs:reference
-      - name: Test Screenshots in ${{ github.event.inputs.test_branch }} Branch
+      - name: Test Screenshots in ${{ github.event.inputs.test_branch }} Branch/Tag
         working-directory: ${{ env.SHOREDITCH_DIR }}
         continue-on-error: true
         run: |

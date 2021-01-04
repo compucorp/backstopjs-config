@@ -7,6 +7,11 @@ const createPendingContribution = require('./data-setup-steps/create-pending-con
 
 module.exports = setupData;
 
+/**
+ * Sets up all the data necessary for backstop tests to run
+ *
+ * @returns {Promise} promise
+ */
 function setupData () {
   enableCivicaseComponent();
   createNewCase();
@@ -17,5 +22,3 @@ function setupData () {
 
   return Promise.resolve();
 }
-
-

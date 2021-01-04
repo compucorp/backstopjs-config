@@ -9,21 +9,21 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 * [Node.js](https://nodejs.org/en/) v8.9.0
 * [Drush](https://www.drush.org/) installed globally
 
-### Data
-* At least one Price Set added with at least one price set (/civicrm/admin/price/), with at least one price field (/civicrm/admin/price/field)
-* At least one Batch Data Entry Set with type 'Contribution' (/civicrm/batch/add?reset=1&action=add)
-* On Contact search page (/civicrm/contact/search) , the first result should have a valid email address field
-* At least one pending contribution with a contact.
-
-### Extensions
+### Extensions (Not Required when using Github Action)
 * The [uk.co.vedaconsulting.mosaico](https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico) extension should not be enabled on the site. In case it is, either momentarily disable it or remove the *mailings_menu.json* scenarios group
-* Enable `CiviCase` component (admin/setting/component?reset=1) which is the part of core vanilla civicrm. The test suite contains screens for civicase component
 
 ### Drupal
 * [Clean URLs](https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls) enabled
 * The user name for admin should be `admin`
 
 # How to use it
+## Using Github Actions
+1. Go to [Actions Tab](https://github.com/compucorp/backstopjs-config/actions?query=workflow%3A%22Backstop+Tests%22)
+2. Click on 'Run Workflow' button.
+3. Enter required 'CiviCRM Version', 'Shoreditch Reference Branch/Tag Name' and 'Shoreditch Test Branch/Tag Name'.
+4. Wait for the Action to finish, and download the Artifacts to compare screenshots in local system.
+
+## Manual Process
 1. Create a `backstop_data/site-config.json` file with the following content.
     ```json
     {
@@ -31,11 +31,15 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
       "root": "absolute_path_to_site"
     }
     ```
-2. Create the reference screenshots
+2. Setup required data
+    ```shell
+    npx gulp backstopjs:setup-data
+    ```
+3. Create the reference screenshots
     ```shell
     npx gulp backstopjs:reference
     ```
-3. Create the test screenshots and compare
+4. Create the test screenshots and compare
     ```shell
     npx gulp backstopjs:test
     ```
