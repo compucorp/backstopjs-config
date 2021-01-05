@@ -103,7 +103,7 @@ module.exports = class CrmPage {
    */
   async clickAndWaitForSuccessfulSearch (submitBtn) {
     let trySubmit = true;
-    submitBtn = submitBtn || '.crm-form-submit[value="Search"]';
+    submitBtn = submitBtn || '.crm-form-submit[type="submit"]';
 
     while (trySubmit) {
       await this.clickAndWaitForNavigation(submitBtn);

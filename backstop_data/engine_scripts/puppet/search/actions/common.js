@@ -7,11 +7,10 @@
  * as a way to improve performance
  *
  * @param {CrmPage} page
- * @param {Array} checkboxIds
+ * @param {number} numberOfRecords
  */
-module.exports = async (page, checkboxIds = ['151']) => {
+module.exports = async (page, numberOfRecords = 1) => {
   await page.clickSelect2Option('#s2id_contact_type', 'Organization');
-  await page.engine.type('#sort_name', 'Alliance');
   await page.clickAndWaitForNavigation('#_qf_Basic_refresh');
 
   /**
@@ -25,12 +24,11 @@ module.exports = async (page, checkboxIds = ['151']) => {
   // if page redirects, refill it and submit
   if (onAdvanceSearchPage) {
     await page.clickSelect2Option('#s2id_contact_type', 'Organization');
-    await page.engine.type('#sort_name', 'Alliance');
     await page.clickAndWaitForNavigation('#_qf_Advanced_refresh-top');
   }
 
-  for (const id of checkboxIds) {
-    await page.engine.click(`#mark_x_${id}`);
+  for(let i = 1; i <= numberOfRecords; i++) {
+    await page.engine.click(`.crm-search-results tbody tr:nth-child(${i}) .crm-form-checkbox`);
   }
 
   await page.engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = async (engine) => {
-  await engine.click('#crm-dashboard-configure');
-  await engine.waitFor('#configure-dashlet', { visible: true });
-  await engine.waitFor('.blockUI.blockOverlay', { hidden: true });
+  await engine.waitFor('.crm-inactive-dashlet-fieldset');
+  await engine.click('.crm-inactive-dashlet-fieldset legend a');
+  await engine.waitFor(100);
 };
