@@ -52,8 +52,7 @@ jobs:
       - name: Installing Shoreditch & Backstop
         working-directory: ${{ env.CIVICRM_EXTENSIONS_DIR }}
         run: |
-          # Branch name below needs to be removed before merging, its only to test
-          git clone https://github.com/compucorp/backstopjs-config.git --branch CPS-393-automate-data-generation
+          git clone https://github.com/compucorp/backstopjs-config.git
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git
           cv en shoreditch
           drush en civicrmtheme -y
