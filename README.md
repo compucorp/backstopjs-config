@@ -20,7 +20,7 @@ A CiviCRM site with sample data (check the "Load sample data" option when runnin
 ## Using Github Actions
 1. Go to [Actions Tab](https://github.com/compucorp/backstopjs-config/actions?query=workflow%3A%22Backstop+Tests%22)
 2. Click on 'Run Workflow' button.
-3. Enter required 'CiviCRM Version', 'Shoreditch Reference Branch/Tag Name' and 'Shoreditch Test Branch/Tag Name'.
+3. Enter required 'Reference CiviCRM Version', 'Test CiviCRM Version', 'Shoreditch Reference Branch/Tag Name' and 'Shoreditch Test Branch/Tag Name'.
 4. Wait for the Action to finish, and download the Artifacts to compare the screenshots.
 
 ## Manual Process
