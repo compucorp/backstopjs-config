@@ -3,15 +3,19 @@ name: Backstop Tests
 on:
   workflow_dispatch:
     inputs:
-      civicrm_version:
-        description: CiviCRM Version
+      reference_civicrm_version:
+        description: Reference CiviCRM Version
         default: master
         required: true
-      reference_branch:
+      reference_shoreditch_branch:
         description: Shoreditch Reference Branch/Tag Name
         default: master
         required: true
-      test_branch:
+      test_civicrm_version:
+        description: Target CiviCRM Version
+        default: master
+        required: true
+      test_shoreditch_branch:
         description: Shoreditch Test Branch/Tag Name
         required: true
 
@@ -22,10 +26,14 @@ jobs:
       image: compucorp/civicrm-buildkit:1.1.0-php7.2-chrome
 
     env:
-      CIVICRM_EXTENSIONS_DIR: site/web/sites/all/modules/civicrm/tools/extensions
-      SHOREDITCH_DIR: site/web/sites/all/modules/civicrm/tools/extensions/org.civicrm.shoreditch
-      BACKSTOP_DIR: site/web/sites/all/modules/civicrm/tools/extensions/backstopjs-config
-      DRUPAL_THEME_DIR: site/web/sites/all/themes
+      REFERENCE_SITE_FOLDER: reference_site
+      REFERENCE_SITE_URL: http://localhost:7979
+      TEST_SITE_FOLDER: test_site
+      TEST_SITE_URL: http://localhost:7980
+      CIVICRM_EXTENSIONS_DIR: web/sites/all/modules/civicrm/tools/extensions
+      SHOREDITCH_DIR: web/sites/all/modules/civicrm/tools/extensions/org.civicrm.shoreditch
+      BACKSTOP_DIR: backstopjs-config
+      DRUPAL_THEME_DIR: web/sites/all/themes
 
     services:
       mysql:
@@ -45,21 +53,30 @@ jobs:
           amp config:set --db_type=mysql_dsn --mysql_dsn='mysql://root:root@mysql:3306' --httpd_type=apache24 --httpd_restart_command='sudo /usr/sbin/apache2ctl graceful' --perm_type=worldWritable --hosts_type=file
           echo "IncludeOptional $HOME/.amp/apache.d/*.conf" >> /etc/apache2/apache2.conf
           /usr/sbin/apache2ctl restart
-      - name: Build Drupal site
+      - name: Build Reference Drupal site (CiviCRM v${{ github.event.inputs.reference_civicrm_version }})
         run: |
-          civibuild create drupal-clean --civi-ver ${{ github.event.inputs.civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/site
-          chmod -R 777 $GITHUB_WORKSPACE/site
-      - name: Installing Shoreditch & Backstop
-        working-directory: ${{ env.CIVICRM_EXTENSIONS_DIR }}
+          civibuild create drupal-clean --civi-ver ${{ github.event.inputs.reference_civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/${{ env.REFERENCE_SITE_FOLDER }} --url ${{ env.REFERENCE_SITE_URL }}
+          chmod -R 777 $GITHUB_WORKSPACE/${{ env.REFERENCE_SITE_FOLDER }}
+      - name: Build Test Drupal site (CiviCRM v${{ github.event.inputs.test_civicrm_version }})
         run: |
-          git clone https://github.com/compucorp/backstopjs-config.git
-          git clone https://github.com/civicrm/org.civicrm.shoreditch.git
+          civibuild create drupal-clean --civi-ver ${{ github.event.inputs.test_civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/${{ env.TEST_SITE_FOLDER }} --url ${{ env.TEST_SITE_URL }}
+          chmod -R 777 $GITHUB_WORKSPACE/${{ env.TEST_SITE_FOLDER }}
+      - name: Install BackstopJS
+        run: |
+          git clone https://github.com/compucorp/backstopjs-config.git depth=1
+          cd ${{ env.BACKSTOP_DIR }}
+          npm install
+
+      - name: Installing Shoreditch for Reference Site
+        working-directory: ${{ env.REFERENCE_SITE_FOLDER }}/${{ env.CIVICRM_EXTENSIONS_DIR }}
+        run: |
+          git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.reference_shoreditch_branch }}
           cv en shoreditch
           drush en civicrmtheme -y
           drush en bootstrap -y
           drush vset theme_default bootstrap
-      - name: Installing Shoreditch Companion Theme
-        working-directory: ${{ env.DRUPAL_THEME_DIR }}
+      - name: Installing Shoreditch Companion Theme for Reference Site
+        working-directory: ${{ env.REFERENCE_SITE_FOLDER }}/${{ env.DRUPAL_THEME_DIR }}
         run: |
           git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git depth=1
           drush en -y shoreditch_companion_d7_theme
@@ -68,37 +85,55 @@ jobs:
           drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='search' AND delta='form';" -y
           drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='system' AND delta IN ('navigation', 'powered-by');" -y
           drush cc all && drush cc civicrm
-      - name: Setup data and site-config.json for Backstop tests
+      - name: Setup data and site-config.json for Reference Backstop Screenshots
+        working-directory: ${{ env.BACKSTOP_DIR }}/backstop_data
+        run: |
+          cp site-config.json.sample site-config.json
+          sed -i 's+<url>+${{ env.REFERENCE_SITE_URL }}+' site-config.json
+          sed -i 's+<path-to-site-root>+'"$GITHUB_WORKSPACE"'/${{ env.REFERENCE_SITE_FOLDER }}/web+' site-config.json
+          cd ..
+          npx gulp backstopjs:setup-data
+      - name: Reference Screenshots in ${{ github.event.inputs.reference_shoreditch_branch }} Branch/Tag
+        continue-on-error: true
         working-directory: ${{ env.BACKSTOP_DIR }}
         run: |
-          cd backstop_data
-          cp site-config.json.sample site-config.json
-          sed -i 's+<url>+http://localhost:7979+' site-config.json
-          sed -i 's+<path-to-site-root>+'"$GITHUB_WORKSPACE"'/site/web+' site-config.json
-          cd ..
-          npm install
-          npx gulp backstopjs:setup-data
-      - name: Reference Screenshots in ${{ github.event.inputs.reference_branch }} Branch/Tag
-        continue-on-error: true
-        working-directory: ${{ env.SHOREDITCH_DIR }}
-        run: |
-          git checkout ${{ github.event.inputs.reference_branch }}
-          cd ..
-          cd backstopjs-config
           npx gulp backstopjs:reference
-      - name: Test Screenshots in ${{ github.event.inputs.test_branch }} Branch/Tag
-        working-directory: ${{ env.SHOREDITCH_DIR }}
+
+      - name: Installing Shoreditch for Test Site
+        working-directory: ${{ env.TEST_SITE_FOLDER }}/${{ env.CIVICRM_EXTENSIONS_DIR }}
+        run: |
+          git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.test_shoreditch_branch }}
+          cv en shoreditch
+          drush en civicrmtheme -y
+          drush en bootstrap -y
+          drush vset theme_default bootstrap
+      - name: Installing Shoreditch Companion Theme for Test Site
+        working-directory: ${{ env.TEST_SITE_FOLDER }}/${{ env.DRUPAL_THEME_DIR }}
+        run: |
+          git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git depth=1
+          drush en -y shoreditch_companion_d7_theme
+          drush vset civicrmtheme_theme_admin shoreditch_companion_d7_theme
+          drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='civicrm' AND delta IN ('1', '2', '3', '4', '5');" -y
+          drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='search' AND delta='form';" -y
+          drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='system' AND delta IN ('navigation', 'powered-by');" -y
+          drush cc all && drush cc civicrm
+      - name: Setup data and site-config.json for Test Backstop Screenshots
+        working-directory: ${{ env.BACKSTOP_DIR }}/backstop_data
+        run: |
+          sed -i 's+${{ env.REFERENCE_SITE_URL }}+${{ env.TEST_SITE_URL }}+' site-config.json
+          sed -i 's+${{ env.REFERENCE_SITE_FOLDER }}+${{ env.TEST_SITE_FOLDER }}+' site-config.json
+          cd ..
+          npx gulp backstopjs:setup-data
+      - name: Test Screenshots in ${{ github.event.inputs.test_shoreditch_branch }} Branch/Tag
+        working-directory: ${{ env.BACKSTOP_DIR }}
         continue-on-error: true
         run: |
-          git checkout ${{ github.event.inputs.test_branch }}
-          cd ..
-          cd backstopjs-config
           npx gulp backstopjs:test
+
       - name: Prepare test report for download
         if: ${{ always() }}
-        working-directory: ${{ env.BACKSTOP_DIR }}
+        working-directory: ${{ env.BACKSTOP_DIR }}/backstop_data
         run: |
-          cd backstop_data
           mkdir backstop_report
           cp -r html_report backstop_report
           cp -r screenshots backstop_report
