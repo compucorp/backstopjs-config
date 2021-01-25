@@ -63,7 +63,7 @@ jobs:
           chmod -R 777 $GITHUB_WORKSPACE/${{ env.TEST_SITE_FOLDER }}
       - name: Install BackstopJS
         run: |
-          git clone https://github.com/compucorp/backstopjs-config.git depth=1
+          git clone https://github.com/compucorp/backstopjs-config.git --depth 1
           cd ${{ env.BACKSTOP_DIR }}
           npm install
 
@@ -78,7 +78,7 @@ jobs:
       - name: Installing Shoreditch Companion Theme for Reference Site
         working-directory: ${{ env.REFERENCE_SITE_FOLDER }}/${{ env.DRUPAL_THEME_DIR }}
         run: |
-          git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git depth=1
+          git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git --depth 1
           drush en -y shoreditch_companion_d7_theme
           drush vset civicrmtheme_theme_admin shoreditch_companion_d7_theme
           drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='civicrm' AND delta IN ('1', '2', '3', '4', '5');" -y
@@ -110,7 +110,7 @@ jobs:
       - name: Installing Shoreditch Companion Theme for Test Site
         working-directory: ${{ env.TEST_SITE_FOLDER }}/${{ env.DRUPAL_THEME_DIR }}
         run: |
-          git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git depth=1
+          git clone https://github.com/compucorp/shoreditch-companion-d7-theme.git --depth 1
           drush en -y shoreditch_companion_d7_theme
           drush vset civicrmtheme_theme_admin shoreditch_companion_d7_theme
           drush sql-query "UPDATE block SET status = 0 WHERE theme='shoreditch_companion_d7_theme' AND module='civicrm' AND delta IN ('1', '2', '3', '4', '5');" -y
