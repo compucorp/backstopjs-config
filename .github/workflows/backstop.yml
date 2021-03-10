@@ -53,11 +53,11 @@ jobs:
           amp config:set --db_type=mysql_dsn --mysql_dsn='mysql://root:root@mysql:3306' --httpd_type=apache24 --httpd_restart_command='sudo /usr/sbin/apache2ctl graceful' --perm_type=worldWritable --hosts_type=file
           echo "IncludeOptional $HOME/.amp/apache.d/*.conf" >> /etc/apache2/apache2.conf
           /usr/sbin/apache2ctl restart
-      - name: Build Reference Drupal site (CiviCRM v${{ github.event.inputs.reference_civicrm_version }})
+      - name: Build Reference Drupal site (CiviCRM - ${{ github.event.inputs.reference_civicrm_version }}), (Shoreditch - ${{ github.event.inputs.reference_shoreditch_branch }})
         run: |
           civibuild create drupal-clean --civi-ver ${{ github.event.inputs.reference_civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/${{ env.REFERENCE_SITE_FOLDER }} --url ${{ env.REFERENCE_SITE_URL }}
           chmod -R 777 $GITHUB_WORKSPACE/${{ env.REFERENCE_SITE_FOLDER }}
-      - name: Build Test Drupal site (CiviCRM v${{ github.event.inputs.test_civicrm_version }})
+      - name: Build Test Drupal site (CiviCRM - ${{ github.event.inputs.test_civicrm_version }}), (Shoreditch - ${{ github.event.inputs.test_shoreditch_branch }})
         run: |
           civibuild create drupal-clean --civi-ver ${{ github.event.inputs.test_civicrm_version }} --cms-ver 7.74 --web-root $GITHUB_WORKSPACE/${{ env.TEST_SITE_FOLDER }} --url ${{ env.TEST_SITE_URL }}
           chmod -R 777 $GITHUB_WORKSPACE/${{ env.TEST_SITE_FOLDER }}

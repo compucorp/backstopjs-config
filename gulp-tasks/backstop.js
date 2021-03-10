@@ -76,6 +76,12 @@ function createTempConfig () {
   const content = JSON.parse(fs.readFileSync(CONFIGS.FILES.tpl));
 
   content.scenarios = list;
+  content.scenarios = list.map((item) => {
+    item.delay = item.delay || 1000;
+
+    return item;
+  });
+
 
   ['bitmaps_reference', 'bitmaps_test', 'html_report', 'ci_report'].forEach(path => {
     content.paths[path] = content.paths[path].replace('{group}', group);
