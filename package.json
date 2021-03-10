@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "ansi-colors": "4.1.1",
-    "backstopjs": "4.1.9",
+    "backstopjs": "5.1.0",
     "clean": "4.0.2",
     "fs": "0.0.1-security",
     "gulp": "4.0.2",
