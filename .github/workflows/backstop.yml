@@ -71,6 +71,8 @@ jobs:
         working-directory: ${{ env.REFERENCE_SITE_FOLDER }}/${{ env.CIVICRM_EXTENSIONS_DIR }}
         run: |
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.reference_shoreditch_branch }}
+          npm install
+          npx gulp sass
           cv en shoreditch
           drush en civicrmtheme -y
           drush en bootstrap -y
@@ -103,6 +105,8 @@ jobs:
         working-directory: ${{ env.TEST_SITE_FOLDER }}/${{ env.CIVICRM_EXTENSIONS_DIR }}
         run: |
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.test_shoreditch_branch }}
+          npm install
+          npx gulp sass
           cv en shoreditch
           drush en civicrmtheme -y
           drush en bootstrap -y
