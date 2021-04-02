@@ -6,7 +6,7 @@ A comprehensive suite of [BackstopJS](https://github.com/garris/BackstopJS) scen
 A CiviCRM site with sample data (check the "Load sample data" option when running the installer)
 
 ### Technical
-* [Node.js](https://nodejs.org/en/) v8.9.0
+* [Node.js](https://nodejs.org/en/) v14.16.0
 * [Drush](https://www.drush.org/) installed globally
 
 ### Extensions (Not Required when using Github Action)

@@ -22,8 +22,7 @@ on:
 jobs:
   run-backstop-tests:
     runs-on: ubuntu-latest
-    container:
-      image: compucorp/civicrm-buildkit:1.1.0-php7.2-chrome
+    container: compucorp/civicrm-buildkit:1.1.0-php7.2-chrome
 
     env:
       REFERENCE_SITE_FOLDER: reference_site
@@ -65,6 +64,9 @@ jobs:
         run: |
           git clone https://github.com/compucorp/backstopjs-config.git --depth 1
           cd ${{ env.BACKSTOP_DIR }}
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm install
+          nvm use
           npm install
 
       - name: Installing Shoreditch for Reference Site
@@ -92,11 +94,15 @@ jobs:
           sed -i 's+<url>+${{ env.REFERENCE_SITE_URL }}+' site-config.json
           sed -i 's+<path-to-site-root>+'"$GITHUB_WORKSPACE"'/${{ env.REFERENCE_SITE_FOLDER }}/web+' site-config.json
           cd ..
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm use
           npx gulp backstopjs:setup-data
       - name: Reference Screenshots in ${{ github.event.inputs.reference_shoreditch_branch }} Branch/Tag
         continue-on-error: true
         working-directory: ${{ env.BACKSTOP_DIR }}
         run: |
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm use
           npx gulp backstopjs:reference
 
       - name: Installing Shoreditch for Test Site
@@ -123,11 +129,15 @@ jobs:
           sed -i 's+${{ env.REFERENCE_SITE_URL }}+${{ env.TEST_SITE_URL }}+' site-config.json
           sed -i 's+${{ env.REFERENCE_SITE_FOLDER }}+${{ env.TEST_SITE_FOLDER }}+' site-config.json
           cd ..
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm use
           npx gulp backstopjs:setup-data
       - name: Test Screenshots in ${{ github.event.inputs.test_shoreditch_branch }} Branch/Tag
         working-directory: ${{ env.BACKSTOP_DIR }}
         continue-on-error: true
         run: |
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm use
           npx gulp backstopjs:test
 
       - name: Prepare test report for download
