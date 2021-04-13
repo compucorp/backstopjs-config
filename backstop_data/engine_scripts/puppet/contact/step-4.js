@@ -3,7 +3,7 @@
 module.exports = async (engine, scenario, vp) => {
   await engine.on('dialog', async dialog => {
     await dialog.accept();
-    await engine.waitFor('.crm-import-summary-form-block', { visible: true });
+    await engine.waitForSelector('.crm-import-summary-form-block', { visible: true });
   });
 
   await require('./step-3')(engine, scenario, vp);

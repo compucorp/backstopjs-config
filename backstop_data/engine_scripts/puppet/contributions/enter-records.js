@@ -10,6 +10,6 @@ module.exports = async (engine, scenario, viewport) => {
 
   // The .fa-calendar addon is present only in Shoreditch
   try {
-    await engine.waitFor('.addon.fa-calendar', { visible: true });
+    await engine.waitForSelector('.addon.fa-calendar', { visible: true });
   } catch (e) {}
 };

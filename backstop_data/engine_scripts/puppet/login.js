@@ -21,7 +21,7 @@ module.exports = async (engine, scenario, vp) => {
   console.log('Logging in before starting...');
 
   await engine.goto(config.url);
-  await engine.waitFor(formSelector);
+  await engine.waitForSelector(formSelector);
   await engine.type('[name="name"]', config.credentials.name);
   await engine.type('[name="pass"]', config.credentials.pass);
   await page.clickAndWaitForNavigation('#edit-submit');
