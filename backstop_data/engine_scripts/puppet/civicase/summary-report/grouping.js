@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = async (engine, scenario, vp) => {
-  await engine.click('a[title="Grouping"]');
+  await engine.waitForAndClick('a[title="Grouping"]');
 };
