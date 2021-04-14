@@ -6,5 +6,5 @@ module.exports = async (engine, scenario, vp) => {
   const page = await Page.build(engine, scenario, vp);
 
   await page.closeErrorNotifications();
-  await engine.waitFor('.crm-status-item', { visible: true });
+  await engine.waitForSelector('.crm-status-item', { visible: true });
 };

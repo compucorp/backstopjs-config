@@ -31,5 +31,5 @@ module.exports = async (page, numberOfRecords = 1) => {
     await page.engine.click(`.crm-search-results tbody tr:nth-child(${i}) .crm-form-checkbox`);
   }
 
-  await page.engine.waitFor('#search-status .select2-container:not(.select2-container-disabled)');
+  await page.engine.waitForSelector('#search-status .select2-container:not(.select2-container-disabled)');
 };

@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = async (engine, scenario, viewport) => {
-  await engine.waitFor('form[name="editCaseTypeForm"]');
+  await engine.waitForSelector('form[name="editCaseTypeForm"]');
 };

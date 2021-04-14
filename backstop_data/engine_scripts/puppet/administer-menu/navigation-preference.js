@@ -6,5 +6,5 @@ module.exports = async (engine, scenario, vp) => {
   const page = await Page.build(engine, scenario, vp);
 
   await page.closeErrorNotifications();
-  await engine.waitFor('.jstree-loading', { hidden: true });
+  await engine.waitForSelector('.jstree-loading', { hidden: true });
 };

@@ -6,6 +6,9 @@
   "scripts": {
     "precommit": "lint-staged"
   },
+  "engines": {
+    "node": ">=14.16.0"
+  },
   "lint-staged": {
     "*.js": [
       "semistandard --fix",

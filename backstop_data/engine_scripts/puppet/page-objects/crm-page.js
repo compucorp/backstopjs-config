@@ -89,7 +89,7 @@ module.exports = class CrmPage {
     await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
     await this.cleanups();
     // Waiting for civicrm to complete readjusting the modal, to help backstop taking better screenshots
-    await this.engine.waitFor(300);
+    await this.engine.waitForTimeout(300);
   }
 
   /**
@@ -124,7 +124,7 @@ module.exports = class CrmPage {
     if (exists) {
       console.log('Closing error notifications');
       await this.clickAll('a.ui-notify-cross.ui-notify-close');
-      await this.engine.waitFor('.ui-notify-message', { hidden: true });
+      await this.engine.waitForSelector('.ui-notify-message', { hidden: true });
     }
   }
 
@@ -164,7 +164,7 @@ module.exports = class CrmPage {
    * Waits for the KAM menu to appear on the screen.
    */
   async waitForKAMMenu () {
-    await this.engine.waitFor('#crm-qsearch', { visible: true });
+    await this.engine.waitForSelector('#crm-qsearch', { visible: true });
   }
 
   /**
@@ -174,7 +174,7 @@ module.exports = class CrmPage {
    * look for.
    */
   async waitForVisibility (selector) {
-    await this.engine.waitFor((selector) => {
+    await this.engine.waitForFunction((selector) => {
       const uiBlock = document.querySelector(selector);
 
       return uiBlock.style.display === 'block';
@@ -202,11 +202,11 @@ module.exports = class CrmPage {
         'content': 'document.body.classList.add("backstop-all-accordions-open")'
       });
       try {
-        await this.engine.waitFor('.blockUI.blockOverlay', { hidden: true });
-        await this.engine.waitFor('.loading-text', { hidden: true, timeout: 8000 });
-        await this.engine.waitFor('[alt="loading"]', { hidden: true });
+        await this.engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
+        await this.engine.waitForSelector('.loading-text', { hidden: true, timeout: 8000 });
+        await this.engine.waitForSelector('[alt="loading"]', { hidden: true });
         // wait for reedjustment of the modal after ajax content load after opening accordion
-        await this.engine.waitFor(500);
+        await this.engine.waitForTimeout(500);
         console.log('All accordion blocks loaded');
       } catch (e) {
         console.log('Loaders still visible and timeout reached!');
@@ -245,7 +245,7 @@ module.exports = class CrmPage {
    */
   async waitForSelectorAndEvaluate (selector, fn) {
     try {
-      await this.engine.waitFor(selector, { timeout: 8000 });
+      await this.engine.waitForSelector(selector, { timeout: 8000 });
       await this.engine.evaluate(fn, selector);
     } catch (e) {
       console.log('Selector "' + selector + '" not found');
@@ -259,7 +259,7 @@ module.exports = class CrmPage {
     const isWysiwygVisible = await this.isElementVisible('.crm-form-wysiwyg');
 
     if (isWysiwygVisible) {
-      await this.engine.waitFor('.cke .cke_contents', { visible: true });
+      await this.engine.waitForSelector('.cke .cke_contents', { visible: true });
     }
   }
 

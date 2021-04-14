@@ -6,5 +6,5 @@ module.exports = async (engine, scenario, vp) => {
   await engine.waitForSelector('.modal-dialog > form', { visible: true });
   await engine.waitForSelector('.blockUI.blockOverlay', { hidden: true });
   // wait for modal adjustment
-  await engine.waitFor(200);
+  await engine.waitForTimeout(200);
 };
