@@ -74,6 +74,9 @@ jobs:
         run: |
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.reference_shoreditch_branch }}
           cd org.civicrm.shoreditch
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm install
+          nvm use
           npm install
           npx gulp sass
           cv en shoreditch
@@ -113,6 +116,9 @@ jobs:
         run: |
           git clone https://github.com/civicrm/org.civicrm.shoreditch.git --branch ${{ github.event.inputs.test_shoreditch_branch }}
           cd org.civicrm.shoreditch
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm install
+          nvm use
           npm install
           npx gulp sass
           cv en shoreditch
