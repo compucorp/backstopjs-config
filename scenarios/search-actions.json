@@ -94,6 +94,11 @@
       "onReadyScript": "search/actions/export-contact.js"
     },
     {
+      "label": "Export contacts - Save fields",
+      "url": "{url}/civicrm/contact/search?reset=1",
+      "onReadyScript": "search/actions/export-contact-save-fields.js"
+    },
+    {
       "label": "Export contact - Step 3",
       "url": "{url}/civicrm/contact/search?reset=1",
       "onReadyScript": "search/actions/export-contact-step-3.js"
