@@ -9,6 +9,7 @@ module.exports = async (engine, scenario, vp) => {
   await engine.click('#CIVICRM_QFID_2_exportOption');
   await page.clickAndWaitForNavigation('#_qf_Select_next-bottom');
 
+  await engine.waitForSelector('#s2id_autogen3');
   await page.clickSelect2Option('#s2id_autogen3', 'Addressee');
   await engine.click('.ng-binding.crm-button');
 };
