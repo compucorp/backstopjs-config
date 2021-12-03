@@ -22,7 +22,7 @@ on:
 jobs:
   run-backstop-tests:
     runs-on: ubuntu-latest
-    container: compucorp/civicrm-buildkit:1.1.1-php7.2-chrome
+    container: compucorp/civicrm-buildkit:1.1.2-php7.2-chrome
 
     env:
       REFERENCE_SITE_FOLDER: reference_site
